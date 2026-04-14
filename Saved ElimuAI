@@ -1,0 +1,6 @@
+git init
+git add .
+git commit -m "ElimuAI project saved"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/elimuai-platform.git
+git push -u origin main
