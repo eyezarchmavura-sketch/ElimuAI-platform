@@ -1,0 +1,27 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+logs
+*.log
+
+# Dependency directories
+backend/node_modules
+frontend/node_modules
+
+# Build output
+frontend/build
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# OS generated files
+*.swp
+
+# Coverage
+coverage/
