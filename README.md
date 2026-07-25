@@ -10,9 +10,10 @@ This repository now contains a launchable MVP foundation:
 - Frontend styles split into `src/styles.css`.
 - Frontend interactions split into `src/app.js`.
 - API helper functions in `src/api.js`.
-- A minimal Node/Express backend in `server/src/index.js`.
+- A dependency-light Node backend in `server/src/index.js` that runs without installing Express.
 - A health endpoint at `GET /api/health`.
 - An AI-ready education endpoint at `POST /api/ai/generate`.
+- Automatic browser saving of generated study content into the Maktaba/History page.
 - A safe local fallback response when no OpenAI API key is configured.
 
 ## MVP focus
@@ -31,16 +32,15 @@ The backend prompt is designed for Tanzanian learners and asks the AI to answer 
 ## Requirements
 
 - Node.js 18 or newer
-- npm
+- npm for scripts; no production dependency install is required for the local fallback MVP.
 
 ## Setup
 
 ```bash
-npm install
 cp .env.example .env
 ```
 
-The app works without an AI key by returning local demo learning content. To enable live AI generation, edit `.env` and set:
+The app works without an AI key by returning local demo learning content, and generated content is saved in the browser history/library for quick reuse. To enable live AI generation, edit `.env` and set:
 
 ```bash
 OPENAI_API_KEY=your_api_key_here

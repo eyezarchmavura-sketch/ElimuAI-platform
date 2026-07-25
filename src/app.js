@@ -1,9 +1,14 @@
 const pageNav={home:'nav-home',translate:'nav-translate',audiobook:'nav-audiobook',textgen:'nav-textgen',history:'nav-history',profile:'nav-profile'};
+const historyKey='elimuai.studyHistory.v1';
+const typeLabels={summary:'Muhtasari',explain:'Maelezo',quiz:'Maswali ya Mtihani',essay:'Insha',notes:'Madokezo',translate:'Tafsiri'};
+const levelLabels={primary:'Msingi',secondary:'Sekondari',university:'Chuo Kikuu',adult:'Watu Wazima'};
+
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.bnav-item').forEach(b=>b.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
   if(pageNav[id])document.getElementById(pageNav[id]).classList.add('active');
+  if(id==='history')renderStudyHistory();
   window.scrollTo(0,0);
 }
 function switchTab(btn,ids,show){
@@ -41,14 +46,36 @@ function runAudiobook(){
   setTimeout(()=>{document.getElementById('ab-result').style.display='block';showToast('✅ Kitabu cha sauti kimekamilika!');document.getElementById('ab-result').scrollIntoView({behavior:'smooth'});},2500);
 }
 let currentType='summary';
-const sTexts={
-  summary:'Muhtasari: Sheria ya Kwanza ya Newton inasema kwamba mwili utakuwa katika hali yake ya sasa mpaka nguvu ya nje isababishe mabadiliko. Hii inaitwa "Sheria ya Inertia." Sheria ya Pili: F = ma (Nguvu = Misa × Kasi ya Mabadiliko). Sheria ya Tatu: kwa kila kitendo, kuna kitendo kingine sawa na kinyume nacho.',
-  explain:'Maelezo kwa Lugha Rahisi: Fikiria wewe uko ndani ya basi inayokwenda mbele kwa kasi kubwa. Ghafla basi inasimama. Mwili wako unaendelea kwenda mbele — hii ndio inertia. Hii inaonyesha jinsi Sheria ya Newton inavyofanya kazi katika maisha ya kila siku.',
-  quiz:'❓ Maswali ya Mtihani — Fizikia:\n\n1. Eleza Sheria ya Kwanza ya Newton kwa maneno yako mwenyewe.\n\n2. Nguvu ya 20N inasababisha mwili wa 5kg kusogea. Kasi ni ngapi? (F = ma)\n\n3. Toa mfano wa Sheria ya Tatu katika maisha ya kila siku.\n\n4. Ni nini maana ya "inertia"?\n\n5. Kwa nini astronaut angepata shida kutembea angani?',
-  essay:'Insha: Umuhimu wa Sheria za Newton katika Teknolojia ya Leo\n\nSheria za Newton za mwendo zimekuwa msingi wa uvumbuzi wa kisayansi kwa karne nyingi. Tangu Newton alipozieleza mwaka 1687, wanafikra wa sayansi na wahandisi wametumia sheria hizi kuunda magari, ndege, na hata roketi za kwenda angani...',
-  notes:'📖 Madokezo Muhimu — Sheria za Newton:\n\n• Sheria ya 1: Inertia — mwili hauwezi kubadilika bila nguvu ya nje\n• Sheria ya 2: F = ma\n• Sheria ya 3: Kitendo na Majibu — nguvu mbili sawa na kinyume\n• Vitengo: Nguvu = Newton (N), Misa = kg, Kasi = m/s²',
-  translate:'Tafsiri ya Kiswahili:\n\nNewton\'s First Law states that an object at rest stays at rest, and an object in motion stays in motion unless acted upon by an external force.\n\n→ Kiswahili: Sheria ya Kwanza ya Newton inasema kwamba kitu kilichosimama kitabaki kimesimama, na kitu kinachosogea kitaendelea kusogea mpaka nguvu ya nje iisababishe kubadilika.'
-};
+function getStudyHistory(){
+  try{return JSON.parse(localStorage.getItem(historyKey)||'[]');}catch(error){return [];}
+}
+function saveStudyHistory(item){
+  const next=[item,...getStudyHistory()].slice(0,20);
+  localStorage.setItem(historyKey,JSON.stringify(next));
+  renderStudyHistory();
+}
+function renderStudyHistory(){
+  const history=getStudyHistory();
+  const all=document.getElementById('generated-history-all');
+  const txt=document.getElementById('generated-history-text');
+  if(!all||!txt)return;
+  const markup=history.map(item=>`<div class="history-item" onclick="openStudyHistory('${item.id}')"><div class="hi-icon green">✍️</div><div class="hi-info"><div class="hi-title">${escapeHtml(item.title)}</div><div class="hi-meta">${escapeHtml(item.typeLabel)} • ${escapeHtml(item.levelLabel)} • ${escapeHtml(item.date)}</div></div><span class="hi-badge done">✓ Tayari</span></div>`).join('');
+  const empty='<div class="history-item"><div class="hi-icon green">✍️</div><div class="hi-info"><div class="hi-title">Hakuna maandishi mapya bado</div><div class="hi-meta">Tengeneza maandishi kwenye sehemu ya Andika ili yahifadhiwe hapa.</div></div><span class="hi-badge proc">Mpya</span></div>';
+  all.innerHTML=history.length?markup:empty;
+  txt.innerHTML=history.length?markup:empty;
+}
+function openStudyHistory(id){
+  const item=getStudyHistory().find(entry=>entry.id===id);
+  if(!item)return;
+  showPage('textgen');
+  document.getElementById('tg-input').value=item.input;
+  document.getElementById('tg-text').textContent=item.result;
+  document.getElementById('tg-result').style.display='block';
+  showToast('📚 Kazi imefunguliwa kutoka Maktaba');
+}
+function escapeHtml(value){
+  return String(value).replace(/[&<>'"]/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+}
 async function runTextGen(){
   const inp=document.getElementById('tg-input').value.trim();
   const level=document.getElementById('tg-level')?.value||'secondary';
@@ -65,7 +92,19 @@ async function runTextGen(){
   try{
     const data=await ElimuApi.generateStudyContent({type:currentType,level,length,input:inp});
     text.textContent=data.result;
-    showToast(data.demo?'✅ Mfano wa AI uko tayari!':'✅ Maandishi yamekamilika!');
+    saveStudyHistory({
+      id:String(Date.now()),
+      title:inp.length>54?inp.slice(0,54)+'...':inp,
+      input:inp,
+      result:data.result,
+      type:currentType,
+      typeLabel:typeLabels[currentType]||'Maandishi',
+      level,
+      levelLabel:levelLabels[level]||'Sekondari',
+      date:new Date().toLocaleDateString('sw-TZ',{day:'numeric',month:'short',year:'numeric'}),
+      demo:Boolean(data.demo),
+    });
+    showToast(data.demo?'✅ Mfano wa AI umehifadhiwa!':'✅ Maandishi yamehifadhiwa!');
     result.scrollIntoView({behavior:'smooth'});
   }catch(error){
     text.textContent='Samahani, hatukuweza kutengeneza maandishi sasa. Hakikisha seva inaendelea kufanya kazi na jaribu tena.';
@@ -74,3 +113,4 @@ async function runTextGen(){
 }
 function toAudio(){showPage('audiobook');const t=document.getElementById('tg-text').textContent;document.getElementById('ab-input').value=t.substring(0,300)+'...';showToast('🎧 Maandishi yamehamishiwa kwenye Sauti!');}
 function doPay(){showToast('🔄 Inashughulikia malipo...');setTimeout(()=>showModal('pay-success'),2000);}
+document.addEventListener('DOMContentLoaded',renderStudyHistory);
