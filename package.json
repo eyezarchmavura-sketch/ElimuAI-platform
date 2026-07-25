@@ -1,0 +1,17 @@
+{
+  "name": "elimuai-platform",
+  "version": "0.1.0",
+  "description": "Kiswahili-first AI learning platform for Tanzanian students.",
+  "main": "server/src/index.js",
+  "scripts": {
+    "start": "node server/src/index.js",
+    "dev": "node server/src/index.js",
+    "check": "node --check server/src/index.js && node --check server/src/routes/ai.js && node --check server/src/services/aiService.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
