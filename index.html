@@ -35,6 +35,18 @@
     <div class="stat-box"><div class="sv">12K+</div><div class="sl">Video Zilizotafsiriwa</div></div>
     <div class="stat-box"><div class="sv">98%</div><div class="sl">Usahihi wa AI</div></div>
   </div>
+
+  <div class="container preview-panel">
+    <div class="preview-panel-top">
+      <div>
+        <span class="section-label">🧪 App Preview</span>
+        <div class="section-title">Tayari kujaribu Andika</div>
+        <div class="section-sub">Seva: <strong id="api-status">Inakaguliwa...</strong> • Maktaba: <strong id="history-count">0 kazi</strong></div>
+      </div>
+      <button class="btn-sm" onclick="fillSampleTopic()">Jaribu mada</button>
+    </div>
+  </div>
+
   <div class="container" style="padding:0 1rem 0.8rem;">
     <span class="section-label">🛠️ Zana za Elimu</span>
     <div class="section-title">Chagua zana unayohitaji</div>
@@ -120,7 +132,7 @@
         <div class="rc-label">✅ Maandishi ya Kiswahili</div>
         <div class="rc-content">Sheria za kwanza za Newton zinasema kwamba kila kitu kitaendelea kusogea kwa mwelekeo mmoja na kwa kasi moja mpaka nguvu nyingine isababishe mabadiliko. Hii inaitwa inertia — au uvivu wa mwili. Fikiria mpira unaosogea kwenye uso laini — utaendelea kusogea milele bila msimamo kama hakuna nguvu ya kupinga...</div>
         <div class="result-actions">
-          <button class="btn-sm" onclick="showToast('📋 Imenakiliwa!')">📋 Nakili</button>
+          <button class="btn-sm" onclick="copyGeneratedText()">📋 Nakili</button>
           <button class="btn-sm" onclick="showToast('⬇️ Inashuka PDF...')">⬇️ PDF</button>
           <button class="btn-sm" onclick="showPage('audiobook');showToast('🎧 Nenda kwenye Sauti!')">🎧 Sauti</button>
           <button class="btn-sm" onclick="showToast('🔗 Kiungo kimeshachangudwa!')">🔗 Shiriki</button>
@@ -201,7 +213,7 @@
         <div class="rc-label">✅ Maandishi ya AI — Kiswahili</div>
         <div class="rc-content" id="tg-text"></div>
         <div class="result-actions">
-          <button class="btn-sm" onclick="showToast('📋 Imenakiliwa!')">📋 Nakili</button>
+          <button class="btn-sm" onclick="copyGeneratedText()">📋 Nakili</button>
           <button class="btn-sm" onclick="showToast('⬇️ Inashuka PDF...')">⬇️ PDF</button>
           <button class="btn-sm" onclick="toAudio()">🎧 Sauti</button>
           <button class="btn-sm" onclick="showToast('🔗 Imechangudwa!')">🔗 Shiriki</button>

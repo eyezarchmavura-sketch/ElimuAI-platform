@@ -14,6 +14,7 @@ This repository now contains a launchable MVP foundation:
 - A health endpoint at `GET /api/health`.
 - An AI-ready education endpoint at `POST /api/ai/generate`.
 - Automatic browser saving of generated study content into the Maktaba/History page.
+- A home-screen preview panel showing backend AI mode, saved-work count, and a sample-topic shortcut.
 - A safe local fallback response when no OpenAI API key is configured.
 
 ## MVP focus

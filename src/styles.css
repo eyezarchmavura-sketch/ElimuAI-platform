@@ -172,3 +172,8 @@ select.input-field{cursor:pointer;appearance:none;background-image:url("data:ima
 .upload-zone{background:var(--deep);border:2px dashed var(--border);border-radius:12px;padding:2.5rem 1rem;text-align:center;cursor:pointer;margin-bottom:1rem;transition:border-color 0.2s;}
 .upload-zone:hover{border-color:var(--cyan);}
 @media(min-width:600px){.container{max-width:560px;}.feature-grid{display:grid;grid-template-columns:1fr 1fr;}.stats-row{grid-template-columns:repeat(4,1fr);}}
+.preview-panel{padding:0 1rem 1.2rem;}
+.preview-panel-top{background:linear-gradient(135deg,rgba(0,200,224,0.12),rgba(26,110,220,0.08));border:1px solid rgba(0,200,224,0.25);border-radius:var(--radius);padding:1rem;display:flex;align-items:center;justify-content:space-between;gap:0.8rem;box-shadow:0 8px 28px rgba(0,200,224,0.08);}
+.preview-panel .section-title{font-size:1.05rem;margin-bottom:0.25rem;}
+.preview-panel .section-sub{margin-bottom:0;font-size:0.78rem;}
+#api-status.ok{color:var(--green);}#api-status.warn{color:var(--gold);}#api-status.err{color:var(--red);}

@@ -8,6 +8,7 @@ function showPage(id){
   document.querySelectorAll('.bnav-item').forEach(b=>b.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
   if(pageNav[id])document.getElementById(pageNav[id]).classList.add('active');
+  updateHistoryCount();
   if(id==='history')renderStudyHistory();
   window.scrollTo(0,0);
 }
@@ -53,6 +54,7 @@ function saveStudyHistory(item){
   const next=[item,...getStudyHistory()].slice(0,20);
   localStorage.setItem(historyKey,JSON.stringify(next));
   renderStudyHistory();
+  updateHistoryCount();
 }
 function renderStudyHistory(){
   const history=getStudyHistory();
@@ -76,6 +78,51 @@ function openStudyHistory(id){
 function escapeHtml(value){
   return String(value).replace(/[&<>'"]/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
 }
+
+function updateHistoryCount(){
+  const el=document.getElementById('history-count');
+  if(!el)return;
+  const count=getStudyHistory().length;
+  el.textContent=count===1?'1 kazi':count+' kazi';
+}
+async function checkBackendStatus(){
+  const el=document.getElementById('api-status');
+  if(!el)return;
+
+  try{
+    const health=await ElimuApi.getHealth();
+    el.textContent=health.aiProvider==='openai'?'Live AI tayari':'Demo AI tayari';
+    el.className=health.aiProvider==='openai'?'ok':'warn';
+  }catch(error){
+    el.textContent='Seva haipatikani';
+    el.className='err';
+  }
+}
+function fillSampleTopic(){
+  showPage('textgen');
+  document.getElementById('tg-input').value='Eleza fotosinthesisi kwa mwanafunzi wa Form 2 kwa mifano ya mazingira ya Tanzania';
+  document.getElementById('tg-level').value='secondary';
+  document.getElementById('tg-length').value='medium';
+  showToast('📝 Mada ya mfano imewekwa. Bonyeza Tengeneza Maandishi.');
+}
+async function copyGeneratedText(){
+  const value=document.getElementById('tg-text').textContent.trim();
+  if(!value){showToast('⚠️ Hakuna maandishi ya kunakili');return;}
+
+  if(navigator.clipboard){
+    await navigator.clipboard.writeText(value);
+  }else{
+    const area=document.createElement('textarea');
+    area.value=value;
+    document.body.appendChild(area);
+    area.select();
+    document.execCommand('copy');
+    area.remove();
+  }
+
+  showToast('📋 Maandishi yamenakiliwa!');
+}
+
 async function runTextGen(){
   const inp=document.getElementById('tg-input').value.trim();
   const level=document.getElementById('tg-level')?.value||'secondary';
@@ -113,4 +160,4 @@ async function runTextGen(){
 }
 function toAudio(){showPage('audiobook');const t=document.getElementById('tg-text').textContent;document.getElementById('ab-input').value=t.substring(0,300)+'...';showToast('🎧 Maandishi yamehamishiwa kwenye Sauti!');}
 function doPay(){showToast('🔄 Inashughulikia malipo...');setTimeout(()=>showModal('pay-success'),2000);}
-document.addEventListener('DOMContentLoaded',renderStudyHistory);
+document.addEventListener('DOMContentLoaded',()=>{renderStudyHistory();updateHistoryCount();checkBackendStatus();});
