@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="theme-color" content="#0a1628"/>
+<title>ElimuAI — Elimu ya Kidijitali kwa Kiswahili</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/src/styles.css"/>
+
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Elimu<span>AI</span></div>
+  <div class="topbar-right">
+    <button class="btn-login" onclick="showModal('login-modal')">Ingia</button>
+    <button class="btn-signup" onclick="showModal('signup-modal')">Jisajili</button>
+  </div>
+</div>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <div class="hero container">
+    <div class="hero-badge">🇹🇿 Iliyoundwa kwa Tanzania</div>
+    <h1>Elimu yote <span class="grad">kwa Kiswahili</span> popote ulipo</h1>
+    <p>Tafsiri video za YouTube, tengeneza vitabu vya sauti, na pata maandishi yaliyoundwa na AI — yote kwa Kiswahili.</p>
+    <div class="hero-btns">
+      <button class="btn-hero-primary" onclick="showPage('translate')">🎬 Anza Sasa</button>
+      <button class="btn-hero-secondary" onclick="showPage('pricing')">💳 Angalia Bei</button>
+    </div>
+  </div>
+  <div class="stats-row container">
+    <div class="stat-box"><div class="sv">50K+</div><div class="sl">Watumiaji</div></div>
+    <div class="stat-box"><div class="sv">12K+</div><div class="sl">Video Zilizotafsiriwa</div></div>
+    <div class="stat-box"><div class="sv">98%</div><div class="sl">Usahihi wa AI</div></div>
+  </div>
+
+  <div class="container preview-panel">
+    <div class="preview-panel-top">
+      <div>
+        <span class="section-label">🧪 App Preview</span>
+        <div class="section-title">Tayari kujaribu Andika</div>
+        <div class="section-sub">Seva: <strong id="api-status">Inakaguliwa...</strong> • Maktaba: <strong id="history-count">0 kazi</strong></div>
+      </div>
+      <button class="btn-sm" onclick="fillSampleTopic()">Jaribu mada</button>
+    </div>
+  </div>
+
+  <div class="container" style="padding:0 1rem 0.8rem;">
+    <span class="section-label">🛠️ Zana za Elimu</span>
+    <div class="section-title">Chagua zana unayohitaji</div>
+    <div class="section-sub">Kila zana imejengwa kwa teknolojia ya hali ya juu ya AI</div>
+  </div>
+  <div class="feature-grid container">
+    <div class="feature-card" onclick="showPage('translate')">
+      <div class="fc-top"><div class="fc-icon red">🎬</div><span class="fc-badge hot">🔥 Maarufu</span></div>
+      <div class="fc-title">Tafsiri Video za YouTube</div>
+      <div class="fc-desc">Bandika kiungo cha YouTube — AI itatafsiri sauti na maandishi yote kwa Kiswahili papo hapo.</div>
+      <div class="fc-arrow">Anza kutafsiri <span>→</span></div>
+    </div>
+    <div class="feature-card" onclick="showPage('audiobook')">
+      <div class="fc-top"><div class="fc-icon gold">🎧</div><span class="fc-badge pro">⭐ Pro</span></div>
+      <div class="fc-title">Tengeneza Kitabu cha Sauti</div>
+      <div class="fc-desc">Pakia maandishi au PDF — AI itasoma kwa sauti ya Kiswahili inayofanana na mtu halisi.</div>
+      <div class="fc-arrow">Tengeneza sauti <span>→</span></div>
+    </div>
+    <div class="feature-card" onclick="showPage('textgen')">
+      <div class="fc-top"><div class="fc-icon green">✍️</div><span class="fc-badge new">✨ Mpya</span></div>
+      <div class="fc-title">Tengeneza Maandishi na AI</div>
+      <div class="fc-desc">Muhtasari, maelezo, insha, na maswali ya mtihani — yote kwa Kiswahili kwa sekunde.</div>
+      <div class="fc-arrow">Anza kuandika <span>→</span></div>
+    </div>
+    <div class="feature-card" onclick="showPage('history')">
+      <div class="fc-top"><div class="fc-icon blue">📚</div><span class="fc-badge new">🗂️</span></div>
+      <div class="fc-title">Maktaba Yangu</div>
+      <div class="fc-desc">Angalia video zote ulizotafsiri, vitabu vya sauti, na maandishi yaliyohifadhiwa.</div>
+      <div class="fc-arrow">Fungua maktaba <span>→</span></div>
+    </div>
+  </div>
+  <div class="container" style="padding:0 1rem 2rem;">
+    <div class="divider"></div>
+    <span class="section-label">⚡ Jinsi Inavyofanya Kazi</span>
+    <div style="display:flex;flex-direction:column;gap:0.8rem;margin-top:0.8rem;">
+      <div style="display:flex;gap:0.9rem;align-items:flex-start;"><div style="width:36px;height:36px;border-radius:50%;background:rgba(26,110,220,0.2);border:1px solid rgba(26,110,220,0.4);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--cyan);flex-shrink:0;">1</div><div><div style="font-weight:600;font-size:0.88rem;margin-bottom:0.2rem;">Chagua chanzo chako</div><div style="font-size:0.8rem;color:var(--muted);">YouTube, PDF, maandishi, au faili la sauti</div></div></div>
+      <div style="display:flex;gap:0.9rem;align-items:flex-start;"><div style="width:36px;height:36px;border-radius:50%;background:rgba(0,200,224,0.2);border:1px solid rgba(0,200,224,0.4);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--cyan);flex-shrink:0;">2</div><div><div style="font-weight:600;font-size:0.88rem;margin-bottom:0.2rem;">AI inafanya kazi</div><div style="font-size:0.8rem;color:var(--muted);">Mfumo wetu unatafsiri na kutoa sauti ya Kiswahili</div></div></div>
+      <div style="display:flex;gap:0.9rem;align-items:flex-start;"><div style="width:36px;height:36px;border-radius:50%;background:rgba(0,200,120,0.2);border:1px solid rgba(0,200,120,0.4);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--green);flex-shrink:0;">3</div><div><div style="font-weight:600;font-size:0.88rem;margin-bottom:0.2rem;">Pokea na shiriki</div><div style="font-size:0.8rem;color:var(--muted);">Pakua, shiriki, au hifadhi katika maktaba yako</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TRANSLATE -->
+<div id="page-translate" class="page">
+  <div class="tool-header container">
+    <button onclick="showPage('home')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;margin-bottom:0.5rem;font-family:'Noto Sans',sans-serif;">← Rudi</button>
+    <div style="display:flex;align-items:center;gap:0.7rem;"><div class="fc-icon red" style="width:40px;height:40px;border-radius:10px;font-size:1.2rem;">🎬</div><div><div class="tool-title">Tafsiri Video za YouTube</div><div class="tool-sub">Sauti & maandishi • Kiswahili sanifu</div></div></div>
+  </div>
+  <div class="tool-body container">
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="switchTab(this,['yt-tab','up-tab','url-tab'],'yt-tab')">YouTube</button>
+      <button class="tab-btn" onclick="switchTab(this,['yt-tab','up-tab','url-tab'],'up-tab')">Pakia Faili</button>
+      <button class="tab-btn" onclick="switchTab(this,['yt-tab','up-tab','url-tab'],'url-tab')">URL Nyingine</button>
+    </div>
+    <div id="yt-tab">
+      <div class="input-group"><label class="input-label">🔗 Kiungo cha YouTube</label><input class="input-field" id="yt-url" type="url" placeholder="https://youtube.com/watch?v=..."/></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;">
+        <div class="input-group"><label class="input-label">Lugha ya Asili</label><select class="input-field" id="yt-from"><option>🇬🇧 Kiingereza</option><option>🇫🇷 Kifaransa</option><option>🇸🇦 Kiarabu</option><option>🇨🇳 Kichina</option><option>🇧🇷 Kireno</option><option>🇮🇳 Kihindi</option></select></div>
+        <div class="input-group"><label class="input-label">Lugha ya Matokeo</label><select class="input-field"><option>🇹🇿 Kiswahili</option></select></div>
+      </div>
+      <div class="input-group"><label class="input-label">Aina ya Matokeo</label><div><span class="lang-pill active" onclick="this.classList.toggle('active')">📝 Maandishi</span><span class="lang-pill active" onclick="this.classList.toggle('active')">🔊 Dubbing</span><span class="lang-pill" onclick="this.classList.toggle('active')">📄 Manukuu</span><span class="lang-pill" onclick="this.classList.toggle('active')">📋 Muhtasari</span></div></div>
+    </div>
+    <div id="up-tab" style="display:none;"><div class="upload-zone" onclick="showToast('📁 Chagua faili kutoka kwenye simu yako')"><div style="font-size:2.5rem;margin-bottom:0.5rem;">📁</div><div style="font-size:0.88rem;font-weight:600;margin-bottom:0.2rem;">Gusa kupakia faili</div><div style="font-size:0.75rem;color:var(--muted);">MP4, MP3, WAV, PDF — hadi 500MB</div></div></div>
+    <div id="url-tab" style="display:none;"><div class="input-group"><label class="input-label">🔗 URL (Vimeo, TikTok, n.k.)</label><input class="input-field" type="url" placeholder="https://..."/></div></div>
+    <button class="btn-main" onclick="runTranslation()"><span>🔄</span> Tafsiri Sasa</button>
+    <div id="tr-progress" style="display:none;margin-top:1rem;">
+      <div style="display:flex;justify-content:space-between;font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;"><span id="tr-label">Inabainisha sauti...</span><span id="tr-pct">0%</span></div>
+      <div class="loading-bar"><div class="loading-bar-fill" id="tr-bar"></div></div>
+    </div>
+    <div id="tr-result" style="display:none;">
+      <div class="video-preview" style="margin-top:1rem;">
+        <div class="video-thumb"><span style="font-size:4rem;opacity:0.3;">🎬</span><div class="play-btn" onclick="showToast('▶️ Inacheza toleo la Kiswahili...')">▶</div></div>
+        <div class="video-info"><div class="video-title">Video ya YouTube — Toleo la Kiswahili</div><div class="video-meta">Kutoka: Kiingereza → Kiswahili • ~18 dakika</div></div>
+      </div>
+      <div class="audio-player">
+        <div style="font-size:0.78rem;font-weight:600;color:var(--gold);margin-bottom:0.5rem;">🔊 Dubbing ya Kiswahili</div>
+        <div class="ap-waveform" onclick="this.querySelectorAll('.ap-bar').forEach(b=>b.classList.toggle('playing'))">
+          <div class="ap-bar" style="height:14px"></div><div class="ap-bar" style="height:24px"></div><div class="ap-bar" style="height:18px"></div><div class="ap-bar" style="height:32px"></div><div class="ap-bar" style="height:22px"></div><div class="ap-bar" style="height:16px"></div><div class="ap-bar" style="height:28px"></div><div class="ap-bar" style="height:20px"></div><div class="ap-bar" style="height:30px"></div><div class="ap-bar" style="height:18px"></div><div class="ap-bar" style="height:24px"></div><div class="ap-bar" style="height:14px"></div><div class="ap-bar" style="height:26px"></div><div class="ap-bar" style="height:32px"></div><div class="ap-bar" style="height:16px"></div><div class="ap-bar" style="height:22px"></div><div class="ap-bar" style="height:20px"></div><div class="ap-bar" style="height:28px"></div><div class="ap-bar" style="height:18px"></div><div class="ap-bar" style="height:14px"></div>
+        </div>
+        <div class="ap-controls"><span class="ap-time">0:00</span><button class="ap-btn" onclick="showToast('▶️ Inacheza...')">▶</button><button class="ap-speed" onclick="showToast('1.25x')">1x</button><span class="ap-time">18:42</span></div>
+      </div>
+      <div class="result-card">
+        <div class="rc-label">✅ Maandishi ya Kiswahili</div>
+        <div class="rc-content">Sheria za kwanza za Newton zinasema kwamba kila kitu kitaendelea kusogea kwa mwelekeo mmoja na kwa kasi moja mpaka nguvu nyingine isababishe mabadiliko. Hii inaitwa inertia — au uvivu wa mwili. Fikiria mpira unaosogea kwenye uso laini — utaendelea kusogea milele bila msimamo kama hakuna nguvu ya kupinga...</div>
+        <div class="result-actions">
+          <button class="btn-sm" onclick="copyGeneratedText()">📋 Nakili</button>
+          <button class="btn-sm" onclick="showToast('⬇️ Inashuka PDF...')">⬇️ PDF</button>
+          <button class="btn-sm" onclick="showPage('audiobook');showToast('🎧 Nenda kwenye Sauti!')">🎧 Sauti</button>
+          <button class="btn-sm" onclick="showToast('🔗 Kiungo kimeshachangudwa!')">🔗 Shiriki</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AUDIOBOOK -->
+<div id="page-audiobook" class="page">
+  <div class="tool-header container">
+    <button onclick="showPage('home')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;margin-bottom:0.5rem;font-family:'Noto Sans',sans-serif;">← Rudi</button>
+    <div style="display:flex;align-items:center;gap:0.7rem;"><div class="fc-icon gold" style="width:40px;height:40px;border-radius:10px;font-size:1.2rem;">🎧</div><div><div class="tool-title">Vitabu vya Sauti</div><div class="tool-sub">Maandishi yoyote → Sauti ya Kiswahili</div></div></div>
+  </div>
+  <div class="tool-body container">
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="switchTab(this,['ab-text','ab-pdf','ab-trans'],'ab-text')">Andika</button>
+      <button class="tab-btn" onclick="switchTab(this,['ab-text','ab-pdf','ab-trans'],'ab-pdf')">Pakia PDF</button>
+      <button class="tab-btn" onclick="switchTab(this,['ab-text','ab-pdf','ab-trans'],'ab-trans')">Tafsiri & Soma</button>
+    </div>
+    <div id="ab-text"><div class="input-group"><label class="input-label">📝 Maandishi yako</label><textarea class="input-field" id="ab-input" placeholder="Andika au bandika maandishi hapa... AI itayasoma kwa sauti ya Kiswahili inayofanana na mtu halisi." style="min-height:150px;"></textarea></div></div>
+    <div id="ab-pdf" style="display:none;"><div class="upload-zone" onclick="showToast('📄 Pakia PDF, DOCX, au TXT')"><div style="font-size:2.5rem;margin-bottom:0.5rem;">📄</div><div style="font-size:0.88rem;font-weight:600;margin-bottom:0.2rem;">Pakia hati yako</div><div style="font-size:0.75rem;color:var(--muted);">PDF, DOCX, TXT — hadi 10MB</div></div></div>
+    <div id="ab-trans" style="display:none;"><div class="input-group"><label class="input-label">📝 Maandishi ya Kigeni</label><textarea class="input-field" placeholder="Bandika maandishi ya Kiingereza, Kifaransa... AI itatafiri na kusoma kwa Kiswahili." style="min-height:120px;"></textarea></div><div class="input-group"><label class="input-label">Lugha ya Asili</label><select class="input-field"><option>🇬🇧 Kiingereza</option><option>🇫🇷 Kifaransa</option><option>🇸🇦 Kiarabu</option><option>🇨🇳 Kichina</option></select></div></div>
+    <div class="input-group">
+      <label class="input-label">🎙️ Chagua Sauti</label>
+      <div class="voice-grid">
+        <div class="voice-card selected" id="vc-amina" onclick="selectVoice('amina')"><div style="font-size:1.3rem;margin-bottom:0.2rem;">👩🏾</div><div style="font-size:0.78rem;font-weight:600;">Amina</div><div style="font-size:0.65rem;color:var(--muted);">Mwanamke • Laini</div></div>
+        <div class="voice-card" id="vc-jabir" onclick="selectVoice('jabir')"><div style="font-size:1.3rem;margin-bottom:0.2rem;">👨🏾</div><div style="font-size:0.78rem;font-weight:600;">Jabir</div><div style="font-size:0.65rem;color:var(--muted);">Mwanaume • Imara</div></div>
+        <div class="voice-card" id="vc-zuri" onclick="selectVoice('zuri')"><div style="font-size:1.3rem;margin-bottom:0.2rem;">👧🏾</div><div style="font-size:0.78rem;font-weight:600;">Zuri</div><div style="font-size:0.65rem;color:var(--muted);">Mtoto • Elimu</div></div>
+        <div class="voice-card" id="vc-hassan" onclick="selectVoice('hassan')"><div style="font-size:1.3rem;margin-bottom:0.2rem;">🧓🏾</div><div style="font-size:0.78rem;font-weight:600;">Hassan</div><div style="font-size:0.65rem;color:var(--muted);">Mzee • Hekima</div></div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:1rem;">
+      <div class="input-group" style="margin-bottom:0;"><label class="input-label">Kasi ya Kusoma</label><select class="input-field"><option>🐢 Polepole (0.75x)</option><option selected>⚡ Kawaida (1.0x)</option><option>🚀 Haraka (1.25x)</option><option>💨 Haraka sana (1.5x)</option></select></div>
+      <div class="input-group" style="margin-bottom:0;"><label class="input-label">Muziki wa Nyuma</label><select class="input-field"><option>🔇 Hakuna</option><option>🎵 Tulivu</option><option>📚 Elimu</option><option>🌿 Asili</option></select></div>
+    </div>
+    <button class="btn-main" onclick="runAudiobook()"><span>🎧</span> Tengeneza Kitabu cha Sauti</button>
+    <div id="ab-result" style="display:none;margin-top:1rem;">
+      <div class="audio-player">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;"><div style="font-size:0.85rem;font-weight:600;">📖 Kitabu cha Sauti — Kiswahili</div><span style="font-size:0.65rem;font-weight:700;background:rgba(0,200,120,0.15);color:var(--green);padding:0.18rem 0.5rem;border-radius:20px;">✓ Tayari</span></div>
+        <div class="ap-waveform" onclick="this.querySelectorAll('.ap-bar').forEach(b=>b.classList.toggle('playing'))">
+          <div class="ap-bar" style="height:18px"></div><div class="ap-bar" style="height:28px"></div><div class="ap-bar" style="height:14px"></div><div class="ap-bar" style="height:24px"></div><div class="ap-bar" style="height:32px"></div><div class="ap-bar" style="height:20px"></div><div class="ap-bar" style="height:16px"></div><div class="ap-bar" style="height:26px"></div><div class="ap-bar" style="height:22px"></div><div class="ap-bar" style="height:30px"></div><div class="ap-bar" style="height:18px"></div><div class="ap-bar" style="height:14px"></div><div class="ap-bar" style="height:28px"></div><div class="ap-bar" style="height:24px"></div><div class="ap-bar" style="height:16px"></div><div class="ap-bar" style="height:20px"></div><div class="ap-bar" style="height:30px"></div><div class="ap-bar" style="height:18px"></div><div class="ap-bar" style="height:22px"></div><div class="ap-bar" style="height:26px"></div>
+        </div>
+        <div class="ap-controls"><span class="ap-time">0:00</span><button class="ap-btn" onclick="showToast('▶️ Inacheza sauti...')">▶</button><button class="ap-speed" onclick="showToast('🔄 Kasi imebadilishwa')">1x</button><span class="ap-time">4:32</span></div>
+      </div>
+      <div class="result-actions"><button class="btn-sm" onclick="showToast('⬇️ Inashuka MP3...')">⬇️ Pakua MP3</button><button class="btn-sm" onclick="showToast('🔗 Imechangudwa!')">🔗 Shiriki</button><button class="btn-sm" onclick="showPage('history')">📚 Hifadhi</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- TEXT GEN -->
+<div id="page-textgen" class="page">
+  <div class="tool-header container">
+    <button onclick="showPage('home')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;margin-bottom:0.5rem;font-family:'Noto Sans',sans-serif;">← Rudi</button>
+    <div style="display:flex;align-items:center;gap:0.7rem;"><div class="fc-icon green" style="width:40px;height:40px;border-radius:10px;font-size:1.2rem;">✍️</div><div><div class="tool-title">Tengeneza Maandishi na AI</div><div class="tool-sub">Muhtasari • Maelezo • Maswali • Insha</div></div></div>
+  </div>
+  <div class="tool-body container">
+    <div class="input-group">
+      <label class="input-label">🎯 Aina ya Maandishi</label>
+      <div class="type-grid">
+        <button class="type-btn active" onclick="selType(this,'summary')">📋 Muhtasari</button>
+        <button class="type-btn" onclick="selType(this,'explain')">💡 Maelezo</button>
+        <button class="type-btn" onclick="selType(this,'quiz')">❓ Maswali ya Mtihani</button>
+        <button class="type-btn" onclick="selType(this,'essay')">📝 Insha</button>
+        <button class="type-btn" onclick="selType(this,'notes')">📖 Madokezo</button>
+        <button class="type-btn" onclick="selType(this,'translate')">🔄 Tafsiri</button>
+      </div>
+    </div>
+    <div class="input-group"><label class="input-label">📚 Mada au Maandishi</label><textarea class="input-field" id="tg-input" placeholder="Mfano: 'Eleza Sheria za Newton kwa lugha rahisi kwa mwanafunzi wa darasa la 8' au bandika maandishi yoyote..." style="min-height:130px;"></textarea></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:1rem;">
+      <div class="input-group" style="margin-bottom:0;"><label class="input-label">Kiwango cha Elimu</label><select class="input-field" id="tg-level"><option value="primary">🎒 Msingi (Darasa 1–7)</option><option value="secondary" selected>📚 Sekondari (Form 1–6)</option><option value="university">🎓 Chuo Kikuu</option><option value="adult">👥 Watu Wazima</option></select></div>
+      <div class="input-group" style="margin-bottom:0;"><label class="input-label">Urefu</label><select class="input-field" id="tg-length"><option value="short">📝 Mfupi</option><option value="medium" selected>📄 Wastani</option><option value="long">📃 Ndefu</option></select></div>
+    </div>
+    <button class="btn-main" onclick="runTextGen()"><span>✨</span> Tengeneza Maandishi</button>
+    <div id="tg-result" style="display:none;">
+      <div class="result-card" style="margin-top:1rem;">
+        <div class="rc-label">✅ Maandishi ya AI — Kiswahili</div>
+        <div class="rc-content" id="tg-text"></div>
+        <div class="result-actions">
+          <button class="btn-sm" onclick="copyGeneratedText()">📋 Nakili</button>
+          <button class="btn-sm" onclick="showToast('⬇️ Inashuka PDF...')">⬇️ PDF</button>
+          <button class="btn-sm" onclick="toAudio()">🎧 Sauti</button>
+          <button class="btn-sm" onclick="showToast('🔗 Imechangudwa!')">🔗 Shiriki</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div id="page-pricing" class="page">
+  <div class="tool-header container">
+    <button onclick="showPage('home')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;margin-bottom:0.5rem;font-family:'Noto Sans',sans-serif;">← Rudi</button>
+    <div class="tool-title">💳 Bei na Mipango</div>
+    <div class="tool-sub">Chagua mpango unaokufaa — badilisha wakati wowote</div>
+  </div>
+  <div class="tool-body container">
+    <div class="plan-cards">
+      <div class="plan-card selected" id="plan-free" onclick="selPlan('free')">
+        <div class="plan-top"><div><div class="plan-name">🆓 Bure</div><div style="font-size:0.75rem;color:var(--muted);margin-top:0.15rem;">Anza leo bila malipo</div></div><div class="plan-price"><div class="amount">TZS 0</div><div class="period">/mwezi</div></div></div>
+        <div class="plan-features"><div class="plan-feature"><span class="check">✓</span> Video 5 kwa mwezi</div><div class="plan-feature"><span class="check">✓</span> Maandishi 20 kwa mwezi</div><div class="plan-feature"><span class="check">✓</span> Sauti dakika 30</div><div class="plan-feature" style="opacity:0.4;"><span>✗</span> Vitabu vya Sauti</div><div class="plan-feature" style="opacity:0.4;"><span>✗</span> Dubbing ya Hali ya Juu</div></div>
+      </div>
+      <div class="plan-card popular" id="plan-pro" onclick="selPlan('pro')" style="padding-top:1.8rem;">
+        <div class="plan-badge-top">⭐ Maarufu Zaidi</div>
+        <div class="plan-top"><div><div class="plan-name">🚀 Pro</div><div style="font-size:0.75rem;color:var(--muted);margin-top:0.15rem;">Kwa wanafunzi na walimu</div></div><div class="plan-price"><div class="amount">TZS 9,900</div><div class="period">/mwezi</div></div></div>
+        <div class="plan-features"><div class="plan-feature"><span class="check">✓</span> Video 100 kwa mwezi</div><div class="plan-feature"><span class="check">✓</span> Maandishi yasio na kikomo</div><div class="plan-feature"><span class="check">✓</span> Sauti masaa 20</div><div class="plan-feature"><span class="check">✓</span> Vitabu vya Sauti 50</div><div class="plan-feature"><span class="check">✓</span> Dubbing ya Hali ya Juu</div><div class="plan-feature"><span class="check">✓</span> Pakua bila kikomo</div></div>
+      </div>
+      <div class="plan-card" id="plan-school" onclick="selPlan('school')">
+        <div class="plan-top"><div><div class="plan-name">🏫 Shule</div><div style="font-size:0.75rem;color:var(--muted);margin-top:0.15rem;">Kwa shule nzima</div></div><div class="plan-price"><div class="amount">TZS 49K</div><div class="period">/mwezi</div></div></div>
+        <div class="plan-features"><div class="plan-feature"><span class="check">✓</span> Watumiaji 50 (wanafunzi)</div><div class="plan-feature"><span class="check">✓</span> Kila kitu katika Pro</div><div class="plan-feature"><span class="check">✓</span> Dashboard ya Mwalimu</div><div class="plan-feature"><span class="check">✓</span> Ripoti za Maendeleo</div><div class="plan-feature"><span class="check">✓</span> Msaada wa kipaumbele</div></div>
+      </div>
+    </div>
+    <label class="input-label">💳 Njia ya Malipo</label>
+    <div class="pay-methods">
+      <div class="pay-method selected" id="pm-mpesa" onclick="selPay('mpesa')"><div class="pm-icon">📱</div><div class="pm-name">M-Pesa</div><div class="pm-sub">Vodacom Tanzania</div></div>
+      <div class="pay-method" id="pm-tigo" onclick="selPay('tigo')"><div class="pm-icon">📲</div><div class="pm-name">Tigo Pesa</div><div class="pm-sub">Tigo Tanzania</div></div>
+      <div class="pay-method" id="pm-airtel" onclick="selPay('airtel')"><div class="pm-icon">📡</div><div class="pm-name">Airtel Money</div><div class="pm-sub">Airtel Tanzania</div></div>
+      <div class="pay-method" id="pm-card" onclick="selPay('card')"><div class="pm-icon">💳</div><div class="pm-name">Kadi ya Benki</div><div class="pm-sub">Visa / Mastercard</div></div>
+    </div>
+    <div id="mobile-input"><div class="input-group"><label class="input-label">📱 Namba yako ya Simu</label><input class="input-field" type="tel" placeholder="+255 7XX XXX XXX"/></div></div>
+    <div id="card-fields" style="display:none;">
+      <div class="input-group"><label class="input-label">💳 Namba ya Kadi</label><input class="input-field" type="text" placeholder="1234 5678 9012 3456" maxlength="19"/></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;">
+        <div class="input-group"><label class="input-label">Tarehe ya Mwisho</label><input class="input-field" type="text" placeholder="MM/YY" maxlength="5"/></div>
+        <div class="input-group"><label class="input-label">CVV</label><input class="input-field" type="text" placeholder="123" maxlength="3"/></div>
+      </div>
+    </div>
+    <button class="btn-gold" onclick="doPay()">🔒 Lipa Salama Sasa</button>
+    <div style="text-align:center;margin-top:0.7rem;font-size:0.72rem;color:var(--muted);">🔐 Salama 100% • Futa wakati wowote • Hakuna ada zilizofichwa</div>
+  </div>
+</div>
+
+<!-- HISTORY -->
+<div id="page-history" class="page">
+  <div class="tool-header container"><div class="tool-title">📚 Maktaba Yangu</div><div class="tool-sub">Kazi zako zote zilizohifadhiwa</div></div>
+  <div class="tool-body container">
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="switchTab(this,['hist-all','hist-vid','hist-aud','hist-txt'],'hist-all')">Zote</button>
+      <button class="tab-btn" onclick="switchTab(this,['hist-all','hist-vid','hist-aud','hist-txt'],'hist-vid')">Video</button>
+      <button class="tab-btn" onclick="switchTab(this,['hist-all','hist-vid','hist-aud','hist-txt'],'hist-aud')">Sauti</button>
+      <button class="tab-btn" onclick="switchTab(this,['hist-all','hist-vid','hist-aud','hist-txt'],'hist-txt')">Maandishi</button>
+    </div>
+    <div id="hist-all">
+      <div id="generated-history-all"></div>
+      <div class="history-item"><div class="hi-icon red">🎬</div><div class="hi-info"><div class="hi-title">Sayansi ya Fizikia: Sheria za Newton</div><div class="hi-meta">YouTube • Kiingereza → Kiswahili • Jan 15, 2026</div></div><span class="hi-badge done">✓ Tayari</span></div>
+      <div class="history-item"><div class="hi-icon gold">🎧</div><div class="hi-info"><div class="hi-title">Hisabati: Algebra ya Msingi — Sauti</div><div class="hi-meta">Kitabu cha sauti • Sauti: Amina • Jan 14</div></div><span class="hi-badge done">✓ Tayari</span></div>
+      <div class="history-item"><div class="hi-icon green">✍️</div><div class="hi-info"><div class="hi-title">Muhtasari: Historia ya Tanzania</div><div class="hi-meta">Maandishi ya AI • Sekondari • Jan 13</div></div><span class="hi-badge done">✓ Tayari</span></div>
+      <div class="history-item"><div class="hi-icon red">🎬</div><div class="hi-info"><div class="hi-title">Biolojia: Seli na Viumbe Hai</div><div class="hi-meta">YouTube • Kiingereza → Kiswahili • Jan 12</div></div><span class="hi-badge proc">⏳ Inafanyika</span></div>
+      <div class="history-item"><div class="hi-icon gold">🎧</div><div class="hi-info"><div class="hi-title">Kemikali: Jedwali la Vipengele</div><div class="hi-meta">PDF → Sauti • Sauti: Jabir • Jan 11</div></div><span class="hi-badge done">✓ Tayari</span></div>
+      <div class="history-item"><div class="hi-icon green">✍️</div><div class="hi-info"><div class="hi-title">Maswali 20 ya Mtihani wa Fizikia</div><div class="hi-meta">Maandishi ya AI • Chuo • Jan 10</div></div><span class="hi-badge done">✓ Tayari</span></div>
+    </div>
+    <div id="hist-vid" style="display:none;">
+      <div class="history-item"><div class="hi-icon red">🎬</div><div class="hi-info"><div class="hi-title">Sayansi ya Fizikia: Sheria za Newton</div><div class="hi-meta">YouTube • Kiingereza → Kiswahili • Jan 15</div></div><span class="hi-badge done">✓</span></div>
+      <div class="history-item"><div class="hi-icon red">🎬</div><div class="hi-info"><div class="hi-title">Biolojia: Seli na Viumbe Hai</div><div class="hi-meta">YouTube • Kiingereza → Kiswahili • Jan 12</div></div><span class="hi-badge proc">⏳</span></div>
+    </div>
+    <div id="hist-aud" style="display:none;">
+      <div class="history-item"><div class="hi-icon gold">🎧</div><div class="hi-info"><div class="hi-title">Hisabati: Algebra ya Msingi</div><div class="hi-meta">Kitabu cha sauti • Amina • Jan 14</div></div><span class="hi-badge done">✓</span></div>
+      <div class="history-item"><div class="hi-icon gold">🎧</div><div class="hi-info"><div class="hi-title">Kemikali: Jedwali la Vipengele</div><div class="hi-meta">PDF → Sauti • Jabir • Jan 11</div></div><span class="hi-badge done">✓</span></div>
+    </div>
+    <div id="hist-txt" style="display:none;">
+      <div id="generated-history-text"></div>
+      <div class="history-item"><div class="hi-icon green">✍️</div><div class="hi-info"><div class="hi-title">Muhtasari: Historia ya Tanzania</div><div class="hi-meta">AI Maandishi • Sekondari • Jan 13</div></div><span class="hi-badge done">✓</span></div>
+      <div class="history-item"><div class="hi-icon green">✍️</div><div class="hi-info"><div class="hi-title">Maswali 20 ya Mtihani wa Fizikia</div><div class="hi-meta">AI Maandishi • Chuo • Jan 10</div></div><span class="hi-badge done">✓</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE -->
+<div id="page-profile" class="page">
+  <div class="profile-hero">
+    <div class="profile-avatar">👤</div>
+    <div class="profile-name">Mtumiaji wa ElimuAI</div>
+    <div class="profile-email">mtumiaji@elimuai.co.tz</div>
+    <div class="profile-plan">⭐ Mpango wa Pro</div>
+  </div>
+  <div class="usage-row">
+    <div class="usage-box"><div class="uv">47</div><div class="ul">Video Zilizotafsiriwa</div></div>
+    <div class="usage-box"><div class="uv">23</div><div class="ul">Vitabu vya Sauti</div></div>
+    <div class="usage-box"><div class="uv">156</div><div class="ul">Maandishi ya AI</div></div>
+  </div>
+  <div class="settings-list">
+    <div class="settings-item" onclick="showModal('edit-modal')"><div class="si-left"><div class="si-icon">👤</div><div><div class="si-text">Hariri Wasifu</div><div class="si-sub">Jina, barua pepe, picha</div></div></div><div class="si-right">›</div></div>
+    <div class="settings-item" onclick="showPage('pricing')"><div class="si-left"><div class="si-icon">⭐</div><div><div class="si-text">Mpango Wangu</div><div class="si-sub">Pro — TZS 9,900/mwezi</div></div></div><div class="si-right">›</div></div>
+    <div class="settings-item" onclick="showToast('🔔 Mipangilio ya arifa')"><div class="si-left"><div class="si-icon">🔔</div><div><div class="si-text">Arifa</div><div class="si-sub">Simamia arifa zako</div></div></div><div class="si-right">›</div></div>
+    <div class="settings-item" onclick="showToast('🌐 Kiswahili (Sanifu)')"><div class="si-left"><div class="si-icon">🌐</div><div><div class="si-text">Lugha ya App</div><div class="si-sub">Kiswahili (Sanifu)</div></div></div><div class="si-right">›</div></div>
+    <div class="settings-item" onclick="showToast('📲 ElimuAI ipo Google Play & App Store')"><div class="si-left"><div class="si-icon">📲</div><div><div class="si-text">Pakua App ya Simu</div><div class="si-sub">Android & iOS zinapatikana</div></div></div><div class="si-right">›</div></div>
+    <div class="settings-item" onclick="showToast('ℹ️ ElimuAI v2.0.1 — Toleo la hivi karibuni')"><div class="si-left"><div class="si-icon">ℹ️</div><div><div class="si-text">Kuhusu ElimuAI</div><div class="si-sub">Toleo 2.0.1</div></div></div><div class="si-right">›</div></div>
+    <div class="settings-item" onclick="showToast('👋 Umefanikiwa kutoka! Kwa heri.')"><div class="si-left"><div class="si-icon">🚪</div><div><div class="si-text" style="color:var(--red);">Toka (Logout)</div></div></div></div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <button class="bnav-item active" id="nav-home" onclick="showPage('home')"><div class="bnav-icon">🏠</div><div class="bnav-label">Nyumbani</div></button>
+  <button class="bnav-item" id="nav-translate" onclick="showPage('translate')"><div class="bnav-icon">🎬</div><div class="bnav-label">Tafsiri</div></button>
+  <button class="bnav-item" id="nav-audiobook" onclick="showPage('audiobook')"><div class="bnav-icon">🎧</div><div class="bnav-label">Sauti</div></button>
+  <button class="bnav-item" id="nav-textgen" onclick="showPage('textgen')"><div class="bnav-icon">✍️</div><div class="bnav-label">Andika</div></button>
+  <button class="bnav-item" id="nav-history" onclick="showPage('history')"><div class="bnav-icon">📚</div><div class="bnav-label">Maktaba</div></button>
+  <button class="bnav-item" id="nav-profile" onclick="showPage('profile')"><div class="bnav-icon">👤</div><div class="bnav-label">Wasifu</div></button>
+</nav>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="login-modal" onclick="closeModalOut(event,'login-modal')">
+  <div class="modal-sheet"><div class="modal-handle"></div><div class="modal-title">🔐 Ingia ElimuAI</div><div class="modal-sub">Karibu tena! Ingia ili uendelee kujifunza.</div>
+  <div class="input-group"><label class="input-label">Barua Pepe</label><input class="input-field" type="email" placeholder="jina@mfano.com"/></div>
+  <div class="input-group"><label class="input-label">Nywila</label><input class="input-field" type="password" placeholder="••••••••"/></div>
+  <button class="btn-main" onclick="closeModal('login-modal');showToast('✅ Umeingia! Karibu ElimuAI')">🔐 Ingia</button>
+  <div class="divider-text"><span>au</span></div>
+  <button class="btn-secondary" onclick="showToast('📱 Ingia kwa Google...')">🔍 Ingia kwa Google</button>
+  <div style="text-align:center;margin-top:1rem;font-size:0.8rem;color:var(--muted);">Huna akaunti? <span style="color:var(--cyan);cursor:pointer;font-weight:600;" onclick="closeModal('login-modal');showModal('signup-modal')">Jisajili bure</span></div></div>
+</div>
+
+<div class="modal-overlay" id="signup-modal" onclick="closeModalOut(event,'signup-modal')">
+  <div class="modal-sheet"><div class="modal-handle"></div><div class="modal-title">✨ Jisajili ElimuAI</div><div class="modal-sub">Anza bure leo — hakuna kadi ya benki inayohitajika.</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;"><div class="input-group"><label class="input-label">Jina la Kwanza</label><input class="input-field" type="text" placeholder="Jina"/></div><div class="input-group"><label class="input-label">Jina la Familia</label><input class="input-field" type="text" placeholder="Ukoo"/></div></div>
+  <div class="input-group"><label class="input-label">Barua Pepe</label><input class="input-field" type="email" placeholder="jina@mfano.com"/></div>
+  <div class="input-group"><label class="input-label">Nywila</label><input class="input-field" type="password" placeholder="Angalau herufi 8"/></div>
+  <div class="input-group"><label class="input-label">Mimi ni...</label><select class="input-field"><option>🎒 Mwanafunzi</option><option>👩‍🏫 Mwalimu</option><option>👨‍👩‍👧 Mzazi</option><option>🏫 Msimamizi wa Shule</option></select></div>
+  <button class="btn-main" onclick="closeModal('signup-modal');showToast('🎉 Akaunti yako imefunguliwa! Karibu ElimuAI')">✨ Unda Akaunti Bure</button>
+  <div style="text-align:center;margin-top:1rem;font-size:0.8rem;color:var(--muted);">Una akaunti? <span style="color:var(--cyan);cursor:pointer;font-weight:600;" onclick="closeModal('signup-modal');showModal('login-modal')">Ingia hapa</span></div></div>
+</div>
+
+<div class="modal-overlay" id="pay-success" onclick="closeModalOut(event,'pay-success')">
+  <div class="modal-sheet"><div class="modal-handle"></div><div class="modal-title">✅ Malipo Yamekamilika!</div><div class="modal-sub">Asante kwa kujiunga na ElimuAI.</div>
+  <div style="text-align:center;padding:1.5rem 0;"><div style="font-size:4rem;margin-bottom:0.5rem;">🎉</div><div style="font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.3rem;">Karibu ElimuAI Pro!</div><div style="font-size:0.82rem;color:var(--muted);">Sasa una ufikiaji wa kikamilifu wa zana zote za ElimuAI</div></div>
+  <button class="btn-main" onclick="closeModal('pay-success');showPage('home')">🚀 Anza Kutumia Pro</button></div>
+</div>
+
+<div class="modal-overlay" id="edit-modal" onclick="closeModalOut(event,'edit-modal')">
+  <div class="modal-sheet"><div class="modal-handle"></div><div class="modal-title">👤 Hariri Wasifu</div>
+  <div class="input-group"><label class="input-label">Jina Kamili</label><input class="input-field" type="text" value="Mtumiaji wa ElimuAI"/></div>
+  <div class="input-group"><label class="input-label">Barua Pepe</label><input class="input-field" type="email" value="mtumiaji@elimuai.co.tz"/></div>
+  <div class="input-group"><label class="input-label">Namba ya Simu</label><input class="input-field" type="tel" placeholder="+255 7XX XXX XXX"/></div>
+  <button class="btn-main" onclick="closeModal('edit-modal');showToast('✅ Wasifu umesasishwa!')">💾 Hifadhi Mabadiliko</button></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="/src/api.js"></script>
+<script src="/src/app.js"></script>
+
+</body>
+</html>
