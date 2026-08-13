@@ -38,3 +38,47 @@ The browser opened the updated text-learning workflow and exposed the new learne
 ## Persistence test
 
 Browser runtime verification confirmed that a generated learning session can be saved to `localStorage` (`sessions: 1`), the learning result is visible, and the answer-feedback control exists. The settings preference store is initially empty until a learner changes a preference, after which the prototype writes it locally.
+
+## Follow-up browser test: settings controls
+
+The prototype loaded successfully in a browser. The `Aa` button opened the labelled language and accessibility dialog. Switching the interface preference to English triggered the expected confirmation and selected the English option; the prototype correctly states that full interface translation is still planned. Enabling high-contrast mode changed the visible interface to a stronger black, white, and cyan contrast scheme and showed the expected confirmation message.
+
+## Follow-up browser test: motion and data settings
+
+Reduced-motion mode accepted the learner’s selection and returned the expected confirmation. Data-saver mode also activated successfully; the home-screen status changed from “Hali ya kawaida” to “Hali ya kuhifadhi data.” The visual state confirms that the preference is applied while the dialog remains operable.
+
+## Follow-up browser test: persisted state and text scaling
+
+Browser runtime inspection confirmed that the active body classes are `high-contrast`, `reduced-motion`, and `data-saver`. The saved preference object contains `language: "en"`, contrast, motion, data saver, and text-scale values. Increasing text size triggered the expected confirmation message, updating the stored text scale from `1` to `1.05`.
+
+## Follow-up browser test: learner quiz
+
+With high contrast, reduced motion, data saver, and enlarged text still active, the learner workspace remained usable. The tester selected “Maswali ya Mtihani,” entered “Sheria za Newton,” and generated a demo quiz. The result provided four self-test questions, bilingual key terms, a self-explanation prompt, a source/limitations notice, an answer field, feedback action, and actions to save, copy, or send text to audio. The interface correctly labels the output as a demo.
+
+## Follow-up browser test: feedback and refresh persistence
+
+Submitting a written quiz response produced formative feedback in Kiswahili and updated the most recent local learning session to `completed: true`; two saved sessions were present in local storage. After a full browser refresh, the high-contrast visual state and “Hali ya kuhifadhi data” indicator remained active, confirming that the accessibility preferences persist across reloads.
+
+## Bilingual redesign verification
+
+The redesigned prototype now loads with a visible `SW Kiswahili / EN English` language rail, a data-policy control, a session-language dock, four learner pathways, inline accessibility controls, a vocabulary route, and a library/profile navigation structure. Switching the visible interface rail to Kiswahili updated the main home-screen strings in place; the reverse English switch updated navigation, labels, forms, and accessibility copy in place without opening a modal.
+
+The learner workspace exposed session controls for Kiswahili, English, Both, Focus & reveal, and Parallel, plus a text-first data estimate. A bilingual Newton’s Laws session rendered both labelled Kiswahili and English text variants, key-term pairs, a shared-media notice, a source/limitations note, and saved-session actions. The English-only session view was also verified through the live runtime: it hides the Kiswahili result and shows the English variant while preserving the same session.
+
+One browser click attempt did not change the session language because the result control was below the active viewport snapshot; direct runtime state inspection confirmed the control logic itself works and updates `languageMode` plus the hidden/visible result panes correctly. Future UI testing should scroll the control into view before pointer interaction.
+
+## Final English resume verification
+
+After the supporting-text repair, reloading and resuming the saved English session displayed `● Learning session`, English learner prompts, English source-transparency copy, the English source link label, and the English answer placeholder without opening a modal. Runtime inspection confirmed `languageMode: en`, `sessionLanguage: en`, `displayMode: reveal`, with only the English result pane visible (`swHidden: true`, `enHidden: false`, `bothHidden: true`).
+
+## Data policy verification
+
+The visible header data control works outside any modal. It cycles from `Data: Text-first` to `Data: Normal` with a larger estimate (`~45 KB`) and then to `Data: Offline copy` with `Saved text`. The policy label and learner workspace estimate update in place while the current session remains intact.
+
+## Inline accessibility verification
+
+The home page quick-access dock exposes text scaling, contrast, reduced-motion, and data controls without requiring the prior settings modal. High-contrast mode activated and the runtime state reported `contrast: true`; reduced-motion could be toggled from the same dock and the final check reported `motion: false` after it was toggled off. The persisted runtime state also showed `textScale: 1.05` and `dataPolicy: offlineOnly`, confirming accessibility and low-data preferences are stored independently.
+
+## Vocabulary verification
+
+After bringing the result card into view, the `Save terms` control displayed `Terms saved.` and the Vocabulary route then showed four locally stored bilingual term cards. The cards contain only Kiswahili/English terms and short examples, with no media download, supporting the low-data learning model.

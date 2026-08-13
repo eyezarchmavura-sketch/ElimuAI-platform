@@ -213,515 +213,299 @@ body.reduced-motion *,body.reduced-motion *::before,body.reduced-motion *::after
 .empty-state{padding:1rem;text-align:center;background:var(--card);border:1px dashed var(--border);border-radius:12px;color:var(--muted);font-size:0.8rem;line-height:1.55;}
 .mode-badge{display:inline-flex;align-items:center;gap:0.35rem;background:rgba(0,200,120,0.1);border:1px solid rgba(0,200,120,0.25);color:var(--green);border-radius:20px;padding:0.22rem 0.55rem;font-size:0.65rem;font-weight:700;margin-top:0.55rem;}
 
+
+/* Elimu AI v2 bilingual learner experience */
+.topbar{height:auto;min-height:60px;gap:0.7rem;padding:0.55rem 1rem;flex-wrap:wrap;}
+.brand{flex-shrink:0;}
+.topbar-right{margin-left:auto;display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;justify-content:flex-end;}
+.language-rail{display:flex;align-items:center;background:var(--deep);border:1px solid var(--border);border-radius:10px;padding:0.18rem;gap:0.15rem;}
+.locale-btn,.policy-toggle,.topbar-link{min-height:36px;border:1px solid transparent;border-radius:8px;background:transparent;color:var(--muted);padding:0.28rem 0.5rem;font-size:0.7rem;font-weight:800;cursor:pointer;font-family:'Noto Sans',sans-serif;}
+.locale-btn span{font-weight:600;margin-left:0.18rem;}
+.locale-btn.active{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;}
+.policy-toggle{background:rgba(0,200,120,0.1);border-color:rgba(0,200,120,0.3);color:var(--green);}
+.topbar-link{border-color:var(--border);color:var(--white);}
+.page{padding-top:92px;}
+.hero{padding-top:1.6rem;}
+.hero h1{max-width:700px;margin-left:auto;margin-right:auto;}
+.home-intro{font-size:0.82rem;color:var(--muted);line-height:1.6;max-width:680px;margin:0 auto 1.1rem;}
+.home-language-dock{background:linear-gradient(135deg,rgba(26,110,220,0.12),rgba(0,200,224,0.07));border:1px solid rgba(0,200,224,0.28);border-radius:18px;padding:1rem;margin-bottom:1.2rem;}
+.dock-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:0.7rem;margin-bottom:0.8rem;}
+.dock-heading h2{font-family:'Sora',sans-serif;font-size:1rem;}
+.dock-heading p{font-size:0.72rem;color:var(--muted);line-height:1.45;margin-top:0.2rem;}
+.data-chip{display:inline-flex;align-items:center;gap:0.28rem;border-radius:20px;padding:0.25rem 0.55rem;font-size:0.64rem;font-weight:800;white-space:nowrap;background:rgba(0,200,120,0.12);border:1px solid rgba(0,200,120,0.3);color:var(--green);}
+.language-choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.55rem;}
+.language-choice{background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:0.8rem 0.55rem;text-align:left;color:var(--white);cursor:pointer;font-family:'Noto Sans',sans-serif;transition:all 0.2s;}
+.language-choice:hover,.language-choice.active{border-color:var(--cyan);background:rgba(0,200,224,0.11);}
+.language-choice .choice-code{font-family:'Sora',sans-serif;font-weight:800;color:var(--cyan);font-size:0.85rem;display:block;margin-bottom:0.25rem;}
+.language-choice strong{display:block;font-size:0.78rem;}
+.language-choice small{display:block;color:var(--muted);font-size:0.66rem;margin-top:0.2rem;line-height:1.35;}
+.resume-strip{display:none;align-items:center;justify-content:space-between;gap:0.7rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:0.8rem 0.9rem;margin-bottom:1.1rem;text-align:left;}
+.resume-strip.show{display:flex;}
+.resume-copy{min-width:0;}
+.resume-copy strong{display:block;font-size:0.8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.resume-copy span{display:block;color:var(--muted);font-size:0.68rem;margin-top:0.18rem;}
+.pathway-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.7rem;margin:0 0 1.2rem;}
+.pathway-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem;text-align:left;cursor:pointer;color:var(--white);font-family:'Noto Sans',sans-serif;transition:all 0.2s;}
+.pathway-card:hover{border-color:var(--cyan);transform:translateY(-2px);}
+.pathway-icon{font-size:1.45rem;margin-bottom:0.45rem;}
+.pathway-card strong{display:block;font-size:0.84rem;}
+.pathway-card span{display:block;color:var(--muted);font-size:0.7rem;line-height:1.45;margin-top:0.25rem;}
+.quick-dock{display:flex;align-items:center;justify-content:center;gap:0.45rem;flex-wrap:wrap;background:var(--deep);border:1px solid var(--border);border-radius:14px;padding:0.75rem;margin:0 0 1.4rem;}
+.quick-dock-label{font-size:0.68rem;color:var(--muted);font-weight:700;margin-right:0.2rem;}
+.quick-control{min-height:36px;border:1px solid var(--border);background:var(--card);color:var(--white);border-radius:8px;padding:0.28rem 0.55rem;font-size:0.7rem;font-weight:700;cursor:pointer;font-family:'Noto Sans',sans-serif;}
+.quick-control.active{border-color:var(--cyan);color:var(--cyan);}
+.feature-card{cursor:pointer;}
+.workflow-bar{display:flex;gap:0.35rem;overflow-x:auto;margin-bottom:1rem;padding-bottom:0.1rem;}
+.workflow-step{flex:1;min-width:88px;background:var(--deep);border:1px solid var(--border);border-radius:10px;padding:0.55rem;color:var(--muted);font-size:0.68rem;text-align:center;}
+.workflow-step.active{border-color:var(--cyan);color:var(--cyan);background:rgba(0,200,224,0.09);}
+.session-language-card{background:var(--deep);border:1px solid var(--border);border-radius:14px;padding:0.9rem;margin-bottom:1rem;}
+.session-language-head{display:flex;align-items:flex-start;justify-content:space-between;gap:0.7rem;margin-bottom:0.7rem;}
+.session-language-head strong{font-size:0.8rem;}
+.session-language-head span{font-size:0.68rem;color:var(--muted);line-height:1.4;text-align:right;}
+.switch-row{display:flex;gap:0.4rem;flex-wrap:wrap;}
+.switch-btn{min-height:38px;flex:1;border:1px solid var(--border);background:var(--card);color:var(--muted);border-radius:9px;padding:0.38rem 0.55rem;font-size:0.72rem;font-weight:800;cursor:pointer;font-family:'Noto Sans',sans-serif;}
+.switch-btn.active{background:rgba(0,200,224,0.13);border-color:var(--cyan);color:var(--cyan);}
+.variant-cost{margin-top:0.65rem;font-size:0.68rem;color:var(--green);line-height:1.45;}
+.data-estimate{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;background:rgba(0,200,120,0.08);border:1px solid rgba(0,200,120,0.25);border-radius:10px;padding:0.6rem 0.7rem;margin-bottom:1rem;color:var(--green);font-size:0.7rem;line-height:1.45;}
+.data-estimate strong{font-size:0.72rem;}
+.result-topline{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.7rem;}
+.result-status{font-size:0.64rem;font-weight:800;border-radius:20px;padding:0.22rem 0.5rem;background:rgba(245,166,35,0.12);border:1px solid rgba(245,166,35,0.3);color:var(--gold);}
+.variant-pane{font-size:0.9rem;line-height:1.75;color:var(--white);border-left:3px solid var(--cyan);padding-left:0.9rem;white-space:pre-wrap;}
+.variant-pane[hidden]{display:none;}
+.variant-bilingual{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;}
+.variant-bilingual>div{background:var(--deep);border:1px solid var(--border);border-radius:10px;padding:0.8rem;font-size:0.82rem;line-height:1.65;white-space:pre-wrap;}
+.variant-label{display:block;color:var(--cyan);font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.7px;margin-bottom:0.4rem;}
+.reveal-action{margin-top:0.7rem;width:100%;}
+.term-list{display:flex;gap:0.2rem;flex-wrap:wrap;}
+.vocab-card{display:flex;align-items:flex-start;justify-content:space-between;gap:0.8rem;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:0.85rem;margin-bottom:0.65rem;}
+.vocab-card strong{display:block;font-size:0.82rem;}
+.vocab-card span{display:block;font-size:0.72rem;color:var(--muted);margin-top:0.18rem;line-height:1.4;}
+.vocab-save{min-height:36px;border:1px solid rgba(0,200,224,0.3);background:rgba(0,200,224,0.1);color:var(--cyan);border-radius:8px;padding:0.25rem 0.5rem;font-size:0.68rem;font-weight:800;cursor:pointer;}
+.inline-settings{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1rem;margin:1rem;}
+.inline-settings h2{font-family:'Sora',sans-serif;font-size:1rem;margin-bottom:0.25rem;}
+.inline-settings>p{font-size:0.76rem;color:var(--muted);line-height:1.55;margin-bottom:0.75rem;}
+.inline-setting-row{display:flex;align-items:center;justify-content:space-between;gap:0.7rem;padding:0.7rem 0;border-bottom:1px solid var(--border);font-size:0.78rem;}
+.inline-setting-row:last-child{border-bottom:none;}
+.inline-setting-row .setting-copy{min-width:0;}
+.inline-setting-row .setting-copy span{display:block;color:var(--muted);font-size:0.68rem;line-height:1.4;margin-top:0.15rem;}
+.toggle-button{min-width:74px;min-height:36px;background:var(--deep);border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:0.68rem;font-weight:800;cursor:pointer;}
+.toggle-button.active{border-color:var(--cyan);color:var(--cyan);background:rgba(0,200,224,0.1);}
+.prototype-pill{display:inline-flex;align-items:center;border-radius:20px;padding:0.22rem 0.5rem;font-size:0.62rem;font-weight:800;background:rgba(245,166,35,0.12);border:1px solid rgba(245,166,35,0.3);color:var(--gold);}
+.tool-header .header-line{display:flex;align-items:center;justify-content:space-between;gap:0.7rem;}
+.data-copy{font-size:0.72rem;color:var(--muted);line-height:1.5;margin:0.55rem 0 1rem;}
+@media(max-width:600px){.topbar{align-items:flex-start;}.topbar-right{width:100%;margin-left:0;justify-content:space-between;}.language-rail{flex:1;}.locale-btn{flex:1;}.policy-toggle{flex:1;}.topbar-link{flex:0 0 auto;}.language-choice-grid{grid-template-columns:1fr;}.language-choice{display:flex;align-items:center;gap:0.6rem;text-align:left;}.language-choice .choice-code{margin:0;min-width:34px;}.language-choice small{margin:0;}.variant-bilingual{grid-template-columns:1fr;}.session-language-head{display:block;}.session-language-head span{text-align:left;display:block;margin-top:0.25rem;}.pathway-grid{grid-template-columns:1fr 1fr;}}
+
 @media(min-width:600px){.container{max-width:560px;}.feature-grid{display:grid;grid-template-columns:1fr 1fr;}.stats-row{grid-template-columns:repeat(4,1fr);}}
 </style>
 </head>
+
 <body>
-
-<div class="topbar">
-  <div class="brand">Elimu<span>AI</span></div>
+<header class="topbar" aria-label="Elimu AI header">
+  <a class="brand" href="#" onclick="showPage('home');return false;" aria-label="Elimu AI home">Elimu<span>AI</span></a>
   <div class="topbar-right">
-    <button class="accessibility-trigger" type="button" onclick="showModal('settings-modal')" aria-label="Fungua lugha na mipangilio ya ufikivu">Aa</button>
-    <button class="btn-login" onclick="showModal('login-modal')">Ingia</button>
-    <button class="btn-signup" onclick="showModal('signup-modal')">Jisajili</button>
+    <div class="language-rail" role="group" aria-label="Interface language">
+      <button class="locale-btn active" id="locale-sw" type="button" onclick="setInterfaceLanguage('sw')"><span>SW</span> Kiswahili</button>
+      <button class="locale-btn" id="locale-en" type="button" onclick="setInterfaceLanguage('en')"><span>EN</span> English</button>
+    </div>
+    <button class="policy-toggle" id="policy-toggle" type="button" onclick="cycleDataPolicy()">Data: Text-first</button>
+    <button class="topbar-link" type="button" onclick="showToast('Akaunti bado haijaunganishwa kwenye prototype.')" data-i18n="login">Ingia</button>
   </div>
-</div>
+</header>
 
-<!-- HOME -->
-<div id="page-home" class="page active">
-  <div class="hero container">
-    <div class="hero-badge">🇹🇿 Iliyoundwa kwa Tanzania</div>
-    <h1>Elimu yote <span class="grad">kwa Kiswahili</span> popote ulipo</h1>
-    <p>Elewa mada, tafsiri nyenzo, sikiliza maelezo, na jifunze kwa hatua — kwa Kiswahili rahisi au Kiingereza, popote ulipo.</p>
-    <div class="mode-badge" id="mode-badge" role="status">● Hali ya kawaida</div>
-    <div class="hero-btns">
-      <button class="btn-hero-primary" onclick="showPage('translate')">🎬 Anza Sasa</button>
-      <button class="btn-hero-secondary" onclick="showPage('pricing')">💳 Angalia Bei</button>
+<main>
+  <section id="page-home" class="page active" aria-labelledby="home-title">
+    <div class="hero container">
+      <div class="hero-badge" data-i18n="hero_badge">🇹🇿 Iliyoundwa kwa Tanzania</div>
+      <h1 id="home-title" data-i18n="hero_title">Elewa zaidi, <span class="grad">kwa lugha yako</span></h1>
+      <p class="home-intro" data-i18n="hero_subtitle">Elimu AI inakusaidia kujifunza, kutafsiri, kufanya mazoezi, na kutafiti kwa Kiswahili, English, au lugha zote mbili — bila kupakua maudhui mara mbili.</p>
+      <div class="hero-btns">
+        <button class="btn-hero-primary" type="button" onclick="startLearning('summary')" data-i18n="start_learning">Jifunze sasa</button>
+        <button class="btn-hero-secondary" type="button" onclick="showPage('vocabulary')" data-i18n="open_vocabulary">Fungua msamiati</button>
+      </div>
+      <div class="mode-badge" id="mode-badge" role="status">● Text-first</div>
     </div>
-  </div>
-  <div class="prototype-notice container" role="note"><strong>Toleo la kujifunzia:</strong> Hii ni prototype ya Elimu AI. Matokeo ya AI, uploads, login, downloads na malipo bado ni majaribio; usitumie taarifa nyeti.
-  </div>
-  <div class="stats-row container">
-    <div class="stat-box"><div class="sv">3</div><div class="sl">Njia za kujifunza</div></div>
-    <div class="stat-box"><div class="sv">2</div><div class="sl">Lugha za kuanzia</div></div>
-    <div class="stat-box"><div class="sv">1</div><div class="sl">Maktaba yako</div></div>
-  </div>
-  <div class="container" style="padding:0 1rem 0.8rem;">
-    <span class="section-label">🛠️ Zana za Elimu</span>
-    <div class="section-title">Chagua zana unayohitaji</div>
-    <div class="section-sub">Kila zana imejengwa kwa teknolojia ya hali ya juu ya AI</div>
-  </div>
-  <div class="feature-grid container">
-    <div class="feature-card" onclick="showPage('translate')">
-      <div class="fc-top"><div class="fc-icon red">🎬</div><span class="fc-badge hot">🔥 Maarufu</span></div>
-      <div class="fc-title">Tafsiri Video za YouTube</div>
-      <div class="fc-desc">Bandika kiungo cha YouTube — AI itatafsiri sauti na maandishi yote kwa Kiswahili papo hapo.</div>
-      <div class="fc-arrow">Anza kutafsiri <span>→</span></div>
-    </div>
-    <div class="feature-card" onclick="showPage('audiobook')">
-      <div class="fc-top"><div class="fc-icon gold">🎧</div><span class="fc-badge pro">⭐ Pro</span></div>
-      <div class="fc-title">Tengeneza Kitabu cha Sauti</div>
-      <div class="fc-desc">Pakia maandishi au PDF — AI itasoma kwa sauti ya Kiswahili inayofanana na mtu halisi.</div>
-      <div class="fc-arrow">Tengeneza sauti <span>→</span></div>
-    </div>
-    <div class="feature-card" onclick="showPage('textgen')">
-      <div class="fc-top"><div class="fc-icon green">✍️</div><span class="fc-badge new">✨ Mpya</span></div>
-      <div class="fc-title">Tengeneza Maandishi na AI</div>
-      <div class="fc-desc">Muhtasari, maelezo, insha, na maswali ya mtihani — yote kwa Kiswahili kwa sekunde.</div>
-      <div class="fc-arrow">Anza kuandika <span>→</span></div>
-    </div>
-    <div class="feature-card" onclick="showPage('history')">
-      <div class="fc-top"><div class="fc-icon blue">📚</div><span class="fc-badge new">🗂️</span></div>
-      <div class="fc-title">Maktaba Yangu</div>
-      <div class="fc-desc">Angalia video zote ulizotafsiri, vitabu vya sauti, na maandishi yaliyohifadhiwa.</div>
-      <div class="fc-arrow">Fungua maktaba <span>→</span></div>
-    </div>
-  </div>
-  <div class="container" style="padding:0 1rem 2rem;">
-    <div class="divider"></div>
-    <span class="section-label">⚡ Jinsi Inavyofanya Kazi</span>
-    <div style="display:flex;flex-direction:column;gap:0.8rem;margin-top:0.8rem;">
-      <div style="display:flex;gap:0.9rem;align-items:flex-start;"><div style="width:36px;height:36px;border-radius:50%;background:rgba(26,110,220,0.2);border:1px solid rgba(26,110,220,0.4);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--cyan);flex-shrink:0;">1</div><div><div style="font-weight:600;font-size:0.88rem;margin-bottom:0.2rem;">Chagua chanzo chako</div><div style="font-size:0.8rem;color:var(--muted);">YouTube, PDF, maandishi, au faili la sauti</div></div></div>
-      <div style="display:flex;gap:0.9rem;align-items:flex-start;"><div style="width:36px;height:36px;border-radius:50%;background:rgba(0,200,224,0.2);border:1px solid rgba(0,200,224,0.4);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--cyan);flex-shrink:0;">2</div><div><div style="font-weight:600;font-size:0.88rem;margin-bottom:0.2rem;">AI inafanya kazi</div><div style="font-size:0.8rem;color:var(--muted);">Mfumo wetu unatafsiri na kutoa sauti ya Kiswahili</div></div></div>
-      <div style="display:flex;gap:0.9rem;align-items:flex-start;"><div style="width:36px;height:36px;border-radius:50%;background:rgba(0,200,120,0.2);border:1px solid rgba(0,200,120,0.4);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--green);flex-shrink:0;">3</div><div><div style="font-weight:600;font-size:0.88rem;margin-bottom:0.2rem;">Pokea na shiriki</div><div style="font-size:0.8rem;color:var(--muted);">Pakua, shiriki, au hifadhi katika maktaba yako</div></div></div>
-    </div>
-  </div>
-</div>
 
-<!-- TRANSLATE -->
-<div id="page-translate" class="page">
-  <div class="tool-header container">
-    <button onclick="showPage('home')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;margin-bottom:0.5rem;font-family:'Noto Sans',sans-serif;">← Rudi</button>
-    <div style="display:flex;align-items:center;gap:0.7rem;"><div class="fc-icon red" style="width:40px;height:40px;border-radius:10px;font-size:1.2rem;">🎬</div><div><div class="tool-title">Tafsiri Video za YouTube</div><div class="tool-sub">Sauti & maandishi • Kiswahili sanifu</div></div></div>
-  </div>
-  <div class="tool-body container">
-    <div class="tab-row">
-      <button class="tab-btn active" onclick="switchTab(this,['yt-tab','up-tab','url-tab'],'yt-tab')">YouTube</button>
-      <button class="tab-btn" onclick="switchTab(this,['yt-tab','up-tab','url-tab'],'up-tab')">Pakia Faili</button>
-      <button class="tab-btn" onclick="switchTab(this,['yt-tab','up-tab','url-tab'],'url-tab')">URL Nyingine</button>
-    </div>
-    <div id="yt-tab">
-      <div class="input-group"><label class="input-label">🔗 Kiungo cha YouTube</label><input class="input-field" id="yt-url" type="url" placeholder="https://youtube.com/watch?v=..."/></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;">
-        <div class="input-group"><label class="input-label">Lugha ya Asili</label><select class="input-field" id="yt-from"><option>🇬🇧 Kiingereza</option><option>🇫🇷 Kifaransa</option><option>🇸🇦 Kiarabu</option><option>🇨🇳 Kichina</option><option>🇧🇷 Kireno</option><option>🇮🇳 Kihindi</option></select></div>
-        <div class="input-group"><label class="input-label">Lugha ya Matokeo</label><select class="input-field"><option>🇹🇿 Kiswahili</option></select></div>
-      </div>
-      <div class="input-group"><label class="input-label">Aina ya Matokeo</label><div><span class="lang-pill active" onclick="this.classList.toggle('active')">📝 Maandishi</span><span class="lang-pill active" onclick="this.classList.toggle('active')">🔊 Dubbing</span><span class="lang-pill" onclick="this.classList.toggle('active')">📄 Manukuu</span><span class="lang-pill" onclick="this.classList.toggle('active')">📋 Muhtasari</span></div></div>
-    </div>
-    <div id="up-tab" style="display:none;"><div class="upload-zone" onclick="showToast('📁 Chagua faili kutoka kwenye simu yako')"><div style="font-size:2.5rem;margin-bottom:0.5rem;">📁</div><div style="font-size:0.88rem;font-weight:600;margin-bottom:0.2rem;">Gusa kupakia faili</div><div style="font-size:0.75rem;color:var(--muted);">MP4, MP3, WAV, PDF — hadi 500MB</div></div></div>
-    <div id="url-tab" style="display:none;"><div class="input-group"><label class="input-label">🔗 URL (Vimeo, TikTok, n.k.)</label><input class="input-field" type="url" placeholder="https://..."/></div></div>
-    <button class="btn-main" onclick="runTranslation()"><span>🔄</span> Tafsiri Sasa</button>
-    <div id="tr-progress" style="display:none;margin-top:1rem;" role="status" aria-live="polite">
-      <div style="display:flex;justify-content:space-between;font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;"><span id="tr-label">Inabainisha sauti...</span><span id="tr-pct">0%</span></div>
-      <div class="loading-bar"><div class="loading-bar-fill" id="tr-bar"></div></div>
-    </div>
-    <div id="tr-result" style="display:none;">
-      <div class="video-preview" style="margin-top:1rem;">
-        <div class="video-thumb"><span style="font-size:4rem;opacity:0.3;">🎬</span><div class="play-btn" onclick="showToast('▶️ Inacheza toleo la Kiswahili...')">▶</div></div>
-        <div class="video-info"><div class="video-title">Video ya YouTube — Toleo la Kiswahili</div><div class="video-meta">Kutoka: Kiingereza → Kiswahili • ~18 dakika</div></div>
-      </div>
-      <div class="audio-player">
-        <div style="font-size:0.78rem;font-weight:600;color:var(--gold);margin-bottom:0.5rem;">🔊 Dubbing ya Kiswahili</div>
-        <div class="ap-waveform" onclick="this.querySelectorAll('.ap-bar').forEach(b=>b.classList.toggle('playing'))">
-          <div class="ap-bar" style="height:14px"></div><div class="ap-bar" style="height:24px"></div><div class="ap-bar" style="height:18px"></div><div class="ap-bar" style="height:32px"></div><div class="ap-bar" style="height:22px"></div><div class="ap-bar" style="height:16px"></div><div class="ap-bar" style="height:28px"></div><div class="ap-bar" style="height:20px"></div><div class="ap-bar" style="height:30px"></div><div class="ap-bar" style="height:18px"></div><div class="ap-bar" style="height:24px"></div><div class="ap-bar" style="height:14px"></div><div class="ap-bar" style="height:26px"></div><div class="ap-bar" style="height:32px"></div><div class="ap-bar" style="height:16px"></div><div class="ap-bar" style="height:22px"></div><div class="ap-bar" style="height:20px"></div><div class="ap-bar" style="height:28px"></div><div class="ap-bar" style="height:18px"></div><div class="ap-bar" style="height:14px"></div>
+    <div class="container">
+      <div class="home-language-dock" aria-labelledby="language-dock-title">
+        <div class="dock-heading">
+          <div><h2 id="language-dock-title" data-i18n="choose_learning_language">Chagua lugha ya kipindi</h2><p data-i18n="choose_learning_language_sub">Hii ni kwa kipindi hiki tu. Unaweza kubadilisha baadaye bila kuanza upya.</p></div>
+          <span class="data-chip" id="home-data-chip">● Text-first</span>
         </div>
-        <div class="ap-controls"><span class="ap-time">0:00</span><button class="ap-btn" onclick="showToast('▶️ Inacheza...')">▶</button><button class="ap-speed" onclick="showToast('1.25x')">1x</button><span class="ap-time">18:42</span></div>
+        <div class="language-choice-grid" role="group" aria-label="Learning language">
+          <button class="language-choice active" id="choice-sw" type="button" onclick="setSessionLanguage('sw')"><span class="choice-code">SW</span><strong data-i18n="choice_sw_title">Kiswahili</strong><small data-i18n="choice_sw_sub">Maelezo rahisi na mifano ya karibu</small></button>
+          <button class="language-choice" id="choice-en" type="button" onclick="setSessionLanguage('en')"><span class="choice-code">EN</span><strong data-i18n="choice_en_title">English</strong><small data-i18n="choice_en_sub">Clear English for study and research</small></button>
+          <button class="language-choice" id="choice-both" type="button" onclick="setSessionLanguage('both')"><span class="choice-code">SW + EN</span><strong data-i18n="choice_both_title">Pande zote</strong><small data-i18n="choice_both_sub">Linganishwa bila media kurudiwa</small></button>
+        </div>
       </div>
-      <div class="result-card">
-        <div class="rc-label">✅ Maandishi ya Kiswahili</div>
-        <div class="rc-content">Sheria za kwanza za Newton zinasema kwamba kila kitu kitaendelea kusogea kwa mwelekeo mmoja na kwa kasi moja mpaka nguvu nyingine isababishe mabadiliko. Hii inaitwa inertia — au uvivu wa mwili. Fikiria mpira unaosogea kwenye uso laini — utaendelea kusogea milele bila msimamo kama hakuna nguvu ya kupinga...</div>
-        <div class="result-actions">
-          <button class="btn-sm" onclick="showToast('📋 Imenakiliwa!')">📋 Nakili</button>
-          <button class="btn-sm" onclick="showToast('⬇️ Inashuka PDF...')">⬇️ PDF</button>
-          <button class="btn-sm" onclick="showPage('audiobook');showToast('🎧 Nenda kwenye Sauti!')">🎧 Sauti</button>
-          <button class="btn-sm" onclick="showToast('🔗 Kiungo kimeshachangudwa!')">🔗 Shiriki</button>
+
+      <div class="resume-strip" id="resume-strip">
+        <div class="resume-copy"><strong id="resume-title"></strong><span id="resume-meta"></span></div>
+        <button class="btn-sm" type="button" onclick="resumeLatest()" data-i18n="resume">Endelea</button>
+      </div>
+
+      <div class="section-label" data-i18n="learning_paths_label">NJIA ZA KUJIFUNZA</div>
+      <div class="section-title" data-i18n="learning_paths_title">Chagua unachotaka kufanya</div>
+      <p class="section-sub" data-i18n="learning_paths_sub">Anza na wazo moja. Elimu AI inakupeleka kutoka kuelewa mpaka kufanya mazoezi.</p>
+      <div class="pathway-grid">
+        <button class="pathway-card" type="button" onclick="startLearning('summary')"><div class="pathway-icon">◈</div><strong data-i18n="path_learn_title">Eleza mada</strong><span data-i18n="path_learn_sub">Pata maelezo rahisi, maneno muhimu, na mfano.</span></button>
+        <button class="pathway-card" type="button" onclick="startLearning('quiz')"><div class="pathway-icon">✦</div><strong data-i18n="path_practice_title">Fanya mazoezi</strong><span data-i18n="path_practice_sub">Jibu swali moja moja na upate feedback.</span></button>
+        <button class="pathway-card" type="button" onclick="showPage('audiobook')"><div class="pathway-icon">◉</div><strong data-i18n="path_listen_title">Sikiliza</strong><span data-i18n="path_listen_sub">Anza na maandishi; omba sauti ukiihitaji.</span></button>
+        <button class="pathway-card" type="button" onclick="showPage('translate')"><div class="pathway-icon">⌕</div><strong data-i18n="path_research_title">Tafiti</strong><span data-i18n="path_research_sub">Elewa chanzo na uone kiungo cha uthibitisho.</span></button>
+      </div>
+
+      <div class="quick-dock" aria-label="Quick accessibility controls">
+        <span class="quick-dock-label" data-i18n="quick_access">UFIKIVU WA HARAKA</span>
+        <button class="quick-control" type="button" onclick="adjustTextSize(-0.05)">A−</button>
+        <button class="quick-control" type="button" onclick="adjustTextSize(0.05)">A+</button>
+        <button class="quick-control" id="quick-contrast" type="button" onclick="toggleQuickPreference('contrast')" data-i18n="contrast_short">Contrast</button>
+        <button class="quick-control" id="quick-motion" type="button" onclick="toggleQuickPreference('motion')" data-i18n="motion_short">Punguza motion</button>
+        <button class="quick-control" id="quick-data" type="button" onclick="cycleDataPolicy()" data-i18n="data_short">Data saver</button>
+      </div>
+
+      <div class="prototype-notice" role="note"><strong data-i18n="prototype_label">Toleo la prototype:</strong> <span data-i18n="prototype_notice">AI, uploads, accounts, downloads, audio na payments bado hazijaunganishwa. Tumia maandishi ya mfano; usiweke taarifa nyeti.</span></div>
+
+      <div class="divider"></div>
+      <span class="section-label" data-i18n="how_label">JINSI INAVYOFANYA KAZI</span>
+      <div style="display:flex;flex-direction:column;gap:0.8rem;margin-top:0.8rem;padding-bottom:2rem;">
+        <div style="display:flex;gap:0.9rem;align-items:flex-start;"><div style="width:36px;height:36px;border-radius:50%;background:rgba(26,110,220,0.2);border:1px solid rgba(26,110,220,0.4);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--cyan);flex-shrink:0;">1</div><div><div style="font-weight:600;font-size:0.88rem;margin-bottom:0.2rem;" data-i18n="step_one_title">Chagua lugha na kiwango</div><div style="font-size:0.8rem;color:var(--muted);" data-i18n="step_one_sub">Kiswahili, English, au pande zote.</div></div></div>
+        <div style="display:flex;gap:0.9rem;align-items:flex-start;"><div style="width:36px;height:36px;border-radius:50%;background:rgba(0,200,224,0.2);border:1px solid rgba(0,200,224,0.4);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--cyan);flex-shrink:0;">2</div><div><div style="font-weight:600;font-size:0.88rem;margin-bottom:0.2rem;" data-i18n="step_two_title">Elewa na sikiliza</div><div style="font-size:0.8rem;color:var(--muted);" data-i18n="step_two_sub">Anza na text; media ni chaguo.</div></div></div>
+        <div style="display:flex;gap:0.9rem;align-items:flex-start;"><div style="width:36px;height:36px;border-radius:50%;background:rgba(0,200,120,0.2);border:1px solid rgba(0,200,120,0.4);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--green);flex-shrink:0;">3</div><div><div style="font-weight:600;font-size:0.88rem;margin-bottom:0.2rem;" data-i18n="step_three_title">Fanya mazoezi na hifadhi</div><div style="font-size:0.8rem;color:var(--muted);" data-i18n="step_three_sub">Jibu, pata feedback, na endelea baadaye.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-textgen" class="page" aria-labelledby="learn-title">
+    <div class="tool-header container"><div class="header-line"><button class="back-button" type="button" onclick="showPage('home')">← <span data-i18n="back">Rudi</span></button><span class="prototype-pill" data-i18n="demo_pill">DEMO YA PROTOTYPE</span></div><div style="display:flex;align-items:center;gap:0.7rem;margin-top:0.7rem;"><div class="fc-icon green" style="width:40px;height:40px;border-radius:10px;font-size:1.2rem;">✦</div><div><div class="tool-title" id="learn-title" data-i18n="learn_title">Jifunze kwa hatua</div><div class="tool-sub" data-i18n="learn_sub">Eleza • Mazoezi • Notes • Terms</div></div></div></div>
+    <div class="tool-body container">
+      <div class="workflow-bar"><div class="workflow-step active" data-i18n="workflow_input">1. Ingiza</div><div class="workflow-step" data-i18n="workflow_understand">2. Elewa</div><div class="workflow-step" data-i18n="workflow_practice">3. Jipime</div><div class="workflow-step" data-i18n="workflow_save">4. Hifadhi</div></div>
+      <div class="session-language-card">
+        <div class="session-language-head"><strong data-i18n="session_language_title">Lugha ya kipindi</strong><span data-i18n="session_language_sub">Kubadilisha lugha hakupakui media nyingine.</span></div>
+        <div class="switch-row" role="group" aria-label="Session language"><button class="switch-btn active" id="session-sw" type="button" onclick="setSessionLanguage('sw')" data-i18n="sw_short">Kiswahili</button><button class="switch-btn" id="session-en" type="button" onclick="setSessionLanguage('en')" data-i18n="en_short">English</button><button class="switch-btn" id="session-both" type="button" onclick="setSessionLanguage('both')" data-i18n="both_short">Pande zote</button></div>
+        <div class="switch-row" style="margin-top:0.5rem;" role="group" aria-label="Result display mode"><button class="switch-btn active" id="mode-reveal" type="button" onclick="setDisplayMode('reveal')" data-i18n="mode_reveal">Focus & reveal</button><button class="switch-btn" id="mode-parallel" type="button" onclick="setDisplayMode('parallel')" data-i18n="mode_parallel">Parallel</button></div>
+        <div class="variant-cost" id="variant-cost" data-i18n="variant_cost">● Text only • source media shared • low data</div>
+      </div>
+      <div class="data-estimate"><div><strong data-i18n="text_first">Text-first</strong><br/><span data-i18n="text_first_sub">Tutaanza na jibu dogo; media ni chaguo.</span></div><span id="learn-data-size">~18 KB</span></div>
+      <div class="learning-setup" aria-labelledby="learning-setup-title"><h3 id="learning-setup-title" data-i18n="setup_title">Anzisha kipindi cha kujifunza</h3><p data-i18n="setup_sub">Chagua kiwango, aina ya jibu, na lugha. Unaweza kubadilisha bila kupoteza progress.</p><div class="setup-grid"><div class="input-group" style="margin-bottom:0;"><label class="input-label" for="tg-level" data-i18n="education_level">Kiwango cha elimu</label><select class="input-field" id="tg-level"><option value="primary" data-i18n="level_primary">Msingi</option><option value="secondary" selected data-i18n="level_secondary">Sekondari</option><option value="higher" data-i18n="level_higher">Chuo / Ufundi</option><option value="adult" data-i18n="level_adult">Mtu mzima</option></select></div><div class="input-group" style="margin-bottom:0;"><label class="input-label" for="tg-length" data-i18n="answer_length">Urefu wa jibu</label><select class="input-field" id="tg-length"><option value="short" data-i18n="length_short">Mfupi</option><option value="medium" selected data-i18n="length_medium">Wastani</option><option value="long" data-i18n="length_long">Ndefu</option></select></div></div></div>
+      <div class="input-group"><label class="input-label" data-i18n="output_type">Aina ya kujifunza</label><div class="type-grid"><button class="type-btn active" onclick="selType(this,'summary')" data-i18n="type_summary">Muhtasari</button><button class="type-btn" onclick="selType(this,'explain')" data-i18n="type_explain">Maelezo rahisi</button><button class="type-btn" onclick="selType(this,'quiz')" data-i18n="type_quiz">Maswali</button><button class="type-btn" onclick="selType(this,'notes')" data-i18n="type_notes">Madokezo</button></div></div>
+      <div class="input-group"><label class="input-label" for="tg-input" data-i18n="topic_label">Mada, swali, au maandishi</label><textarea class="input-field" id="tg-input" data-i18n-placeholder="topic_placeholder" placeholder="Mfano: Eleza Sheria za Newton kwa lugha rahisi..." style="min-height:130px;"></textarea></div>
+      <button class="btn-main" type="button" onclick="runTextGen()"><span>✦</span> <span data-i18n="generate_learning">Anza kipindi</span></button>
+      <div id="tg-result" style="display:none;" aria-live="polite">
+        <div class="result-card" style="margin-top:1rem;">
+          <div class="result-topline"><div class="rc-label" id="tg-result-label">● Kipindi cha kujifunza</div><span class="result-status" id="tg-variant-status">Text only</span></div>
+          <div id="tg-variant-sw" class="variant-pane"></div><div id="tg-variant-en" class="variant-pane" hidden></div><div id="tg-variant-both" class="variant-bilingual" hidden><div><span class="variant-label">Kiswahili</span><div id="tg-both-sw"></div></div><div><span class="variant-label">English</span><div id="tg-both-en"></div></div></div>
+          <button class="btn-secondary reveal-action" id="tg-reveal-button" type="button" onclick="revealSecondaryLanguage()" data-i18n="reveal_language">Onyesha lugha nyingine</button>
+          <div class="learning-grid"><div class="learning-mini-card"><h3 data-i18n="key_terms">Maneno muhimu</h3><div class="term-list" id="tg-terms"></div><button class="vocab-save" type="button" onclick="saveTerms()" data-i18n="save_terms">Hifadhi terms</button></div><div class="learning-mini-card"><h3 data-i18n="try_explain">Jaribu kueleza</h3><p id="tg-check"></p></div><div class="learning-mini-card"><h3 data-i18n="source_transparency">Chanzo na uwazi</h3><p class="source-note" id="tg-source"></p></div></div>
+          <div class="feedback-box"><label class="input-label" for="tg-answer" data-i18n="your_answer">Jibu lako</label><textarea class="input-field" id="tg-answer" data-i18n-placeholder="answer_placeholder" placeholder="Eleza kwa maneno yako mwenyewe..."></textarea><button class="btn-secondary" type="button" onclick="checkAnswer()" data-i18n="check_answer">Kagua jibu langu</button><div class="feedback-message" id="tg-feedback" role="status" aria-live="polite"></div></div>
+          <div class="result-actions"><button class="btn-sm" type="button" onclick="copyResult()" data-i18n="copy">Nakili</button><button class="btn-sm" type="button" onclick="showToast(currentLocale()==='en'?'Downloads will be connected later.':'Download itaunganishwa baadaye.')" data-i18n="download">Pakua</button><button class="btn-sm" type="button" onclick="toAudio()" data-i18n="listen">Sikiliza</button><button class="btn-sm" type="button" onclick="saveSession()" data-i18n="save_session">Hifadhi kipindi</button></div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- AUDIOBOOK -->
-<div id="page-audiobook" class="page">
-  <div class="tool-header container">
-    <button onclick="showPage('home')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;margin-bottom:0.5rem;font-family:'Noto Sans',sans-serif;">← Rudi</button>
-    <div style="display:flex;align-items:center;gap:0.7rem;"><div class="fc-icon gold" style="width:40px;height:40px;border-radius:10px;font-size:1.2rem;">🎧</div><div><div class="tool-title">Vitabu vya Sauti</div><div class="tool-sub">Maandishi yoyote → Sauti ya Kiswahili</div></div></div>
-  </div>
-  <div class="tool-body container">
-    <div class="tab-row">
-      <button class="tab-btn active" onclick="switchTab(this,['ab-text','ab-pdf','ab-trans'],'ab-text')">Andika</button>
-      <button class="tab-btn" onclick="switchTab(this,['ab-text','ab-pdf','ab-trans'],'ab-pdf')">Pakia PDF</button>
-      <button class="tab-btn" onclick="switchTab(this,['ab-text','ab-pdf','ab-trans'],'ab-trans')">Tafsiri & Soma</button>
-    </div>
-    <div id="ab-text"><div class="input-group"><label class="input-label">📝 Maandishi yako</label><textarea class="input-field" id="ab-input" placeholder="Andika au bandika maandishi hapa... AI itayasoma kwa sauti ya Kiswahili inayofanana na mtu halisi." style="min-height:150px;"></textarea></div></div>
-    <div id="ab-pdf" style="display:none;"><div class="upload-zone" onclick="showToast('📄 Pakia PDF, DOCX, au TXT')"><div style="font-size:2.5rem;margin-bottom:0.5rem;">📄</div><div style="font-size:0.88rem;font-weight:600;margin-bottom:0.2rem;">Pakia hati yako</div><div style="font-size:0.75rem;color:var(--muted);">PDF, DOCX, TXT — hadi 10MB</div></div></div>
-    <div id="ab-trans" style="display:none;"><div class="input-group"><label class="input-label">📝 Maandishi ya Kigeni</label><textarea class="input-field" placeholder="Bandika maandishi ya Kiingereza, Kifaransa... AI itatafiri na kusoma kwa Kiswahili." style="min-height:120px;"></textarea></div><div class="input-group"><label class="input-label">Lugha ya Asili</label><select class="input-field"><option>🇬🇧 Kiingereza</option><option>🇫🇷 Kifaransa</option><option>🇸🇦 Kiarabu</option><option>🇨🇳 Kichina</option></select></div></div>
-    <div class="input-group">
-      <label class="input-label">🎙️ Chagua Sauti</label>
-      <div class="voice-grid">
-        <div class="voice-card selected" id="vc-amina" onclick="selectVoice('amina')"><div style="font-size:1.3rem;margin-bottom:0.2rem;">👩🏾</div><div style="font-size:0.78rem;font-weight:600;">Amina</div><div style="font-size:0.65rem;color:var(--muted);">Mwanamke • Laini</div></div>
-        <div class="voice-card" id="vc-jabir" onclick="selectVoice('jabir')"><div style="font-size:1.3rem;margin-bottom:0.2rem;">👨🏾</div><div style="font-size:0.78rem;font-weight:600;">Jabir</div><div style="font-size:0.65rem;color:var(--muted);">Mwanaume • Imara</div></div>
-        <div class="voice-card" id="vc-zuri" onclick="selectVoice('zuri')"><div style="font-size:1.3rem;margin-bottom:0.2rem;">👧🏾</div><div style="font-size:0.78rem;font-weight:600;">Zuri</div><div style="font-size:0.65rem;color:var(--muted);">Mtoto • Elimu</div></div>
-        <div class="voice-card" id="vc-hassan" onclick="selectVoice('hassan')"><div style="font-size:1.3rem;margin-bottom:0.2rem;">🧓🏾</div><div style="font-size:0.78rem;font-weight:600;">Hassan</div><div style="font-size:0.65rem;color:var(--muted);">Mzee • Hekima</div></div>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:1rem;">
-      <div class="input-group" style="margin-bottom:0;"><label class="input-label">Kasi ya Kusoma</label><select class="input-field"><option>🐢 Polepole (0.75x)</option><option selected>⚡ Kawaida (1.0x)</option><option>🚀 Haraka (1.25x)</option><option>💨 Haraka sana (1.5x)</option></select></div>
-      <div class="input-group" style="margin-bottom:0;"><label class="input-label">Muziki wa Nyuma</label><select class="input-field"><option>🔇 Hakuna</option><option>🎵 Tulivu</option><option>📚 Elimu</option><option>🌿 Asili</option></select></div>
-    </div>
-    <button class="btn-main" onclick="runAudiobook()"><span>🎧</span> Tengeneza Kitabu cha Sauti</button>
-    <div id="ab-result" style="display:none;margin-top:1rem;">
-      <div class="audio-player">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;"><div style="font-size:0.85rem;font-weight:600;">📖 Kitabu cha Sauti — Kiswahili</div><span style="font-size:0.65rem;font-weight:700;background:rgba(0,200,120,0.15);color:var(--green);padding:0.18rem 0.5rem;border-radius:20px;">✓ Tayari</span></div>
-        <div class="ap-waveform" onclick="this.querySelectorAll('.ap-bar').forEach(b=>b.classList.toggle('playing'))">
-          <div class="ap-bar" style="height:18px"></div><div class="ap-bar" style="height:28px"></div><div class="ap-bar" style="height:14px"></div><div class="ap-bar" style="height:24px"></div><div class="ap-bar" style="height:32px"></div><div class="ap-bar" style="height:20px"></div><div class="ap-bar" style="height:16px"></div><div class="ap-bar" style="height:26px"></div><div class="ap-bar" style="height:22px"></div><div class="ap-bar" style="height:30px"></div><div class="ap-bar" style="height:18px"></div><div class="ap-bar" style="height:14px"></div><div class="ap-bar" style="height:28px"></div><div class="ap-bar" style="height:24px"></div><div class="ap-bar" style="height:16px"></div><div class="ap-bar" style="height:20px"></div><div class="ap-bar" style="height:30px"></div><div class="ap-bar" style="height:18px"></div><div class="ap-bar" style="height:22px"></div><div class="ap-bar" style="height:26px"></div>
-        </div>
-        <div class="ap-controls"><span class="ap-time">0:00</span><button class="ap-btn" onclick="showToast('▶️ Inacheza sauti...')">▶</button><button class="ap-speed" onclick="showToast('🔄 Kasi imebadilishwa')">1x</button><span class="ap-time">4:32</span></div>
-      </div>
-      <div class="result-actions"><button class="btn-sm" onclick="showToast('⬇️ Inashuka MP3...')">⬇️ Pakua MP3</button><button class="btn-sm" onclick="showToast('🔗 Imechangudwa!')">🔗 Shiriki</button><button class="btn-sm" onclick="showPage('history')">📚 Hifadhi</button></div>
-    </div>
-  </div>
-</div>
+  <section id="page-translate" class="page" aria-labelledby="translate-title"><div class="tool-header container"><div class="header-line"><button class="back-button" type="button" onclick="showPage('home')">← <span data-i18n="back">Rudi</span></button><span class="prototype-pill" data-i18n="text_first_badge">TEXT-FIRST</span></div><div style="display:flex;align-items:center;gap:0.7rem;margin-top:0.7rem;"><div class="fc-icon red" style="width:40px;height:40px;border-radius:10px;font-size:1.2rem;">⌕</div><div><div class="tool-title" id="translate-title" data-i18n="research_title">Tafsiri na tafiti</div><div class="tool-sub" data-i18n="research_sub">Chanzo kimoja • lugha nyingi • media haijirudii</div></div></div></div><div class="tool-body container"><div class="data-estimate"><div><strong data-i18n="text_first">Text-first</strong><br/><span data-i18n="research_data_sub">Transcript na summary kwanza. Video ni chaguo.</span></div><span data-i18n="low_data">Low data</span></div><div class="input-group"><label class="input-label" for="yt-url" data-i18n="source_url">Kiungo cha chanzo</label><input class="input-field" id="yt-url" type="url" data-i18n-placeholder="url_placeholder" placeholder="https://youtube.com/watch?v=..."/></div><div class="session-language-card"><div class="session-language-head"><strong data-i18n="output_language">Lugha ya matokeo</strong><span data-i18n="same_media">Text variant mpya tu; source media inabaki ileile.</span></div><div class="switch-row"><button class="switch-btn active" id="translate-sw" type="button" onclick="setTranslateLanguage('sw')" data-i18n="sw_short">Kiswahili</button><button class="switch-btn" id="translate-en" type="button" onclick="setTranslateLanguage('en')" data-i18n="en_short">English</button></div></div><button class="btn-main" type="button" onclick="runTranslation()"><span>⌕</span> <span data-i18n="analyze_source">Soma chanzo</span></button><div id="tr-progress" style="display:none;margin-top:1rem;" role="status" aria-live="polite"><div style="display:flex;justify-content:space-between;font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;"><span id="tr-label">Inasoma chanzo...</span><span id="tr-pct">0%</span></div><div class="loading-bar"><div class="loading-bar-fill" id="tr-bar"></div></div></div><div id="tr-result" style="display:none;"><div class="result-card"><div class="result-topline"><div class="rc-label" data-i18n="source_ready">● Chanzo kiko tayari</div><span class="result-status" data-i18n="text_only_status">Transcript only</span></div><div class="variant-pane" id="tr-text"></div><div class="learning-grid"><div class="learning-mini-card"><h3 data-i18n="key_terms">Maneno muhimu</h3><div class="term-list"><span class="term-chip">transcript</span><span class="term-chip">source / chanzo</span><span class="term-chip">summary</span></div></div><div class="learning-mini-card"><h3 data-i18n="research_next">Hatua inayofuata</h3><p data-i18n="research_next_sub">Hifadhi text, fungua source, au itume kwenye kipindi cha kujifunza.</p></div></div><div class="result-actions"><button class="btn-sm" type="button" onclick="startLearning('summary')" data-i18n="study_this">Jifunze mada hii</button><button class="btn-sm" type="button" onclick="showToast(currentLocale()==='en'?'The source link is ready for the production connector.':'Kiungo cha chanzo kiko tayari kwa connector ya production.')" data-i18n="open_source">Fungua chanzo</button></div></div></div></div></section>
 
-<!-- TEXT GEN -->
-<div id="page-textgen" class="page">
-  <div class="tool-header container">
-    <button onclick="showPage('home')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;margin-bottom:0.5rem;font-family:'Noto Sans',sans-serif;">← Rudi</button>
-    <div style="display:flex;align-items:center;gap:0.7rem;"><div class="fc-icon green" style="width:40px;height:40px;border-radius:10px;font-size:1.2rem;">✍️</div><div><div class="tool-title">Tengeneza Maandishi na AI</div><div class="tool-sub">Muhtasari • Maelezo • Maswali • Insha</div></div></div>
-  </div>
-  <div class="tool-body container">
-    <div class="learning-setup" aria-labelledby="learning-setup-title">
-      <h3 id="learning-setup-title">Anzisha kipindi cha kujifunza</h3>
-      <p>Chagua kiwango na lugha unayotaka. Baadaye unaweza kubadilisha mipangilio kupitia <strong>Aa</strong> juu ya ukurasa.</p>
-      <div class="setup-grid">
-        <div class="input-group" style="margin-bottom:0;"><label class="input-label" for="learning-level">Kiwango cha kujifunza</label><select class="input-field" id="learning-level"><option value="primary">Msingi</option><option value="secondary" selected>Sekondari</option><option value="higher">Chuo / Ufundi</option><option value="adult">Mtu mzima</option></select></div>
-        <div class="input-group" style="margin-bottom:0;"><label class="input-label" for="learning-language">Lugha ya maelezo</label><select class="input-field" id="learning-language"><option value="sw" selected>Kiswahili rahisi</option><option value="en">English</option><option value="both">Kiswahili + English</option></select></div>
-      </div>
-    </div>
-    <div class="input-group">
-      <label class="input-label">🎯 Aina ya Maandishi</label>
-      <div class="type-grid">
-        <button class="type-btn active" onclick="selType(this,'summary')">📋 Muhtasari</button>
-        <button class="type-btn" onclick="selType(this,'explain')">💡 Maelezo</button>
-        <button class="type-btn" onclick="selType(this,'quiz')">❓ Maswali ya Mtihani</button>
-        <button class="type-btn" onclick="selType(this,'essay')">📝 Insha</button>
-        <button class="type-btn" onclick="selType(this,'notes')">📖 Madokezo</button>
-        <button class="type-btn" onclick="selType(this,'translate')">🔄 Tafsiri</button>
-      </div>
-    </div>
-    <div class="input-group"><label class="input-label">📚 Mada au Maandishi</label><textarea class="input-field" id="tg-input" placeholder="Mfano: 'Eleza Sheria za Newton kwa lugha rahisi kwa mwanafunzi wa darasa la 8' au bandika maandishi yoyote..." style="min-height:130px;"></textarea></div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:1rem;">
-      <div class="input-group" style="margin-bottom:0;"><label class="input-label" for="tg-level">Kiwango cha elimu</label><select class="input-field" id="tg-level"><option value="primary">🎒 Msingi</option><option value="secondary" selected>📚 Sekondari</option><option value="higher">🎓 Chuo / Ufundi</option><option value="adult">👥 Watu Wazima</option></select></div>
-      <div class="input-group" style="margin-bottom:0;"><label class="input-label" for="tg-length">Urefu wa jibu</label><select class="input-field" id="tg-length"><option value="short">📝 Mfupi</option><option value="medium" selected>📄 Wastani</option><option value="long">📃 Ndefu</option></select></div>
-    </div>
-    <button class="btn-main" onclick="runTextGen()"><span>✨</span> Tengeneza Maandishi</button>
-    <div id="tg-result" style="display:none;" aria-live="polite">
-      <div class="result-card" style="margin-top:1rem;">
-        <div class="rc-label">✅ Kipindi cha kujifunza — demo</div>
-        <div class="rc-content" id="tg-text"></div>
-        <div class="learning-grid">
-          <div class="learning-mini-card"><h3>Maneno muhimu</h3><div id="tg-terms"><span class="term-chip">Inasubiri...</span></div></div>
-          <div class="learning-mini-card"><h3>Jaribu kueleza</h3><p id="tg-check">Andika jibu lako kwa maneno yako mwenyewe.</p></div>
-          <div class="learning-mini-card"><h3>Chanzo na uwazi</h3><p class="source-note" id="tg-source">Hii ni mifano ya prototype. Katika toleo la production, hapa litaonekana chanzo, tarehe, na kiungo cha utafiti.</p></div>
-        </div>
-        <div class="feedback-box">
-          <label class="input-label" for="tg-answer">Jibu lako</label>
-          <textarea class="input-field" id="tg-answer" placeholder="Andika kwa maneno yako mwenyewe..."></textarea>
-          <button class="btn-secondary" type="button" onclick="checkAnswer()">Kagua jibu langu</button>
-          <div class="feedback-message" id="tg-feedback" role="status" aria-live="polite"></div>
-        </div>
-        <div class="result-actions">
-          <button class="btn-sm" onclick="copyResult()">📋 Nakili</button>
-          <button class="btn-sm" onclick="showToast('⬇️ Download itapatikana baada ya kuunganisha huduma')">⬇️ Pakua</button>
-          <button class="btn-sm" onclick="toAudio()">🎧 Sauti</button>
-          <button class="btn-sm" onclick="showToast('🔗 Kushiriki kutapatikana baada ya kuunganisha akaunti')">🔗 Shiriki</button>
-          <button class="btn-sm" onclick="saveSession()">💾 Hifadhi kipindi</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <section id="page-audiobook" class="page" aria-labelledby="audio-title"><div class="tool-header container"><div class="header-line"><button class="back-button" type="button" onclick="showPage('home')">← <span data-i18n="back">Rudi</span></button><span class="prototype-pill" data-i18n="audio_optional">AUDIO OPTIONAL</span></div><div style="display:flex;align-items:center;gap:0.7rem;margin-top:0.7rem;"><div class="fc-icon gold" style="width:40px;height:40px;border-radius:10px;font-size:1.2rem;">◉</div><div><div class="tool-title" id="audio-title" data-i18n="listen_title">Sikiliza kwa hiari</div><div class="tool-sub" data-i18n="listen_sub">Maandishi kwanza • sauti baada ya kuchagua</div></div></div></div><div class="tool-body container"><div class="data-estimate"><div><strong data-i18n="text_first">Text-first</strong><br/><span data-i18n="audio_data_sub">Audio ni kubwa kuliko text. Tutaonyesha estimate kabla ya kuanza.</span></div><span data-i18n="audio_estimate">~2–5 MB</span></div><div class="input-group"><label class="input-label" for="ab-input" data-i18n="audio_text_label">Maandishi ya kusoma</label><textarea class="input-field" id="ab-input" data-i18n-placeholder="audio_placeholder" placeholder="Bandika maandishi hapa..." style="min-height:160px;"></textarea></div><div class="session-language-card"><div class="session-language-head"><strong data-i18n="audio_language">Lugha ya sauti</strong><span data-i18n="audio_shared">Text source ni ileile; tunazalisha sauti uliyochagua tu.</span></div><div class="switch-row"><button class="switch-btn active" id="audio-sw" type="button" onclick="setAudioLanguage('sw')" data-i18n="sw_short">Kiswahili</button><button class="switch-btn" id="audio-en" type="button" onclick="setAudioLanguage('en')" data-i18n="en_short">English</button></div></div><button class="btn-main" type="button" onclick="runAudiobook()"><span>◉</span> <span data-i18n="prepare_audio">Andaa sauti</span></button><div id="ab-result" style="display:none;margin-top:1rem;"><div class="audio-player"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;"><div style="font-size:0.85rem;font-weight:600;" data-i18n="audio_ready">● Sauti ya mfano iko tayari</div><span class="result-status" data-i18n="audio_not_connected">Prototype</span></div><div class="variant-pane" data-i18n="audio_transcript_notice">Transcript inabaki available hata kama audio haipatikani.</div></div><button class="btn-sm" type="button" onclick="showToast(currentLocale()==='en'?'Audio download will be connected later.':'Download ya sauti itaunganishwa baadaye.')" data-i18n="download_audio">Pakua sauti</button></div></div></section>
 
-<!-- PRICING -->
-<div id="page-pricing" class="page">
-  <div class="tool-header container">
-    <button onclick="showPage('home')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;margin-bottom:0.5rem;font-family:'Noto Sans',sans-serif;">← Rudi</button>
-    <div class="tool-title">💳 Bei na Mipango</div>
-    <div class="tool-sub">Chagua mpango unaokufaa — badilisha wakati wowote</div>
-  </div>
-  <div class="tool-body container">
-    <div class="plan-cards">
-      <div class="plan-card selected" id="plan-free" onclick="selPlan('free')">
-        <div class="plan-top"><div><div class="plan-name">🆓 Bure</div><div style="font-size:0.75rem;color:var(--muted);margin-top:0.15rem;">Anza leo bila malipo</div></div><div class="plan-price"><div class="amount">TZS 0</div><div class="period">/mwezi</div></div></div>
-        <div class="plan-features"><div class="plan-feature"><span class="check">✓</span> Video 5 kwa mwezi</div><div class="plan-feature"><span class="check">✓</span> Maandishi 20 kwa mwezi</div><div class="plan-feature"><span class="check">✓</span> Sauti dakika 30</div><div class="plan-feature" style="opacity:0.4;"><span>✗</span> Vitabu vya Sauti</div><div class="plan-feature" style="opacity:0.4;"><span>✗</span> Dubbing ya Hali ya Juu</div></div>
-      </div>
-      <div class="plan-card popular" id="plan-pro" onclick="selPlan('pro')" style="padding-top:1.8rem;">
-        <div class="plan-badge-top">⭐ Maarufu Zaidi</div>
-        <div class="plan-top"><div><div class="plan-name">🚀 Pro</div><div style="font-size:0.75rem;color:var(--muted);margin-top:0.15rem;">Kwa wanafunzi na walimu</div></div><div class="plan-price"><div class="amount">TZS 9,900</div><div class="period">/mwezi</div></div></div>
-        <div class="plan-features"><div class="plan-feature"><span class="check">✓</span> Video 100 kwa mwezi</div><div class="plan-feature"><span class="check">✓</span> Maandishi yasio na kikomo</div><div class="plan-feature"><span class="check">✓</span> Sauti masaa 20</div><div class="plan-feature"><span class="check">✓</span> Vitabu vya Sauti 50</div><div class="plan-feature"><span class="check">✓</span> Dubbing ya Hali ya Juu</div><div class="plan-feature"><span class="check">✓</span> Pakua bila kikomo</div></div>
-      </div>
-      <div class="plan-card" id="plan-school" onclick="selPlan('school')">
-        <div class="plan-top"><div><div class="plan-name">🏫 Shule</div><div style="font-size:0.75rem;color:var(--muted);margin-top:0.15rem;">Kwa shule nzima</div></div><div class="plan-price"><div class="amount">TZS 49K</div><div class="period">/mwezi</div></div></div>
-        <div class="plan-features"><div class="plan-feature"><span class="check">✓</span> Watumiaji 50 (wanafunzi)</div><div class="plan-feature"><span class="check">✓</span> Kila kitu katika Pro</div><div class="plan-feature"><span class="check">✓</span> Dashboard ya Mwalimu</div><div class="plan-feature"><span class="check">✓</span> Ripoti za Maendeleo</div><div class="plan-feature"><span class="check">✓</span> Msaada wa kipaumbele</div></div>
-      </div>
-    </div>
-    <label class="input-label">💳 Njia ya Malipo</label>
-    <div class="pay-methods">
-      <div class="pay-method selected" id="pm-mpesa" onclick="selPay('mpesa')"><div class="pm-icon">📱</div><div class="pm-name">M-Pesa</div><div class="pm-sub">Vodacom Tanzania</div></div>
-      <div class="pay-method" id="pm-tigo" onclick="selPay('tigo')"><div class="pm-icon">📲</div><div class="pm-name">Tigo Pesa</div><div class="pm-sub">Tigo Tanzania</div></div>
-      <div class="pay-method" id="pm-airtel" onclick="selPay('airtel')"><div class="pm-icon">📡</div><div class="pm-name">Airtel Money</div><div class="pm-sub">Airtel Tanzania</div></div>
-      <div class="pay-method" id="pm-card" onclick="selPay('card')"><div class="pm-icon">💳</div><div class="pm-name">Kadi ya Benki</div><div class="pm-sub">Visa / Mastercard</div></div>
-    </div>
-    <div id="mobile-input"><div class="input-group"><label class="input-label">📱 Namba yako ya Simu</label><input class="input-field" type="tel" placeholder="+255 7XX XXX XXX"/></div></div>
-    <div id="card-fields" style="display:none;">
-      <div class="input-group"><label class="input-label">💳 Namba ya Kadi</label><input class="input-field" type="text" placeholder="1234 5678 9012 3456" maxlength="19"/></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;">
-        <div class="input-group"><label class="input-label">Tarehe ya Mwisho</label><input class="input-field" type="text" placeholder="MM/YY" maxlength="5"/></div>
-        <div class="input-group"><label class="input-label">CVV</label><input class="input-field" type="text" placeholder="123" maxlength="3"/></div>
-      </div>
-    </div>
-    <button class="btn-gold" onclick="doPay()">🔒 Lipa Salama Sasa</button>
-    <div style="text-align:center;margin-top:0.7rem;font-size:0.72rem;color:var(--muted);">🔐 Salama 100% • Futa wakati wowote • Hakuna ada zilizofichwa</div>
-  </div>
-</div>
+  <section id="page-vocabulary" class="page" aria-labelledby="vocab-title"><div class="tool-header container"><div class="header-line"><button class="back-button" type="button" onclick="showPage('home')">← <span data-i18n="back">Rudi</span></button><span class="prototype-pill" data-i18n="local_only">LOCAL ONLY</span></div><div style="display:flex;align-items:center;gap:0.7rem;margin-top:0.7rem;"><div class="fc-icon blue" style="width:40px;height:40px;border-radius:10px;font-size:1.2rem;">Aa</div><div><div class="tool-title" id="vocab-title" data-i18n="vocab_title">Msamiati wangu</div><div class="tool-sub" data-i18n="vocab_sub">Maneno ya Kiswahili na English uliyochagua</div></div></div></div><div class="tool-body container"><div class="data-estimate"><div><strong data-i18n="vocab_light">Lightweight learning</strong><br/><span data-i18n="vocab_light_sub">Term cards ni ndogo na zinaweza kuhifadhiwa bila media.</span></div><span id="vocab-count">0 terms</span></div><div id="vocab-list"></div></div></section>
 
-<!-- HISTORY -->
-<div id="page-history" class="page">
-  <div class="tool-header container"><div class="tool-title">📚 Maktaba Yangu</div><div class="tool-sub">Kazi zako zote zilizohifadhiwa</div></div>
-  <div class="tool-body container">
-    <div class="prototype-notice" role="note"><strong>Maktaba ya prototype:</strong> Vipindi unavyohifadhi kwenye kifaa hiki vitaonekana hapa. Akaunti na usawazishaji wa mtandaoni bado havijaunganishwa.</div>
-    <div class="tab-row">
-      <button class="tab-btn active" onclick="switchTab(this,['hist-all','hist-vid','hist-aud','hist-txt'],'hist-all')">Zote</button>
-      <button class="tab-btn" onclick="switchTab(this,['hist-all','hist-vid','hist-aud','hist-txt'],'hist-vid')">Video</button>
-      <button class="tab-btn" onclick="switchTab(this,['hist-all','hist-vid','hist-aud','hist-txt'],'hist-aud')">Sauti</button>
-      <button class="tab-btn" onclick="switchTab(this,['hist-all','hist-vid','hist-aud','hist-txt'],'hist-txt')">Maandishi</button>
-    </div>
-    <div id="hist-all">
-      <div class="history-item"><div class="hi-icon red">🎬</div><div class="hi-info"><div class="hi-title">Sayansi ya Fizikia: Sheria za Newton</div><div class="hi-meta">YouTube • Kiingereza → Kiswahili • Jan 15, 2026</div></div><span class="hi-badge done">✓ Tayari</span></div>
-      <div class="history-item"><div class="hi-icon gold">🎧</div><div class="hi-info"><div class="hi-title">Hisabati: Algebra ya Msingi — Sauti</div><div class="hi-meta">Kitabu cha sauti • Sauti: Amina • Jan 14</div></div><span class="hi-badge done">✓ Tayari</span></div>
-      <div class="history-item"><div class="hi-icon green">✍️</div><div class="hi-info"><div class="hi-title">Muhtasari: Historia ya Tanzania</div><div class="hi-meta">Maandishi ya AI • Sekondari • Jan 13</div></div><span class="hi-badge done">✓ Tayari</span></div>
-      <div class="history-item"><div class="hi-icon red">🎬</div><div class="hi-info"><div class="hi-title">Biolojia: Seli na Viumbe Hai</div><div class="hi-meta">YouTube • Kiingereza → Kiswahili • Jan 12</div></div><span class="hi-badge proc">⏳ Inafanyika</span></div>
-      <div class="history-item"><div class="hi-icon gold">🎧</div><div class="hi-info"><div class="hi-title">Kemikali: Jedwali la Vipengele</div><div class="hi-meta">PDF → Sauti • Sauti: Jabir • Jan 11</div></div><span class="hi-badge done">✓ Tayari</span></div>
-      <div class="history-item"><div class="hi-icon green">✍️</div><div class="hi-info"><div class="hi-title">Maswali 20 ya Mtihani wa Fizikia</div><div class="hi-meta">Maandishi ya AI • Chuo • Jan 10</div></div><span class="hi-badge done">✓ Tayari</span></div>
-    </div>
-    <div id="hist-vid" style="display:none;">
-      <div class="history-item"><div class="hi-icon red">🎬</div><div class="hi-info"><div class="hi-title">Sayansi ya Fizikia: Sheria za Newton</div><div class="hi-meta">YouTube • Kiingereza → Kiswahili • Jan 15</div></div><span class="hi-badge done">✓</span></div>
-      <div class="history-item"><div class="hi-icon red">🎬</div><div class="hi-info"><div class="hi-title">Biolojia: Seli na Viumbe Hai</div><div class="hi-meta">YouTube • Kiingereza → Kiswahili • Jan 12</div></div><span class="hi-badge proc">⏳</span></div>
-    </div>
-    <div id="hist-aud" style="display:none;">
-      <div class="history-item"><div class="hi-icon gold">🎧</div><div class="hi-info"><div class="hi-title">Hisabati: Algebra ya Msingi</div><div class="hi-meta">Kitabu cha sauti • Amina • Jan 14</div></div><span class="hi-badge done">✓</span></div>
-      <div class="history-item"><div class="hi-icon gold">🎧</div><div class="hi-info"><div class="hi-title">Kemikali: Jedwali la Vipengele</div><div class="hi-meta">PDF → Sauti • Jabir • Jan 11</div></div><span class="hi-badge done">✓</span></div>
-    </div>
-    <div id="hist-txt" style="display:none;">
-      <div class="history-item"><div class="hi-icon green">✍️</div><div class="hi-info"><div class="hi-title">Muhtasari: Historia ya Tanzania</div><div class="hi-meta">AI Maandishi • Sekondari • Jan 13</div></div><span class="hi-badge done">✓</span></div>
-      <div class="history-item"><div class="hi-icon green">✍️</div><div class="hi-info"><div class="hi-title">Maswali 20 ya Mtihani wa Fizikia</div><div class="hi-meta">AI Maandishi • Chuo • Jan 10</div></div><span class="hi-badge done">✓</span></div>
-    </div>
-  </div>
-</div>
+  <section id="page-history" class="page" aria-labelledby="library-title"><div class="tool-header container"><div class="header-line"><div><div class="tool-title" id="library-title" data-i18n="library_title">Maktaba yangu</div><div class="tool-sub" data-i18n="library_sub">Vipindi, progress, na text uliyochagua kuhifadhi</div></div><span class="prototype-pill" data-i18n="local_only">LOCAL ONLY</span></div></div><div class="tool-body container"><div class="prototype-notice" role="note"><strong data-i18n="library_note_label">Maktaba ya kifaa:</strong> <span data-i18n="library_note">Hivi vipindi vimehifadhiwa kwenye browser hii. Account sync bado haijaunganishwa.</span></div><div id="library-list"></div></div></section>
 
-<!-- PROFILE -->
-<div id="page-profile" class="page">
-  <div class="profile-hero">
-    <div class="profile-avatar">👤</div>
-    <div class="profile-name">Mtumiaji wa ElimuAI</div>
-    <div class="profile-email">mtumiaji@elimuai.co.tz</div>
-    <div class="profile-plan">⭐ Mpango wa Pro</div>
-  </div>
-  <div class="usage-row">
-    <div class="usage-box"><div class="uv">47</div><div class="ul">Video Zilizotafsiriwa</div></div>
-    <div class="usage-box"><div class="uv">23</div><div class="ul">Vitabu vya Sauti</div></div>
-    <div class="usage-box"><div class="uv">156</div><div class="ul">Maandishi ya AI</div></div>
-  </div>
-  <div class="settings-list">
-    <div class="settings-item" onclick="showModal('edit-modal')"><div class="si-left"><div class="si-icon">👤</div><div><div class="si-text">Hariri Wasifu</div><div class="si-sub">Jina, barua pepe, picha</div></div></div><div class="si-right">›</div></div>
-    <div class="settings-item" onclick="showPage('pricing')"><div class="si-left"><div class="si-icon">⭐</div><div><div class="si-text">Mpango Wangu</div><div class="si-sub">Pro — TZS 9,900/mwezi</div></div></div><div class="si-right">›</div></div>
-    <div class="settings-item" onclick="showToast('🔔 Mipangilio ya arifa')"><div class="si-left"><div class="si-icon">🔔</div><div><div class="si-text">Arifa</div><div class="si-sub">Simamia arifa zako</div></div></div><div class="si-right">›</div></div>
-    <div class="settings-item" onclick="showToast('🌐 Kiswahili (Sanifu)')"><div class="si-left"><div class="si-icon">🌐</div><div><div class="si-text">Lugha ya App</div><div class="si-sub">Kiswahili (Sanifu)</div></div></div><div class="si-right">›</div></div>
-    <div class="settings-item" onclick="showToast('📲 ElimuAI ipo Google Play & App Store')"><div class="si-left"><div class="si-icon">📲</div><div><div class="si-text">Pakua App ya Simu</div><div class="si-sub">Android & iOS zinapatikana</div></div></div><div class="si-right">›</div></div>
-    <div class="settings-item" onclick="showToast('ℹ️ ElimuAI v2.0.1 — Toleo la hivi karibuni')"><div class="si-left"><div class="si-icon">ℹ️</div><div><div class="si-text">Kuhusu ElimuAI</div><div class="si-sub">Toleo 2.0.1</div></div></div><div class="si-right">›</div></div>
-    <div class="settings-item" onclick="showToast('👋 Umefanikiwa kutoka! Kwa heri.')"><div class="si-left"><div class="si-icon">🚪</div><div><div class="si-text" style="color:var(--red);">Toka (Logout)</div></div></div></div>
-  </div>
-</div>
+  <section id="page-profile" class="page" aria-labelledby="profile-title"><div class="profile-hero"><div class="profile-avatar">◌</div><div class="profile-name" id="profile-title" data-i18n="profile_title">Mipangilio ya mwanafunzi</div><div class="profile-email" data-i18n="profile_sub">Dhibiti lugha, ufikivu, na matumizi ya data</div></div><div class="inline-settings"><h2 data-i18n="quick_settings_title">Mipangilio ya haraka</h2><p data-i18n="quick_settings_sub">Mabadiliko haya yanahifadhiwa kwenye kifaa hiki, bila account.</p><div class="inline-setting-row"><div class="setting-copy"><strong data-i18n="interface_language">Interface language</strong><span data-i18n="interface_language_sub">Button labels na navigation</span></div><div class="switch-row"><button class="switch-btn" type="button" onclick="setInterfaceLanguage('sw')">SW</button><button class="switch-btn" type="button" onclick="setInterfaceLanguage('en')">EN</button></div></div><div class="inline-setting-row"><div class="setting-copy"><strong data-i18n="text_size">Ukubwa wa maandishi</strong><span data-i18n="text_size_sub">Ongeza au punguza bila kupoteza layout</span></div><div class="switch-row"><button class="quick-control" type="button" onclick="adjustTextSize(-0.05)">A−</button><button class="quick-control" type="button" onclick="adjustTextSize(0.05)">A+</button></div></div><div class="inline-setting-row"><div class="setting-copy"><strong data-i18n="contrast">Contrast kubwa</strong><span data-i18n="contrast_sub">Kwa usomaji wenye tofauti zaidi</span></div><button class="toggle-button" id="profile-contrast" type="button" onclick="toggleQuickPreference('contrast')">Off</button></div><div class="inline-setting-row"><div class="setting-copy"><strong data-i18n="reduced_motion">Punguza motion</strong><span data-i18n="reduced_motion_sub">Zima animation zisizo muhimu</span></div><button class="toggle-button" id="profile-motion" type="button" onclick="toggleQuickPreference('motion')">Off</button></div><div class="inline-setting-row"><div class="setting-copy"><strong data-i18n="data_policy">Data policy</strong><span data-i18n="data_policy_sub">Text-first, normal, au offline copy</span></div><button class="toggle-button active" id="profile-data" type="button" onclick="cycleDataPolicy()">Text-first</button></div></div><div class="inline-settings"><h2 data-i18n="trust_title">Uwazi na usalama</h2><p data-i18n="trust_sub">Elimu AI itatenganisha learning assistance na verified research. Usitumie prototype kwa malipo au taarifa nyeti.</p><button class="btn-secondary" type="button" onclick="showToast(currentLocale()==='en'?'Feedback and reporting will be connected in the production version.':'Feedback na reporting vitaunganishwa kwenye production.')" data-i18n="report_issue">Ripoti tatizo</button></div></section>
+</main>
 
-<!-- BOTTOM NAV -->
-<nav class="bottom-nav">
-  <button class="bnav-item active" id="nav-home" onclick="showPage('home')"><div class="bnav-icon">🏠</div><div class="bnav-label">Nyumbani</div></button>
-  <button class="bnav-item" id="nav-translate" onclick="showPage('translate')"><div class="bnav-icon">🎬</div><div class="bnav-label">Tafsiri</div></button>
-  <button class="bnav-item" id="nav-audiobook" onclick="showPage('audiobook')"><div class="bnav-icon">🎧</div><div class="bnav-label">Sauti</div></button>
-  <button class="bnav-item" id="nav-textgen" onclick="showPage('textgen')"><div class="bnav-icon">✍️</div><div class="bnav-label">Andika</div></button>
-  <button class="bnav-item" id="nav-history" onclick="showPage('history')"><div class="bnav-icon">📚</div><div class="bnav-label">Maktaba</div></button>
-  <button class="bnav-item" id="nav-profile" onclick="showPage('profile')"><div class="bnav-icon">👤</div><div class="bnav-label">Wasifu</div></button>
-</nav>
+<nav class="bottom-nav" aria-label="Primary navigation"><button class="bnav-item active" id="nav-home" onclick="showPage('home')"><div class="bnav-icon">⌂</div><div class="bnav-label" data-i18n="nav_home">Nyumbani</div></button><button class="bnav-item" id="nav-textgen" onclick="showPage('textgen')"><div class="bnav-icon">✦</div><div class="bnav-label" data-i18n="nav_learn">Jifunze</div></button><button class="bnav-item" id="nav-audiobook" onclick="showPage('audiobook')"><div class="bnav-icon">◉</div><div class="bnav-label" data-i18n="nav_listen">Sauti</div></button><button class="bnav-item" id="nav-vocabulary" onclick="showPage('vocabulary')"><div class="bnav-icon">Aa</div><div class="bnav-label" data-i18n="nav_vocab">Msamiati</div></button><button class="bnav-item" id="nav-history" onclick="showPage('history')"><div class="bnav-icon">▤</div><div class="bnav-label" data-i18n="nav_library">Maktaba</div></button><button class="bnav-item" id="nav-profile" onclick="showPage('profile')"><div class="bnav-icon">◌</div><div class="bnav-label" data-i18n="nav_profile">Wasifu</div></button></nav>
 
-<!-- MODALS -->
-<div class="modal-overlay" id="login-modal" onclick="closeModalOut(event,'login-modal')">
-  <div class="modal-sheet"><div class="modal-handle"></div><div class="modal-title">🔐 Ingia ElimuAI</div><div class="modal-sub">Karibu tena! Ingia ili uendelee kujifunza.</div>
-  <div class="input-group"><label class="input-label">Barua Pepe</label><input class="input-field" type="email" placeholder="jina@mfano.com"/></div>
-  <div class="input-group"><label class="input-label">Nywila</label><input class="input-field" type="password" placeholder="••••••••"/></div>
-  <button class="btn-main" onclick="closeModal('login-modal');showToast('✅ Umeingia! Karibu ElimuAI')">🔐 Ingia</button>
-  <div class="divider-text"><span>au</span></div>
-  <button class="btn-secondary" onclick="showToast('📱 Ingia kwa Google...')">🔍 Ingia kwa Google</button>
-  <div style="text-align:center;margin-top:1rem;font-size:0.8rem;color:var(--muted);">Huna akaunti? <span style="color:var(--cyan);cursor:pointer;font-weight:600;" onclick="closeModal('login-modal');showModal('signup-modal')">Jisajili bure</span></div></div>
-</div>
-
-<div class="modal-overlay" id="signup-modal" onclick="closeModalOut(event,'signup-modal')">
-  <div class="modal-sheet"><div class="modal-handle"></div><div class="modal-title">✨ Jisajili ElimuAI</div><div class="modal-sub">Anza bure leo — hakuna kadi ya benki inayohitajika.</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;"><div class="input-group"><label class="input-label">Jina la Kwanza</label><input class="input-field" type="text" placeholder="Jina"/></div><div class="input-group"><label class="input-label">Jina la Familia</label><input class="input-field" type="text" placeholder="Ukoo"/></div></div>
-  <div class="input-group"><label class="input-label">Barua Pepe</label><input class="input-field" type="email" placeholder="jina@mfano.com"/></div>
-  <div class="input-group"><label class="input-label">Nywila</label><input class="input-field" type="password" placeholder="Angalau herufi 8"/></div>
-  <div class="input-group"><label class="input-label">Mimi ni...</label><select class="input-field"><option>🎒 Mwanafunzi</option><option>👩‍🏫 Mwalimu</option><option>👨‍👩‍👧 Mzazi</option><option>🏫 Msimamizi wa Shule</option></select></div>
-  <button class="btn-main" onclick="closeModal('signup-modal');showToast('🎉 Akaunti yako imefunguliwa! Karibu ElimuAI')">✨ Unda Akaunti Bure</button>
-  <div style="text-align:center;margin-top:1rem;font-size:0.8rem;color:var(--muted);">Una akaunti? <span style="color:var(--cyan);cursor:pointer;font-weight:600;" onclick="closeModal('signup-modal');showModal('login-modal')">Ingia hapa</span></div></div>
-</div>
-
-<div class="modal-overlay" id="pay-success" onclick="closeModalOut(event,'pay-success')">
-  <div class="modal-sheet"><div class="modal-handle"></div><div class="modal-title">✅ Malipo Yamekamilika!</div><div class="modal-sub">Asante kwa kujiunga na ElimuAI.</div>
-  <div style="text-align:center;padding:1.5rem 0;"><div style="font-size:4rem;margin-bottom:0.5rem;">🎉</div><div style="font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.3rem;">Karibu ElimuAI Pro!</div><div style="font-size:0.82rem;color:var(--muted);">Sasa una ufikiaji wa kikamilifu wa zana zote za ElimuAI</div></div>
-  <button class="btn-main" onclick="closeModal('pay-success');showPage('home')">🚀 Anza Kutumia Pro</button></div>
-</div>
-
-
-<div class="modal-overlay" id="settings-modal" onclick="closeModalOut(event,'settings-modal')" role="dialog" aria-modal="true" aria-labelledby="settings-title">
-  <div class="modal-sheet"><div class="modal-handle"></div><div class="modal-title" id="settings-title">Aa Lugha na ufikivu</div><div class="modal-sub">Badilisha namna unavyosoma na kusikiliza Elimu AI. Mipangilio hii inahifadhiwa kwenye kifaa hiki.</div>
-    <div class="input-group"><label class="input-label" for="pref-language">Lugha ya interface</label><select class="input-field" id="pref-language" onchange="setInterfaceLanguage(this.value)"><option value="sw">Kiswahili</option><option value="en">English</option></select></div>
-    <div class="settings-grid"><button class="btn-secondary" type="button" onclick="adjustTextSize(-0.05)">A− Punguza maandishi</button><button class="btn-secondary" type="button" onclick="adjustTextSize(0.05)">A+ Ongeza maandishi</button></div>
-    <label class="toggle-row"><input type="checkbox" id="pref-contrast" onchange="togglePreference('contrast',this.checked)"/><span><strong>Contrast kubwa</strong><br/><span style="color:var(--muted);">Ongeza tofauti ya rangi kwa usomaji rahisi.</span></span></label>
-    <label class="toggle-row"><input type="checkbox" id="pref-motion" onchange="togglePreference('motion',this.checked)"/><span><strong>Punguza motion</strong><br/><span style="color:var(--muted);">Zima animation zisizo muhimu.</span></span></label>
-    <label class="toggle-row"><input type="checkbox" id="pref-data" onchange="togglePreference('dataSaver',this.checked)"/><span><strong>Hifadhi data</strong><br/><span style="color:var(--muted);">Tanguliza maandishi na usianzishe media bila kuchagua.</span></span></label>
-    <button class="btn-main" type="button" onclick="closeModal('settings-modal')">Imefanyika</button>
-  </div>
-</div>
-
-<div class="modal-overlay" id="edit-modal" onclick="closeModalOut(event,'edit-modal')">
-  <div class="modal-sheet"><div class="modal-handle"></div><div class="modal-title">👤 Hariri Wasifu</div>
-  <div class="input-group"><label class="input-label">Jina Kamili</label><input class="input-field" type="text" value="Mtumiaji wa ElimuAI"/></div>
-  <div class="input-group"><label class="input-label">Barua Pepe</label><input class="input-field" type="email" value="mtumiaji@elimuai.co.tz"/></div>
-  <div class="input-group"><label class="input-label">Namba ya Simu</label><input class="input-field" type="tel" placeholder="+255 7XX XXX XXX"/></div>
-  <button class="btn-main" onclick="closeModal('edit-modal');showToast('✅ Wasifu umesasishwa!')">💾 Hifadhi Mabadiliko</button></div>
-</div>
-
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-const pageNav={home:'nav-home',translate:'nav-translate',audiobook:'nav-audiobook',textgen:'nav-textgen',history:'nav-history',profile:'nav-profile'};
-const PREFS_KEY='elimuai-preferences-v1';
-const SESSIONS_KEY='elimuai-learning-sessions-v1';
+const pageNav={home:'nav-home',textgen:'nav-textgen',audiobook:'nav-audiobook',vocabulary:'nav-vocabulary',history:'nav-history',profile:'nav-profile',translate:null};
+const PREFS_KEY='elimuai-preferences-v2';
+const OLD_PREFS_KEY='elimuai-preferences-v1';
+const SESSIONS_KEY='elimuai-learning-sessions-v2';
+const OLD_SESSIONS_KEY='elimuai-learning-sessions-v1';
+const VOCAB_KEY='elimuai-vocabulary-v1';
 let currentType='summary';
 let currentSession=null;
-let preferences={language:'sw',textScale:1,contrast:false,motion:false,dataSaver:false};
+let interfaceLocale='sw';
+let sessionLanguage='sw';
+let translateLanguage='sw';
+let audioLanguage='sw';
+let displayMode='reveal';
+let dataPolicy='textFirst';
+let preferences={textScale:1,contrast:false,motion:false};
 
-function showPage(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.bnav-item').forEach(b=>b.classList.remove('active'));
-  const page=document.getElementById('page-'+id);
-  if(page)page.classList.add('active');
-  if(pageNav[id])document.getElementById(pageNav[id]).classList.add('active');
-  window.scrollTo(0,0);
-}
-function switchTab(btn,ids,show){
-  btn.closest('.tab-row').querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  ids.forEach(id=>{const el=document.getElementById(id);if(el)el.style.display=id===show?'block':'none';});
-}
-function showModal(id){const modal=document.getElementById(id);if(modal){modal.classList.add('open');const first=modal.querySelector('button,input,select,textarea');if(first)setTimeout(()=>first.focus(),50);}}
-function closeModal(id){const modal=document.getElementById(id);if(modal)modal.classList.remove('open');}
-function closeModalOut(e,id){if(e.target.classList.contains('modal-overlay'))closeModal(id);}
-function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove('show'),3200);}
-function selectVoice(v){['amina','jabir','zuri','hassan'].forEach(n=>{const el=document.getElementById('vc-'+n);if(el)el.classList.toggle('selected',n===v);});showToast('Sauti ya '+v.charAt(0).toUpperCase()+v.slice(1)+' imechaguliwa');}
-function selPlan(p){['free','pro','school'].forEach(n=>{const el=document.getElementById('plan-'+n);if(el){el.classList.remove('selected');el.style.borderColor=n==='pro'?'var(--gold)':'var(--border)';}});const sel=document.getElementById('plan-'+p);if(sel){sel.classList.add('selected');sel.style.borderColor='var(--cyan)';}showToast('Mpango umechaguliwa: '+(p==='free'?'Bure':p.charAt(0).toUpperCase()+p.slice(1)));}
-function selPay(m){['mpesa','tigo','airtel','card'].forEach(n=>{const el=document.getElementById('pm-'+n);if(el)el.classList.remove('selected');});const selected=document.getElementById('pm-'+m);if(selected)selected.classList.add('selected');document.getElementById('mobile-input').style.display=m==='card'?'none':'block';document.getElementById('card-fields').style.display=m==='card'?'block':'none';}
-function selType(btn,type){document.querySelectorAll('.type-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');currentType=type;}
-
-function loadPreferences(){
-  try{const saved=JSON.parse(localStorage.getItem(PREFS_KEY)||'{}');preferences={...preferences,...saved};}catch(e){}
-  applyPreferences();
-}
-function persistPreferences(){localStorage.setItem(PREFS_KEY,JSON.stringify(preferences));}
-function applyPreferences(){
-  document.body.classList.toggle('high-contrast',!!preferences.contrast);
-  document.body.classList.toggle('reduced-motion',!!preferences.motion);
-  document.body.classList.toggle('data-saver',!!preferences.dataSaver);
-  document.body.style.setProperty('--text-scale',String(preferences.textScale||1));
-  document.documentElement.lang=preferences.language==='en'?'en':'sw';
-  const language=document.getElementById('pref-language');if(language)language.value=preferences.language;
-  const contrast=document.getElementById('pref-contrast');if(contrast)contrast.checked=!!preferences.contrast;
-  const motion=document.getElementById('pref-motion');if(motion)motion.checked=!!preferences.motion;
-  const data=document.getElementById('pref-data');if(data)data.checked=!!preferences.dataSaver;
-  const badge=document.getElementById('mode-badge');if(badge)badge.textContent=preferences.dataSaver?'● Hali ya kuhifadhi data':'● Hali ya kawaida';
-}
-function setInterfaceLanguage(value){preferences.language=value;persistPreferences();applyPreferences();showToast(value==='en'?'English preference saved; full translation is planned.':'Kiswahili imechaguliwa.');}
-function adjustTextSize(delta){preferences.textScale=Math.min(1.25,Math.max(0.9,Number((preferences.textScale+delta).toFixed(2))));persistPreferences();applyPreferences();showToast('Ukubwa wa maandishi umebadilishwa.');}
-function togglePreference(key,value){preferences[key]=value;persistPreferences();applyPreferences();showToast(value?'Mpangilio umewashwa.':'Mpangilio umezimwa.');}
-
-const steps=[{l:'Inasoma chanzo...',p:15},{l:'Inatafsiri maana...',p:35},{l:'Inaandaa maelezo...',p:60},{l:'Inatengeneza matokeo ya kujifunza...',p:80},{l:'Inakamilisha...',p:95},{l:'Imekamilika — demo ✅',p:100}];
-function runTranslation(){
-  const url=document.getElementById('yt-url').value.trim();
-  if(!url){showToast('Tafadhali weka kiungo cha YouTube');return;}
-  const prog=document.getElementById('tr-progress'),res=document.getElementById('tr-result');
-  prog.style.display='block';res.style.display='none';let i=0;
-  function tick(){
-    if(i>=steps.length){setTimeout(()=>{prog.style.display='none';res.style.display='block';showToast('Prototype imeonyesha matokeo ya mfano.');res.scrollIntoView({behavior:'smooth'});},400);return;}
-    document.getElementById('tr-bar').style.width=steps[i].p+'%';document.getElementById('tr-label').textContent=steps[i].l;document.getElementById('tr-pct').textContent=steps[i].p+'%';i++;setTimeout(tick,500);
-  }tick();
-}
-function runAudiobook(){
-  const txt=document.getElementById('ab-input').value.trim();
-  if(!txt){showToast('Tafadhali andika maandishi kwanza.');return;}
-  showToast('Prototype inaandaa mfano wa sauti...');
-  setTimeout(()=>{document.getElementById('ab-result').style.display='block';showToast('Mfano wa kitabu cha sauti uko tayari.');document.getElementById('ab-result').scrollIntoView({behavior:'smooth'});},1600);
-}
-
-const sTexts={
-  summary:'Sheria za Newton hueleza jinsi vitu vinavyosogea na jinsi nguvu zinavyobadilisha mwendo. Sheria ya kwanza inahusiana na inertia: kitu kitaendelea katika hali yake mpaka nguvu ya nje ikibadilishe. Sheria ya pili inaonyesha uhusiano wa nguvu, misa na acceleration: F = ma. Sheria ya tatu inasema kila kitendo kina mwitikio wenye nguvu sawa na mwelekeo wa kinyume.',
-  explain:'Fikiria uko ndani ya basi linalokwenda. Basi likisimama ghafla, mwili wako unasogea mbele kwa sababu mwili ulitaka kuendelea na mwendo wake. Hii ni inertia. Kwa hiyo, sheria haipo kwenye kitabu tu; tunaiona kwenye usafiri, michezo, mashine na teknolojia.',
-  quiz:'Maswali ya kujipima:\n\n1. Eleza inertia kwa mfano wa maisha ya kila siku.\n2. Nguvu ya 20 N ikiathiri misa ya 5 kg, acceleration ni kiasi gani?\n3. Toa mfano wa kitendo na mwitikio.\n4. Kwa nini mkanda wa usalama ni muhimu wakati gari linasimama ghafla?',
-  essay:'Sheria za Newton ni msingi wa kuelewa mwendo katika sayansi na teknolojia. Zinatusaidia kueleza kwa nini magari yanaongeza au kupunguza mwendo, kwa nini ndege huruka, na kwa nini usalama wa wasafiri ni muhimu. Kujifunza sheria hizi kwa mifano ya mazingira yetu humsaidia mwanafunzi kuunganisha nadharia na maisha ya kila siku.',
-  notes:'Madokezo muhimu:\n\n• Sheria ya 1: inertia — mwili hubaki katika hali yake bila nguvu ya nje.\n• Sheria ya 2: F = ma — nguvu inahusiana na misa na acceleration.\n• Sheria ya 3: kila kitendo kina mwitikio sawa na wa kinyume.\n• Mifano: basi, mpira, mkanda wa usalama na roketi.',
-  translate:'Newton’s First Law says that an object at rest stays at rest and an object in motion stays in motion unless acted on by an external force.\n\nKiswahili cha kujifunza: Kitu kilichosimama kitabaki kimesimama, na kitu kinachosogea kitaendelea kusogea mpaka nguvu ya nje ibadilishe hali hiyo.'
+const catalog={
+ sw:{login:'Ingia',hero_badge:'🇹🇿 Iliyoundwa kwa Tanzania',hero_title:'Elewa zaidi, <span class="grad">kwa lugha yako</span>',hero_subtitle:'Elimu AI inakusaidia kujifunza, kutafsiri, kufanya mazoezi, na kutafiti kwa Kiswahili, English, au lugha zote mbili — bila kupakua maudhui mara mbili.',start_learning:'Jifunze sasa',open_vocabulary:'Fungua msamiati',choose_learning_language:'Chagua lugha ya kipindi',choose_learning_language_sub:'Hii ni kwa kipindi hiki tu. Unaweza kubadilisha baadaye bila kuanza upya.',choice_sw_title:'Kiswahili',choice_sw_sub:'Maelezo rahisi na mifano ya karibu',choice_en_title:'English',choice_en_sub:'Clear English for study and research',choice_both_title:'Pande zote',choice_both_sub:'Linganishwa bila media kurudiwa',resume:'Endelea',learning_paths_label:'NJIA ZA KUJIFUNZA',learning_paths_title:'Chagua unachotaka kufanya',learning_paths_sub:'Anza na wazo moja. Elimu AI inakupeleka kutoka kuelewa mpaka kufanya mazoezi.',path_learn_title:'Eleza mada',path_learn_sub:'Pata maelezo rahisi, maneno muhimu, na mfano.',path_practice_title:'Fanya mazoezi',path_practice_sub:'Jibu swali moja moja na upate feedback.',path_listen_title:'Sikiliza',path_listen_sub:'Anza na maandishi; omba sauti ukiihitaji.',path_research_title:'Tafiti',path_research_sub:'Elewa chanzo na uone kiungo cha uthibitisho.',quick_access:'UFIKIVU WA HARAKA',contrast_short:'Contrast',motion_short:'Punguza motion',data_short:'Data saver',prototype_label:'Toleo la prototype:',prototype_notice:'AI, uploads, accounts, downloads, audio na payments bado hazijaunganishwa. Tumia maandishi ya mfano; usiweke taarifa nyeti.',how_label:'JINSI INAVYOFANYA KAZI',step_one_title:'Chagua lugha na kiwango',step_one_sub:'Kiswahili, English, au pande zote.',step_two_title:'Elewa na sikiliza',step_two_sub:'Anza na text; media ni chaguo.',step_three_title:'Fanya mazoezi na hifadhi',step_three_sub:'Jibu, pata feedback, na endelea baadaye.',back:'Rudi',demo_pill:'DEMO YA PROTOTYPE',text_first_badge:'TEXT-FIRST',learn_title:'Jifunze kwa hatua',learn_sub:'Eleza • Mazoezi • Notes • Terms',workflow_input:'1. Ingiza',workflow_understand:'2. Elewa',workflow_practice:'3. Jipime',workflow_save:'4. Hifadhi',session_language_title:'Lugha ya kipindi',session_language_sub:'Kubadilisha lugha hakupakui media nyingine.',sw_short:'Kiswahili',en_short:'English',both_short:'Pande zote',mode_reveal:'Focus & reveal',mode_parallel:'Parallel',variant_cost:'● Text only • source media shared • low data',text_first:'Text-first',text_first_sub:'Tutaanza na jibu dogo; media ni chaguo.',setup_title:'Anzisha kipindi cha kujifunza',setup_sub:'Chagua kiwango, aina ya jibu, na lugha. Unaweza kubadilisha bila kupoteza progress.',education_level:'Kiwango cha elimu',level_primary:'Msingi',level_secondary:'Sekondari',level_higher:'Chuo / Ufundi',level_adult:'Mtu mzima',answer_length:'Urefu wa jibu',length_short:'Mfupi',length_medium:'Wastani',length_long:'Ndefu',output_type:'Aina ya kujifunza',type_summary:'Muhtasari',type_explain:'Maelezo rahisi',type_quiz:'Maswali',type_notes:'Madokezo',topic_label:'Mada, swali, au maandishi',topic_placeholder:'Mfano: Eleza Sheria za Newton kwa lugha rahisi...',generate_learning:'Anza kipindi',reveal_language:'Onyesha lugha nyingine',key_terms:'Maneno muhimu',save_terms:'Hifadhi terms',try_explain:'Jaribu kueleza',source_transparency:'Chanzo na uwazi',your_answer:'Jibu lako',answer_placeholder:'Eleza kwa maneno yako mwenyewe...',check_answer:'Kagua jibu langu',copy:'Nakili',download:'Pakua',listen:'Sikiliza',save_session:'Hifadhi kipindi',research_title:'Tafsiri na tafiti',research_sub:'Chanzo kimoja • lugha nyingi • media haijirudii',research_data_sub:'Transcript na summary kwanza. Video ni chaguo.',low_data:'Low data',source_url:'Kiungo cha chanzo',url_placeholder:'https://youtube.com/watch?v=...',output_language:'Lugha ya matokeo',same_media:'Text variant mpya tu; source media inabaki ileile.',analyze_source:'Soma chanzo',source_ready:'● Chanzo kiko tayari',text_only_status:'Transcript only',research_next:'Hatua inayofuata',research_next_sub:'Hifadhi text, fungua source, au itume kwenye kipindi cha kujifunza.',study_this:'Jifunze mada hii',open_source:'Fungua chanzo',audio_optional:'AUDIO OPTIONAL',listen_title:'Sikiliza kwa hiari',listen_sub:'Maandishi kwanza • sauti baada ya kuchagua',audio_data_sub:'Audio ni kubwa kuliko text. Tutaonyesha estimate kabla ya kuanza.',audio_estimate:'~2–5 MB',audio_text_label:'Maandishi ya kusoma',audio_placeholder:'Bandika maandishi hapa...',audio_language:'Lugha ya sauti',audio_shared:'Text source ni ileile; tunazalisha sauti uliyochagua tu.',prepare_audio:'Andaa sauti',audio_ready:'● Sauti ya mfano iko tayari',audio_not_connected:'Prototype',audio_transcript_notice:'Transcript inabaki available hata kama audio haipatikani.',download_audio:'Pakua sauti',local_only:'LOCAL ONLY',vocab_title:'Msamiati wangu',vocab_sub:'Maneno ya Kiswahili na English uliyochagua',vocab_light:'Lightweight learning',vocab_light_sub:'Term cards ni ndogo na zinaweza kuhifadhiwa bila media.',library_title:'Maktaba yangu',library_sub:'Vipindi, progress, na text uliyochagua kuhifadhi',library_note_label:'Maktaba ya kifaa:',library_note:'Hivi vipindi vimehifadhiwa kwenye browser hii. Account sync bado haijaunganishwa.',profile_title:'Mipangilio ya mwanafunzi',profile_sub:'Dhibiti lugha, ufikivu, na matumizi ya data',quick_settings_title:'Mipangilio ya haraka',quick_settings_sub:'Mabadiliko haya yanahifadhiwa kwenye kifaa hiki, bila account.',interface_language:'Interface language',interface_language_sub:'Button labels na navigation',text_size:'Ukubwa wa maandishi',text_size_sub:'Ongeza au punguza bila kupoteza layout',contrast:'Contrast kubwa',contrast_sub:'Kwa usomaji wenye tofauti zaidi',reduced_motion:'Punguza motion',reduced_motion_sub:'Zima animation zisizo muhimu',data_policy:'Data policy',data_policy_sub:'Text-first, normal, au offline copy',trust_title:'Uwazi na usalama',trust_sub:'Elimu AI itatenganisha learning assistance na verified research. Usitumie prototype kwa malipo au taarifa nyeti.',report_issue:'Ripoti tatizo',nav_home:'Nyumbani',nav_learn:'Jifunze',nav_listen:'Sauti',nav_vocab:'Msamiati',nav_library:'Maktaba',nav_profile:'Wasifu'},
+ en:{login:'Log in',hero_badge:'🇹🇿 Made for Tanzania',hero_title:'Understand more, <span class="grad">in your language</span>',hero_subtitle:'Elimu AI helps you learn, translate, practise, and research in Kiswahili, English, or both — without downloading the same content twice.',start_learning:'Start learning',open_vocabulary:'Open vocabulary',choose_learning_language:'Choose the session language',choose_learning_language_sub:'This applies to this session only. You can switch later without starting again.',choice_sw_title:'Kiswahili',choice_sw_sub:'Simple explanations and familiar examples',choice_en_title:'English',choice_en_sub:'Clear English for study and research',choice_both_title:'Both languages',choice_both_sub:'Compare without repeating media',resume:'Resume',learning_paths_label:'LEARNING PATHS',learning_paths_title:'Choose what you want to do',learning_paths_sub:'Start with one idea. Elimu AI takes you from understanding to practice.',path_learn_title:'Explain a topic',path_learn_sub:'Get a clear explanation, key terms, and an example.',path_practice_title:'Practise',path_practice_sub:'Answer one question at a time and get feedback.',path_listen_title:'Listen',path_listen_sub:'Start with text; request audio only when useful.',path_research_title:'Research',path_research_sub:'Understand the source and open the evidence link.',quick_access:'QUICK ACCESS',contrast_short:'Contrast',motion_short:'Reduce motion',data_short:'Data saver',prototype_label:'Prototype version:',prototype_notice:'AI, uploads, accounts, downloads, audio, and payments are not connected yet. Use demo text only; do not enter sensitive information.',how_label:'HOW IT WORKS',step_one_title:'Choose a language and level',step_one_sub:'Kiswahili, English, or both.',step_two_title:'Understand and listen',step_two_sub:'Start with text; media is optional.',step_three_title:'Practise and save',step_three_sub:'Answer, get feedback, and continue later.',back:'Back',demo_pill:'PROTOTYPE DEMO',text_first_badge:'TEXT-FIRST',learn_title:'Learn step by step',learn_sub:'Explain • Practise • Notes • Terms',workflow_input:'1. Input',workflow_understand:'2. Understand',workflow_practice:'3. Practise',workflow_save:'4. Save',session_language_title:'Session language',session_language_sub:'Changing language does not download another media file.',sw_short:'Kiswahili',en_short:'English',both_short:'Both',mode_reveal:'Focus & reveal',mode_parallel:'Parallel',variant_cost:'● Text only • shared source media • low data',text_first:'Text-first',text_first_sub:'We start with a small answer; media is optional.',setup_title:'Start a learning session',setup_sub:'Choose level, answer type, and language. You can change them without losing progress.',education_level:'Education level',level_primary:'Primary',level_secondary:'Secondary',level_higher:'College / vocational',level_adult:'Adult learner',answer_length:'Answer length',length_short:'Short',length_medium:'Medium',length_long:'Long',output_type:'Learning type',type_summary:'Summary',type_explain:'Simple explanation',type_quiz:'Questions',type_notes:'Notes',topic_label:'Topic, question, or text',topic_placeholder:'Example: Explain Newton’s Laws in simple language...',generate_learning:'Start session',reveal_language:'Reveal the other language',key_terms:'Key terms',save_terms:'Save terms',try_explain:'Try to explain',source_transparency:'Source and transparency',your_answer:'Your answer',answer_placeholder:'Explain in your own words...',check_answer:'Check my answer',copy:'Copy',download:'Download',listen:'Listen',save_session:'Save session',research_title:'Translate and research',research_sub:'One source • many languages • no repeated media',research_data_sub:'Transcript and summary first. Video is optional.',low_data:'Low data',source_url:'Source link',url_placeholder:'https://youtube.com/watch?v=...',output_language:'Output language',same_media:'Only the text variant changes; the source media stays shared.',analyze_source:'Read source',source_ready:'● Source ready',text_only_status:'Transcript only',research_next:'Next step',research_next_sub:'Save the text, open the source, or send it to a learning session.',study_this:'Study this topic',open_source:'Open source',audio_optional:'AUDIO OPTIONAL',listen_title:'Listen when useful',listen_sub:'Text first • audio after you choose',audio_data_sub:'Audio is larger than text. We show an estimate before starting.',audio_estimate:'~2–5 MB',audio_text_label:'Text to read',audio_placeholder:'Paste text here...',audio_language:'Audio language',audio_shared:'The text source is shared; we generate only the audio you choose.',prepare_audio:'Prepare audio',audio_ready:'● Demo audio ready',audio_not_connected:'Prototype',audio_transcript_notice:'The transcript remains available even when audio is not.',download_audio:'Download audio',local_only:'LOCAL ONLY',vocab_title:'My vocabulary',vocab_sub:'Kiswahili and English terms you choose',vocab_light:'Lightweight learning',vocab_light_sub:'Term cards are small and can be saved without media.',library_title:'My library',library_sub:'Sessions, progress, and saved text',library_note_label:'Device library:',library_note:'These sessions are saved in this browser. Account sync is not connected yet.',profile_title:'Learner settings',profile_sub:'Manage language, accessibility, and data use',quick_settings_title:'Quick settings',quick_settings_sub:'These changes are saved on this device without an account.',interface_language:'Interface language',interface_language_sub:'Button labels and navigation',text_size:'Text size',text_size_sub:'Increase or reduce without losing the layout',contrast:'High contrast',contrast_sub:'Increase visual contrast for reading',reduced_motion:'Reduce motion',reduced_motion_sub:'Turn off non-essential animation',data_policy:'Data policy',data_policy_sub:'Text-first, normal, or offline copy',trust_title:'Trust and safety',trust_sub:'Elimu AI separates learning assistance from verified research. Do not use the prototype for payments or sensitive information.',report_issue:'Report an issue',nav_home:'Home',nav_learn:'Learn',nav_listen:'Listen',nav_vocab:'Vocabulary',nav_library:'Library',nav_profile:'Profile'}
 };
-function buildTerms(){return '<span class="term-chip">inertia</span><span class="term-chip">nguvu / force</span><span class="term-chip">misa / mass</span><span class="term-chip">acceleration</span>';}
-function runTextGen(){
-  const inp=document.getElementById('tg-input').value.trim();
-  if(!inp){showToast('Tafadhali andika mada au maandishi.');return;}
-  const level=document.getElementById('tg-level')?.value||'secondary';
-  const language=document.getElementById('learning-language')?.value||preferences.language||'sw';
-  currentSession={topic:inp,type:currentType,level,language,createdAt:new Date().toISOString(),completed:false};
-  showToast('Prototype inaandaa kipindi cha kujifunza...');
-  setTimeout(()=>{
-    const text=document.getElementById('tg-text');
-    text.textContent=sTexts[currentType]||sTexts.summary;
-    document.getElementById('tg-terms').innerHTML=buildTerms();
-    document.getElementById('tg-check').textContent=currentType==='quiz'?'Jibu swali moja au zaidi, kisha bonyeza “Kagua jibu langu”.':'Eleza kwa maneno yako: kwa nini kitu kinaweza kuendelea kusogea?';
-    document.getElementById('tg-source').innerHTML='Mfano wa prototype. Toleo la production litaonyesha chanzo, tarehe ya kuchapishwa, na kiungo cha uthibitisho. <a href="https://www.unesco.org/en/articles/new-unesco-report-calls-multilingual-education-unlock-learning-and-inclusion" target="_blank" rel="noopener">Soma kuhusu multilingual education</a>.';
-    document.getElementById('tg-feedback').textContent='';document.getElementById('tg-answer').value='';
-    document.getElementById('tg-result').style.display='block';saveSession(false);showToast('Kipindi cha kujifunza kiko tayari — demo.');document.getElementById('tg-result').scrollIntoView({behavior:'smooth'});
-  },1200);
-}
-function checkAnswer(){
-  const answer=document.getElementById('tg-answer').value.trim();const feedback=document.getElementById('tg-feedback');
-  if(answer.length<8){feedback.textContent='Andika jibu lenye maelezo kidogo zaidi ili upate feedback ya kujifunza.';feedback.style.color='var(--gold)';return;}
-  feedback.textContent='Umeanza vizuri. Jibu lako linataja wazo kuu; ongeza mfano wa maisha ya kila siku ili kulifanya liwe kamili.';feedback.style.color='var(--green)';
-  if(currentSession){currentSession.completed=true;saveSession(false);}
-}
-function escapeHTML(value){return String(value).replace(/[&<>'"]/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));}
-function getSessions(){try{return JSON.parse(localStorage.getItem(SESSIONS_KEY)||'[]');}catch(e){return [];}}
-function saveSession(showMessage=true){
-  if(!currentSession)return;
-  currentSession.output=sTexts[currentSession.type]||sTexts.summary;currentSession.completed=currentSession.completed||false;currentSession.id=currentSession.id||Date.now();
-  const sessions=getSessions().filter(item=>item.id!==currentSession.id);sessions.unshift(currentSession);localStorage.setItem(SESSIONS_KEY,JSON.stringify(sessions.slice(0,20)));renderLibrary();if(showMessage)showToast('Kipindi kimehifadhiwa kwenye maktaba ya kifaa.');
-}
-function renderLibrary(){
-  const list=document.getElementById('hist-all');if(!list)return;
-  list.querySelectorAll('.saved-session-item').forEach(el=>el.remove());
-  const sessions=getSessions();
-  sessions.forEach(session=>{const date=new Date(session.createdAt||Date.now()).toLocaleDateString('sw-TZ',{day:'numeric',month:'short',year:'numeric'});const item=document.createElement('div');item.className='history-item saved-session-item';item.setAttribute('role','listitem');item.innerHTML='<div class="hi-icon green">✍️</div><div class="hi-info"><div class="hi-title">'+escapeHTML(session.topic.slice(0,60))+'</div><div class="hi-meta">Kipindi cha kujifunza • '+escapeHTML(session.language||'sw')+' • '+date+'</div></div><span class="hi-badge '+(session.completed?'done':'proc')+'">'+(session.completed?'✓ Tayari':'↗ Endelea')+'</span>';list.prepend(item);});
-}
-function copyResult(){const text=document.getElementById('tg-text')?.textContent||'';if(navigator.clipboard){navigator.clipboard.writeText(text).then(()=>showToast('Maandishi yamenakiliwa.')).catch(()=>showToast('Chagua maandishi na unakili.'));}else{showToast('Chagua maandishi na unakili.');}}
-function toAudio(){showPage('audiobook');const t=document.getElementById('tg-text').textContent;document.getElementById('ab-input').value=t.substring(0,500);showToast('Maandishi yamehamishiwa kwenye Sauti.');}
-function doPay(){showToast('Malipo hayajaunganishwa kwenye prototype. Hakuna fedha iliyokatwa.');}
 
-document.addEventListener('keydown',event=>{if(event.key==='Escape'){document.querySelectorAll('.modal-overlay.open').forEach(modal=>modal.classList.remove('open'));}});
-document.addEventListener('DOMContentLoaded',()=>{loadPreferences();renderLibrary();});
+const contentVariants={
+ summary:{sw:'Sheria za Newton hueleza jinsi vitu vinavyosogea na jinsi nguvu zinavyobadilisha mwendo. Sheria ya kwanza inahusiana na inertia: kitu kitaendelea katika hali yake mpaka nguvu ya nje ikibadilishe. Sheria ya pili inaonyesha uhusiano wa nguvu, misa na acceleration: F = ma. Sheria ya tatu inasema kila kitendo kina mwitikio wenye nguvu sawa na mwelekeo wa kinyume.',en:'Newton’s Laws explain how objects move and how forces change motion. The First Law is connected to inertia: an object continues in its state until an external force changes it. The Second Law relates force, mass, and acceleration: F = ma. The Third Law says that every action has an equal and opposite reaction.'},
+ explain:{sw:'Fikiria uko ndani ya basi linalokwenda. Basi likisimama ghafla, mwili wako unasogea mbele kwa sababu mwili ulitaka kuendelea na mwendo wake. Hii ni inertia. Kwa hiyo, sheria haipo kwenye kitabu tu; tunaiona kwenye usafiri, michezo, mashine na teknolojia.',en:'Imagine that you are inside a moving bus. If the bus stops suddenly, your body moves forward because it wants to continue moving. This is inertia. The laws are not only in a textbook; we see them in transport, sport, machines, and technology.'},
+ quiz:{sw:'Maswali ya kujipima:\n\n1. Eleza inertia kwa mfano wa maisha ya kila siku.\n2. Nguvu ya 20 N ikiathiri misa ya 5 kg, acceleration ni kiasi gani?\n3. Toa mfano wa kitendo na mwitikio.\n4. Kwa nini mkanda wa usalama ni muhimu wakati gari linasimama ghafla?',en:'Self-check questions:\n\n1. Explain inertia using an everyday example.\n2. If a force of 20 N acts on a mass of 5 kg, what is the acceleration?\n3. Give an example of action and reaction.\n4. Why is a seat belt important when a car stops suddenly?'},
+ notes:{sw:'Madokezo muhimu:\n\n• Sheria ya 1: inertia — mwili hubaki katika hali yake bila nguvu ya nje.\n• Sheria ya 2: F = ma — nguvu inahusiana na misa na acceleration.\n• Sheria ya 3: kila kitendo kina mwitikio sawa na wa kinyume.\n• Mifano: basi, mpira, mkanda wa usalama na roketi.',en:'Key notes:\n\n• Law 1: inertia — an object stays in its state without an external force.\n• Law 2: F = ma — force relates to mass and acceleration.\n• Law 3: every action has an equal and opposite reaction.\n• Examples: a bus, a ball, a seat belt, and a rocket.'}
+};
+const termVariants=[{sw:'inertia',en:'inertia',exampleSw:'mwili kuendelea katika hali yake',exampleEn:'an object continuing in its state'},{sw:'nguvu',en:'force',exampleSw:'msukumo au mvutano unaobadilisha mwendo',exampleEn:'a push or pull that changes motion'},{sw:'misa',en:'mass',exampleSw:'kiasi cha vitu katika mwili',exampleEn:'the amount of matter in an object'},{sw:'mwendokasi wa mabadiliko',en:'acceleration',exampleSw:'mabadiliko ya kasi kwa muda',exampleEn:'change in velocity over time'}];
+const policyLabels={textFirst:{sw:'Data: Text-first',en:'Data: Text-first'},normal:{sw:'Data: Normal',en:'Data: Normal'},offlineOnly:{sw:'Data: Offline copy',en:'Data: Offline copy'}};
+
+function currentLocale(){return interfaceLocale;}
+function t(key){return catalog[interfaceLocale][key]||catalog.sw[key]||key;}
+function applyLocale(){
+  document.documentElement.lang=interfaceLocale==='en'?'en':'sw';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.getAttribute('data-i18n');el.innerHTML=t(key);});
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{el.placeholder=t(el.getAttribute('data-i18n-placeholder'));});
+  document.getElementById('locale-sw')?.classList.toggle('active',interfaceLocale==='sw');
+  document.getElementById('locale-en')?.classList.toggle('active',interfaceLocale==='en');
+  updatePolicyUI();
+  updateQuickUI();
+  renderResultLanguage();
+  renderSessionSupportingText();
+  renderLibrary();
+  renderVocabulary();
+}
+function setInterfaceLanguage(locale){interfaceLocale=locale;savePreferences();applyLocale();showToast(locale==='en'?'English interface selected.':'Kiswahili imechaguliwa.');}
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.bnav-item').forEach(b=>b.classList.remove('active'));const page=document.getElementById('page-'+id);if(page)page.classList.add('active');if(pageNav[id])document.getElementById(pageNav[id])?.classList.add('active');window.scrollTo({top:0,behavior:preferences.motion?'auto':'smooth'});if(id==='history')renderLibrary();if(id==='vocabulary')renderVocabulary();}
+function showToast(msg){const toast=document.getElementById('toast');toast.textContent=msg;toast.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>toast.classList.remove('show'),3200);}
+function startLearning(type='summary'){currentType=type;document.querySelectorAll('.type-btn').forEach(btn=>btn.classList.toggle('active',btn.getAttribute('onclick')?.includes("'"+type+"'")));showPage('textgen');document.getElementById('tg-input')?.focus();}
+function selType(btn,type){document.querySelectorAll('.type-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');currentType=type;}
+function setSessionLanguage(language){sessionLanguage=language;document.querySelectorAll('#choice-sw,#choice-en,#choice-both').forEach(b=>b.classList.remove('active'));document.getElementById('choice-'+language)?.classList.add('active');document.querySelectorAll('#session-sw,#session-en,#session-both').forEach(b=>b.classList.remove('active'));document.getElementById('session-'+language)?.classList.add('active');if(currentSession){currentSession.languageMode=language;renderResultLanguage();saveSession(false);}showToast(language==='both'?(interfaceLocale==='en'?'Both language views selected.':'Pande zote zimechaguliwa.'):(language==='en'?'English session selected.':'Kipindi cha Kiswahili kimechaguliwa.'));}
+function setDisplayMode(mode){displayMode=mode;document.getElementById('mode-reveal')?.classList.toggle('active',mode==='reveal');document.getElementById('mode-parallel')?.classList.toggle('active',mode==='parallel');renderResultLanguage();}
+function revealSecondaryLanguage(){setDisplayMode('parallel');showToast(interfaceLocale==='en'?'Both text variants are visible; the source media is still shared.':'Maandishi ya lugha zote yanaonekana; source media bado ni ileile.');}
+function setTranslateLanguage(language){translateLanguage=language;document.getElementById('translate-sw')?.classList.toggle('active',language==='sw');document.getElementById('translate-en')?.classList.toggle('active',language==='en');}
+function setAudioLanguage(language){audioLanguage=language;document.getElementById('audio-sw')?.classList.toggle('active',language==='sw');document.getElementById('audio-en')?.classList.toggle('active',language==='en');}
+function updatePolicyUI(){const label=policyLabels[dataPolicy][interfaceLocale];['policy-toggle','profile-data'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=label;});const chip=document.getElementById('home-data-chip');if(chip)chip.textContent=label;const badge=document.getElementById('mode-badge');if(badge)badge.textContent='● '+label.replace('Data: ','');const size=document.getElementById('learn-data-size');if(size)size.textContent=dataPolicy==='offlineOnly'?(interfaceLocale==='en'?'Saved text':'Text iliyohifadhiwa'):(dataPolicy==='normal'?'~45 KB':'~18 KB');}
+function cycleDataPolicy(){const order=['textFirst','normal','offlineOnly'];dataPolicy=order[(order.indexOf(dataPolicy)+1)%order.length];if(dataPolicy!=='normal'){document.body.classList.add('data-saver');}else{document.body.classList.remove('data-saver');}savePreferences();updatePolicyUI();showToast(interfaceLocale==='en'?'Data policy: '+policyLabels[dataPolicy].en:'Sera ya data: '+policyLabels[dataPolicy].sw);}
+function adjustTextSize(delta){preferences.textScale=Math.min(1.25,Math.max(0.9,Number((preferences.textScale+delta).toFixed(2))));savePreferences();applyPreferences();showToast(interfaceLocale==='en'?'Text size updated.':'Ukubwa wa maandishi umebadilishwa.');}
+function toggleQuickPreference(key){preferences[key]=!preferences[key];savePreferences();applyPreferences();showToast(preferences[key]?(interfaceLocale==='en'?'Setting enabled.':'Mpangilio umewashwa.'):(interfaceLocale==='en'?'Setting disabled.':'Mpangilio umezimwa.'));}
+function updateQuickUI(){[['contrast','quick-contrast','profile-contrast'],['motion','quick-motion','profile-motion']].forEach(([key,quick,profile])=>{document.getElementById(quick)?.classList.toggle('active',!!preferences[key]);const btn=document.getElementById(profile);if(btn){btn.classList.toggle('active',!!preferences[key]);btn.textContent=preferences[key]?(interfaceLocale==='en'?'On':'On'):'Off';}});document.getElementById('quick-data')?.classList.toggle('active',dataPolicy!=='normal');}
+function applyPreferences(){document.body.classList.toggle('high-contrast',!!preferences.contrast);document.body.classList.toggle('reduced-motion',!!preferences.motion);document.body.style.setProperty('--text-scale',String(preferences.textScale||1));updateQuickUI();updatePolicyUI();}
+function loadPreferences(){try{const saved=JSON.parse(localStorage.getItem(PREFS_KEY)||localStorage.getItem(OLD_PREFS_KEY)||'{}');interfaceLocale=saved.language==='en'?'en':'sw';preferences={...preferences,...saved};dataPolicy=saved.dataPolicy||'textFirst';}catch(e){}applyPreferences();applyLocale();}
+function savePreferences(){localStorage.setItem(PREFS_KEY,JSON.stringify({...preferences,language:interfaceLocale,dataPolicy}));}
+function dataCopy(){return dataPolicy==='offlineOnly'?(interfaceLocale==='en'?'Offline copy: no new media requested.':'Offline copy: hakuna media mpya itaombwa.'):(dataPolicy==='normal'?(interfaceLocale==='en'?'Normal data mode.':'Hali ya kawaida ya data.'):(interfaceLocale==='en'?'Text-first: media remains optional.':'Text-first: media bado ni chaguo.'));}
+
+const steps=[{l:'Inasoma chanzo...',p:15},{l:'Inatafsiri maana...',p:35},{l:'Inaandaa text variant...',p:60},{l:'Inakamilisha...',p:90},{l:'Imekamilika — demo ✅',p:100}];
+function runTranslation(){const url=document.getElementById('yt-url').value.trim();if(!url){showToast(interfaceLocale==='en'?'Add a source link first.':'Weka kiungo cha chanzo kwanza.');return;}const prog=document.getElementById('tr-progress'),res=document.getElementById('tr-result');prog.style.display='block';res.style.display='none';let i=0;function tick(){if(i>=steps.length){setTimeout(()=>{prog.style.display='none';res.style.display='block';const text=translateLanguage==='en'?'This demo transcript shows how Elimu AI can read a source, create a text-first result, and keep the original media shared.':'Transcript hii ya mfano inaonyesha jinsi Elimu AI inaweza kusoma chanzo, kuanza na text, na kuacha media ya chanzo ikiwa ileile.';document.getElementById('tr-text').textContent=text;showToast(interfaceLocale==='en'?'Text-first source result ready.':'Matokeo ya text-first yako tayari.');res.scrollIntoView({behavior:preferences.motion?'auto':'smooth'});},350);return;}document.getElementById('tr-bar').style.width=steps[i].p+'%';document.getElementById('tr-label').textContent=interfaceLocale==='en'?['Reading source...','Interpreting meaning...','Preparing text variant...','Finishing...','Ready — demo ✅'][i]:steps[i].l;document.getElementById('tr-pct').textContent=steps[i].p+'%';i++;setTimeout(tick,420);}tick();}
+function runAudiobook(){const text=document.getElementById('ab-input').value.trim();if(!text){showToast(interfaceLocale==='en'?'Add text first.':'Weka maandishi kwanza.');return;}document.getElementById('ab-result').style.display='block';showToast(interfaceLocale==='en'?'Demo audio is ready; the text source remains shared.':'Sauti ya mfano iko tayari; text source bado ni ileile.');document.getElementById('ab-result').scrollIntoView({behavior:preferences.motion?'auto':'smooth'});}
+function buildTerms(){return termVariants.map(term=>'<span class="term-chip">'+term.sw+' / '+term.en+'</span>').join('');}
+function renderResultLanguage(){if(!currentSession)return;const mode=currentSession.languageMode||sessionLanguage;const sw=document.getElementById('tg-variant-sw'),en=document.getElementById('tg-variant-en'),both=document.getElementById('tg-variant-both'),reveal=document.getElementById('tg-reveal-button');if(!sw||!en||!both)return;const variants=currentSession.variants||contentVariants.summary;sw.textContent=variants.sw;en.textContent=variants.en;document.getElementById('tg-both-sw').textContent=variants.sw;document.getElementById('tg-both-en').textContent=variants.en;sw.hidden=true;en.hidden=true;both.hidden=true;reveal.hidden=true;if(mode==='both'||displayMode==='parallel'){both.hidden=false;}else if(mode==='en'){en.hidden=false;if(displayMode==='reveal')reveal.hidden=false;}else{sw.hidden=false;if(displayMode==='reveal')reveal.hidden=false;}const status=document.getElementById('tg-variant-status');if(status)status.textContent=interfaceLocale==='en'?'Text only • shared media':'Text only • media shared';}
+function renderSessionSupportingText(){if(!currentSession)return;const check=document.getElementById('tg-check');const source=document.getElementById('tg-source');const label=document.getElementById('tg-result-label');if(check)check.textContent=currentSession.type==='quiz'?(interfaceLocale==='en'?'Answer one question, then check your answer.':'Jibu swali moja, kisha kagua jibu lako.'):(interfaceLocale==='en'?'Explain in your own words: why can an object keep moving?':'Eleza kwa maneno yako: kwa nini kitu kinaweza kuendelea kusogea?');if(source)source.innerHTML=interfaceLocale==='en'?'Prototype example. Production will show the source, publication date, and verification link. <a href="https://www.unesco.org/en/articles/new-unesco-report-calls-multilingual-education-unlock-learning-and-inclusion" target="_blank" rel="noopener">Read about multilingual education</a>.':'Mfano wa prototype. Production itaonyesha chanzo, tarehe, na kiungo cha uthibitisho. <a href="https://www.unesco.org/en/articles/new-unesco-report-calls-multilingual-education-unlock-learning-and-inclusion" target="_blank" rel="noopener">Soma kuhusu multilingual education</a>.';if(label)label.textContent=interfaceLocale==='en'?'● Learning session':'● Kipindi cha kujifunza';}
+function runTextGen(){const input=document.getElementById('tg-input').value.trim();if(!input){showToast(interfaceLocale==='en'?'Add a topic or question first.':'Andika mada au swali kwanza.');return;}const variants=contentVariants[currentType]||contentVariants.summary;currentSession={id:Date.now(),topic:input,type:currentType,level:document.getElementById('tg-level')?.value||'secondary',languageMode:sessionLanguage,displayMode,variants,createdAt:new Date().toISOString(),completed:false};showToast(interfaceLocale==='en'?'Preparing a text-first learning session...':'Inaandaa kipindi cha kujifunza cha text-first...');setTimeout(()=>{document.getElementById('tg-result').style.display='block';document.getElementById('tg-terms').innerHTML=buildTerms();document.getElementById('tg-check').textContent=currentType==='quiz'?(interfaceLocale==='en'?'Answer one question, then check your answer.':'Jibu swali moja, kisha kagua jibu lako.'): (interfaceLocale==='en'?'Explain in your own words: why can an object keep moving?':'Eleza kwa maneno yako: kwa nini kitu kinaweza kuendelea kusogea?');document.getElementById('tg-source').innerHTML=interfaceLocale==='en'?'Prototype example. Production will show the source, publication date, and verification link. <a href="https://www.unesco.org/en/articles/new-unesco-report-calls-multilingual-education-unlock-learning-and-inclusion" target="_blank" rel="noopener">Read about multilingual education</a>.':'Mfano wa prototype. Production itaonyesha chanzo, tarehe, na kiungo cha uthibitisho. <a href="https://www.unesco.org/en/articles/new-unesco-report-calls-multilingual-education-unlock-learning-and-inclusion" target="_blank" rel="noopener">Soma kuhusu multilingual education</a>.';document.getElementById('tg-feedback').textContent='';document.getElementById('tg-answer').value='';renderResultLanguage();renderSessionSupportingText();saveSession(false);showToast(interfaceLocale==='en'?'Learning session ready — demo.':'Kipindi cha kujifunza kiko tayari — demo.');document.getElementById('tg-result').scrollIntoView({behavior:preferences.motion?'auto':'smooth'});},700);}
+function checkAnswer(){const answer=document.getElementById('tg-answer').value.trim();const feedback=document.getElementById('tg-feedback');if(answer.length<8){feedback.textContent=interfaceLocale==='en'?'Add a little more detail to receive useful feedback.':'Ongeza maelezo kidogo ili upate feedback yenye msaada.';feedback.style.color='var(--gold)';return;}feedback.textContent=interfaceLocale==='en'?'Good start. You named the main idea; add an everyday example to make the answer stronger.':'Umeanza vizuri. Umetaja wazo kuu; ongeza mfano wa maisha ya kila siku ili jibu liwe imara zaidi.';feedback.style.color='var(--green)';if(currentSession){currentSession.completed=true;saveSession(false);}}
+function copyResult(){const text=currentSession?.variants?.[currentSession.languageMode==='en'?'en':'sw']||'';if(navigator.clipboard){navigator.clipboard.writeText(text).then(()=>showToast(interfaceLocale==='en'?'Text copied.':'Maandishi yamenakiliwa.')).catch(()=>showToast(interfaceLocale==='en'?'Select and copy the text.':'Chagua na unakili maandishi.'));}else{showToast(interfaceLocale==='en'?'Select and copy the text.':'Chagua na unakili maandishi.');}}
+function toAudio(){showPage('audiobook');document.getElementById('ab-input').value=currentSession?.variants?.sw||'';showToast(interfaceLocale==='en'?'Text moved to the optional audio step.':'Maandishi yamehamishiwa kwenye hatua ya sauti.');}
+function getSessions(){try{return JSON.parse(localStorage.getItem(SESSIONS_KEY)||localStorage.getItem(OLD_SESSIONS_KEY)||'[]');}catch(e){return [];}}
+function saveSession(showMessage=true){if(!currentSession)return;const sessions=getSessions().filter(item=>item.id!==currentSession.id);sessions.unshift(currentSession);localStorage.setItem(SESSIONS_KEY,JSON.stringify(sessions.slice(0,20)));renderLibrary();updateResume();if(showMessage)showToast(interfaceLocale==='en'?'Session saved on this device.':'Kipindi kimehifadhiwa kwenye kifaa hiki.');}
+function updateResume(){const latest=getSessions()[0];const strip=document.getElementById('resume-strip');if(!latest||!strip)return;strip.classList.add('show');document.getElementById('resume-title').textContent=latest.topic;document.getElementById('resume-meta').textContent=(latest.languageMode==='en'?'English':latest.languageMode==='both'?'Kiswahili + English':'Kiswahili')+' • '+(latest.completed?(interfaceLocale==='en'?'Completed':'Kimekamilika'):(interfaceLocale==='en'?'Continue learning':'Endelea kujifunza'));}
+function resumeLatest(){const latest=getSessions()[0];if(latest)resumeSession(latest.id);}
+function resumeSession(id){const session=getSessions().find(item=>item.id===id);if(!session)return;currentSession=session;sessionLanguage=session.languageMode||'sw';displayMode=session.displayMode||'reveal';document.getElementById('tg-input').value=session.topic;document.getElementById('tg-result').style.display='block';document.querySelectorAll('.type-btn').forEach(btn=>btn.classList.toggle('active',btn.getAttribute('onclick')?.includes("'"+session.type+"'")));renderResultLanguage();renderSessionSupportingText();document.getElementById('tg-terms').innerHTML=buildTerms();showPage('textgen');}
+function renderLibrary(){const list=document.getElementById('library-list');if(!list)return;const sessions=getSessions();if(!sessions.length){list.innerHTML='<div class="empty-state">'+(interfaceLocale==='en'?'No saved learning sessions yet. Start a topic and save it here.':'Hakuna vipindi vilivyohifadhiwa bado. Anza mada na ihifadhi hapa.')+'</div>';return;}list.innerHTML=sessions.map(session=>{const date=new Date(session.createdAt||Date.now()).toLocaleDateString(interfaceLocale==='en'?'en-GB':'sw-TZ',{day:'numeric',month:'short',year:'numeric'});return '<button class="history-item" type="button" onclick="resumeSession('+Number(session.id)+')"><div class="hi-icon green">✦</div><div class="hi-info"><div class="hi-title">'+escapeHTML(session.topic.slice(0,70))+'</div><div class="hi-meta">'+(session.languageMode==='en'?'English':session.languageMode==='both'?'Kiswahili + English':'Kiswahili')+' • '+date+'</div></div><span class="hi-badge '+(session.completed?'done':'proc')+'">'+(session.completed?'✓':'↗')+'</span></button>';}).join('');}
+function escapeHTML(value){return String(value).replace(/[&<>'"]/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));}
+function saveTerms(){const vocab=JSON.parse(localStorage.getItem(VOCAB_KEY)||'[]');termVariants.forEach(term=>{if(!vocab.some(item=>item.en===term.en))vocab.push(term);});localStorage.setItem(VOCAB_KEY,JSON.stringify(vocab));renderVocabulary();showToast(interfaceLocale==='en'?'Terms saved.':'Terms zimehifadhiwa.');}
+function renderVocabulary(){const list=document.getElementById('vocab-list');const count=document.getElementById('vocab-count');if(!list)return;const vocab=JSON.parse(localStorage.getItem(VOCAB_KEY)||'[]');if(count)count.textContent=vocab.length+' '+(interfaceLocale==='en'?'terms':'terms');if(!vocab.length){list.innerHTML='<div class="empty-state">'+(interfaceLocale==='en'?'Save terms from a learning session to build your vocabulary.':'Hifadhi terms kutoka kwenye kipindi cha kujifunza ili kujenga msamiati wako.')+'</div>';return;}list.innerHTML=vocab.map(term=>'<div class="vocab-card"><div><strong>'+escapeHTML(term.sw)+' / '+escapeHTML(term.en)+'</strong><span>'+escapeHTML(interfaceLocale==='en'?term.exampleEn:term.exampleSw)+'</span></div><button class="vocab-save" type="button">✓</button></div>').join('');list.querySelectorAll('.vocab-save').forEach(btn=>btn.addEventListener('click',()=>showToast(interfaceLocale==='en'?'Term ready for review.':'Term iko tayari kwa review.')));}
+function selectVoice(v){showToast(interfaceLocale==='en'?'Voice selected: '+v+'.':'Sauti imechaguliwa: '+v+'.');}
+function doPay(){showToast(interfaceLocale==='en'?'Payments are not connected in this prototype. No money was charged.':'Malipo hayajaunganishwa kwenye prototype. Hakuna fedha iliyokatwa.');}
+document.addEventListener('keydown',event=>{if(event.key==='Escape')document.activeElement?.blur();});
+document.addEventListener('DOMContentLoaded',()=>{loadPreferences();renderLibrary();renderVocabulary();updateResume();});
 </script>
-</body>
+
 </html>

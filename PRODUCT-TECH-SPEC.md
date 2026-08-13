@@ -1,167 +1,431 @@
-# Elimu AI: Learner-First Product and Technical Specification
+# Elimu AI — Complete Product and Technical Specification
 
-**Version:** 1.0  
+**Version:** 2.0
 **Prepared by:** Manus AI  
-**Audience:** Learners in Tanzania and other African contexts who need clearer, more accessible ways to understand English and other languages while studying and researching.
+**Product direction:** Learner-first, Kiswahili-first, fully bilingual, low-data, accessible, and research-aware
+**Primary market:** Tanzania, with a design that can expand across Africa
 
-## 1. Product vision
+## 1. Executive summary
 
-Elimu AI is a Kiswahili-first learning companion that helps learners understand, practise, listen to, and research educational content in the language and format that works best for them. It should not merely translate words. It should explain ideas in clear language, preserve important English terminology, connect claims to sources, generate practice questions, provide feedback, and allow learners to continue when connectivity is limited.
+Elimu AI is a learning and research companion for people who want to understand educational material without being blocked by English proficiency, expensive data, limited device storage, or inaccessible interfaces. It combines **Kiswahili explanation**, **full English access**, optional side-by-side terminology, audio and transcript support, source-aware research assistance, practice questions, feedback, and saved progress.
 
-> **Product promise:** “Elewa. Jifunze. Endelea.” — Understand the idea, practise it, and continue learning wherever you are.
+The product must be different from a basic translation app. A translation app changes words from one language to another. Elimu AI should help a learner **understand an idea, practise it, verify it, remember it, and continue later**. The main unit of the product is therefore a **learning session**, not a translated file.
 
-The prototype and future product should treat language choice as part of the learning experience. UNESCO guidance recommends developing learning materials in learners’ languages, aligning assessment with multilingual education, preparing bilingual educators, and involving communities in programme design [1]. Tanzania-focused research similarly identifies English-heavy ICT materials, unexplained technical language, device and connectivity limitations, and accessibility needs as barriers to digital inclusion [2].
+> **Product promise:** *Elewa. Jifunze. Endelea.* — Understand the idea, practise it, and keep learning.
 
-## 2. Target learners and initial assumptions
+The revised product uses three independent language choices:
 
-The first release is for **learners**, with a broad Tanzania-first scope rather than a school-administration product. It should serve secondary students, university learners, vocational learners, independent adult learners, and anyone researching a topic in English who prefers to understand it in Kiswahili. The interface should avoid assuming a particular age, school, device, network quality, or English proficiency.
-
-| Learner need | Product response | Initial success signal |
+| Language choice | Meaning | Example |
 |---|---|---|
-| Understand English learning content | Side-by-side Kiswahili explanation, English term, pronunciation, and example | Learner completes an explanation and marks it understood |
-| Study a topic independently | Explain, summarize, notes, quiz, and answer feedback flow | Learner completes a learning session rather than only generating text |
-| Learn through listening | Audio playback, captions, speed control, and downloadable output | Learner resumes or completes an audio session |
-| Use a low-cost mobile connection | Lightweight UI, staged processing, text-first fallback, and save-for-later | Learner can open and save content under constrained connectivity |
-| Trust research results | Source links, date, source type, and limitations shown near outputs | Learner opens or saves at least one source |
-| Use the platform with different abilities | Semantic controls, focus states, adjustable text, contrast mode, captions, reduced motion | Core flows are usable with keyboard, screen reader, and enlarged text |
+| Interface language | The language used for buttons, navigation, instructions, and system messages | Kiswahili or English |
+| Learning explanation language | The language used to explain the topic | Kiswahili, English, or bilingual |
+| Source language | The language of the learner’s input or source material | English, Kiswahili, Arabic, French, or detected language |
 
-## 3. Core learner journeys
+This separation is essential. A learner may want English navigation, a Kiswahili explanation, and an English source. The product should never force one language decision to control the entire experience.
 
-### 3.1 First visit and language setup
+## 2. Why Elimu AI is needed
 
-The first visit presents Kiswahili as the default and explains that the learner can switch between Kiswahili and English at any time. The learner chooses an optional learning level, preferred formats, and whether they want more Kiswahili explanation or more English terminology. These choices must be skippable and editable later.
+UNESCO recommends multilingual education that develops learning materials in learners’ languages, aligns assessment with multilingual principles, supports bilingual educators, and involves local communities [1]. Tanzania-focused research reports that many ICT materials and digital tools remain English-heavy even though Kiswahili is the primary language of instruction in public primary education. It also identifies mixed-language terminology, device limitations, connectivity barriers, and accessibility needs as obstacles to digital inclusion [2]. UNICEF reports that home internet access remains sharply unequal across regions and income groups, reinforcing the need for learning experiences that do not assume stable broadband [3].
 
-The product should use a persistent language preference rather than placing language controls only inside a profile screen. Future releases can add other African languages when quality, terminology, and community review are available.
+These conditions imply five non-negotiable product principles:
 
-### 3.2 Learn from a topic or pasted material
+1. **Language must be visible and reversible.** A learner should change languages without losing their place.
+2. **English access must be complete.** English should not be an afterthought or a placeholder option.
+3. **Bilingual content must not mean duplicate downloads.** The same source, media, and session should support multiple text variants.
+4. **Text must come before heavy media.** Audio, video, and images should be optional enhancements rather than the only path to learning.
+5. **The product must teach, not only translate.** Outputs need examples, practice, feedback, and source context.
 
-The learner enters a question, topic, paragraph, URL, or uploaded file. They choose an output such as **Eleza kwa urahisi**, **Fupisha**, **Tengeneza madokezo**, **Nipe maswali**, or **Tafsiri kwa kujifunza**. The system shows the selected language, level, and output format before processing.
+## 3. Vision, mission, and positioning
 
-The result is a learning card with a short explanation, key terms, an example, a “jaribu mwenyewe” prompt, and optional audio. If the content is research-oriented, the result includes sources, publication dates when available, and a notice that AI output may require verification.
+### Vision
 
-### 3.3 Practice and feedback
+A learner in Tanzania or anywhere in Africa can understand useful knowledge, regardless of whether the original material is written or spoken in English or another language, and can continue learning on an affordable mobile connection.
 
-When the learner requests a quiz, the system generates a small set of questions with one question per screen on mobile. After each answer, it explains why the answer is correct or incorrect in clear Kiswahili and optionally shows the English term. Progress is saved locally in the prototype and should be stored per learner account in the production service.
+### Mission
 
-### 3.4 Learn from audio or video
+To make high-quality learning and research assistance understandable, affordable, accessible, and culturally relevant through Kiswahili, English, audio, text, and learner-controlled study tools.
 
-The learner supplies a YouTube URL, file, or supported URL. The product first offers a text transcript and summary before optional dubbing. This text-first fallback is important for speed, bandwidth, and accessibility. Captions should be time-aligned where the source allows it. The learner can save the transcript, audio, or a study note.
+### Positioning
 
-### 3.5 Resume and library
+Elimu AI is a **bilingual learning companion**, not a generic chatbot, a video dubbing service, or a school administration system. Its differentiators are:
 
-The library is organized around learning sessions rather than only generated files. Each saved item has a title, topic, source, language pair, format, date, progress, and available actions. The learner can resume a quiz, replay audio, view the explanation, or delete the item.
+| Differentiator | Product expression |
+|---|---|
+| Concept-first learning | Every important output includes explanation, key terms, an example, and a self-check activity |
+| Full bilingual access | Kiswahili and English are complete product languages, with a quick switch that preserves context |
+| One-source, many-language delivery | One learning session and one media source can expose multiple text variants without duplicating downloads |
+| Low-data by design | Text-first processing, optional media, compressed responses, local caching, and explicit data estimates |
+| Local relevance | Kiswahili terminology, Tanzanian examples, regional research sources, and a future community review process |
+| Trustworthy research | Sources, dates, source type, limitations, and report controls appear next to research-oriented outputs |
+| Inclusive learning | Adjustable text, contrast, reduced motion, captions, audio alternatives, plain-language explanations, and keyboard support |
 
-## 4. Product information architecture
+## 4. Target learners
 
-| Area | Purpose | Prototype state | Production direction |
+The primary audience is **learners**, not institutions. The first release should be useful to secondary students, university and vocational learners, adult learners, self-taught professionals, and independent researchers. The experience should work for a first-time smartphone user as well as a confident internet user.
+
+| Learner group | Typical need | Priority experience |
+|---|---|---|
+| Secondary learner | Understand a difficult English topic and practise for an exam | Explain, key terms, example, quiz, feedback, save progress |
+| University learner | Read research or lecture material across languages | Source-aware summary, bilingual terminology, notes, citation links |
+| Vocational learner | Learn practical concepts with limited data | Short lessons, audio option, downloadable text, local examples |
+| Adult learner | Build confidence in English and digital learning | Simple language, pronunciation, side-by-side mode, guided steps |
+| Independent researcher | Compare sources and understand unfamiliar terms | Search, source panel, evidence notes, limitations, report incorrect output |
+
+## 5. Product principles
+
+### 5.1 Learner control
+
+The learner controls language, level, output type, media, text size, contrast, and data usage. Defaults should be helpful, but no language or media decision should be irreversible.
+
+### 5.2 One concept, multiple representations
+
+The product stores a learning concept once and supplies language variants, audio, captions, notes, and quiz feedback as representations of that concept. This reduces duplicate storage and makes it possible to switch language without starting again.
+
+### 5.3 Explain before embellish
+
+The first response should be readable and useful even when images, audio, or video cannot load. Decorative visuals, waveform animations, background music, and autoplay must never be prerequisites for understanding.
+
+### 5.4 Honest capability states
+
+The interface must distinguish **ready**, **processing**, **partial**, **needs review**, **offline copy**, and **not connected**. Prototype functions must never appear to be live payments, real authentication, or real AI processing when they are not.
+
+### 5.5 Local language quality
+
+Kiswahili should be clear and natural, not a word-for-word machine translation. English technical terms should remain available where they help exams, research, and future study. New African-language support should be added only after terminology, pronunciation, and community review.
+
+## 6. Bilingual experience design
+
+### 6.1 Replace the settings modal with a language rail
+
+Language should no longer be hidden inside a settings modal. The main interface should contain a visible **Language Rail** in the top header:
+
+```text
+[ ElimuAI ]       [ SW Kiswahili | EN English ]       [ Data: Text-first ]
+```
+
+On small screens, this becomes a compact segmented control directly below the header:
+
+```text
+Lugha ya interface:  [ SW ] [ EN ]
+Maelezo ya kipindi:  [ Kiswahili ] [ English ] [ Pande zote ]
+```
+
+The language rail is not a destructive action. Switching language changes labels and the chosen explanation view while preserving the current route, topic, result, quiz position, and saved progress.
+
+The existing accessibility modal may remain as a secondary settings surface, but it must no longer be the primary way to discover or change language.
+
+### 6.2 Home language dock
+
+The home page should include a prominent **Chagua namna ya kujifunza / Choose how to learn** dock with three options:
+
+| Option | Kiswahili label | English label | Result |
 |---|---|---|---|
-| Nyumbani | Start a learning session and discover supported workflows | Existing home page | Add “endelea kujifunza,” recent topics, and explicit low-data mode |
-| Jifunze | Topic, text, URL, and file input | Existing text generation and translation pages | Consolidate into a guided learning workspace |
-| Sauti | Read text or translated content aloud | Existing audiobook page | Add real TTS, captions, download, resume position, and speed control |
-| Mazoezi | Quiz, answer, feedback, and progress | Not yet present | Add a dedicated learning session flow |
-| Maktaba | Saved learning sessions and downloads | Existing history page | Persist metadata, progress, source, and offline cache status |
-| Wasifu na mipangilio | Language, accessibility, privacy, and account preferences | Existing profile page | Add display, language, reduced motion, data usage, and consent settings |
-| Kuhusu / Msaada | Explain limitations, safety, support, and reporting | Not yet present | Add visible trust and help content |
+| Kiswahili | Jifunze kwa Kiswahili | Learn in Kiswahili | Kiswahili interface and explanation |
+| English | Learn in English | Learn in English | English interface and explanation |
+| Pande zote | Kiswahili + English | Kiswahili + English | Bilingual explanation with labelled terms |
 
-## 5. Language and content rules
+The learner can select one option for the current session without changing the global interface preference.
 
-Kiswahili is the default interface language. Educational outputs should use clear, ordinary Kiswahili before introducing technical vocabulary. Where an English term is important for exams, research, or future study, show it as a labelled term, for example: **msuguano (friction)**, with pronunciation and a short example. The system should not silently replace technical terminology with a potentially confusing direct translation.
+### 6.3 Bilingual result view
 
-Every generated learning output should expose the language pair, learner level, and output type. Translation and explanation must be distinct modes. Explanation may restructure and simplify an idea, while translation should preserve meaning and signal uncertainty where the source is ambiguous.
+A learning result should not download two independent copies. The client receives one structured learning object containing a concept identifier and the requested text variants. The interface renders one of three views:
 
-Community and educator review should be supported in a later phase for terminology, pronunciation, and culturally relevant examples. African-language expansion should follow a quality gate requiring reviewed vocabulary, representative voice samples, and clear disclosure of supported domains.
+- **Single language:** only the selected language is visible.
+- **Parallel:** Kiswahili and English paragraphs appear together, using the same section structure.
+- **Focus and reveal:** one language is shown first; the learner taps a sentence or term to reveal the other language on demand.
 
-## 6. Accessibility and inclusive design requirements
+The recommended default for mobile and low-data use is **Focus and reveal**. It gives the learner bilingual access without placing two full blocks of text on screen or requesting both variants at the start.
 
-The interface must use semantic HTML, labelled controls, keyboard navigation, visible focus states, sufficient contrast, and status announcements for progress and errors. Interactive cards should be real buttons or links rather than clickable generic `div` elements. Emoji may support recognition but must never be the only label or meaning.
+### 6.4 Term bridge
+
+Technical terms appear as a compact bridge rather than repeated translations:
+
+```text
+msuguano  →  friction
+Pronunciation: /frik-shən/
+Mfano / Example: The friction between the tyre and road helps the vehicle stop.
+```
+
+Term cards are stored and cached independently from long media. A learner can save a term to a personal vocabulary list.
+
+### 6.5 English completeness requirement
+
+The English mode must translate all learner-facing product strings, including navigation, empty states, errors, progress states, source notices, accessibility controls, library metadata, quiz feedback, and prototype disclosures. English must not be implemented as a dropdown that only changes the document language attribute.
+
+Every user-facing string belongs in a translation catalog with a stable key. Missing translations fall back to Kiswahili only in development; production must show a monitored missing-translation error rather than silently mixing languages.
+
+## 7. Core learner journeys
+
+### 7.1 Start a session
+
+The learner taps **Jifunze / Learn** from the home page. A single guided workspace asks for a topic, question, pasted text, URL, or file. The learner chooses level, explanation language, output type, and data mode. The product displays a small data estimate such as **Text result: low data** or **Audio: larger download** before processing.
+
+### 7.2 Understand a concept
+
+The result begins with a one-paragraph explanation, then shows key terms, a local or practical example, a short self-check question, and source information where relevant. A language rail lets the learner change from Kiswahili to English or bilingual view without creating a second session.
+
+### 7.3 Practise
+
+Quiz mode shows one question at a time on mobile, supports both language views, and returns feedback after each answer. The learner can choose **Nionyeshe kwa Kiswahili / Explain in Kiswahili** or **Explain in English** for feedback without resetting the quiz.
+
+### 7.4 Learn from a URL, video, or file
+
+The product first creates a compact transcript, summary, and key terms. Dubbing, full audio, and visual previews are optional. If processing is incomplete, the learner can use the available text and return later for media.
+
+### 7.5 Save and resume
+
+A saved session contains the topic, source, selected language mode, current section, quiz progress, vocabulary terms, and cache status. Resuming the session does not require downloading content that is already stored locally.
+
+## 8. Product information architecture
+
+| Surface | Purpose | Major change from current prototype |
+|---|---|---|
+| Home | Start learning and resume recent sessions | Add language dock, learner path cards, data estimate, and resume strip |
+| Learn workspace | One place for topic, text, URL, and file input | Replace fragmented generation controls with a guided session builder |
+| Result view | Understand and switch language without losing context | Add single/parallel/focus-and-reveal views, term bridge, examples, sources |
+| Practice | Quiz and formative feedback | Add dedicated practice state and bilingual feedback toggle |
+| Listen | Audio and transcript | Text-first by default, optional TTS, captions, download estimate |
+| Vocabulary | Saved technical terms | New lightweight learning surface for English-Kiswahili term pairs |
+| Library | Resume learning sessions | Show progress, language mode, cache status, and storage size |
+| Header language rail | Change interface and session language | New persistent visible control; not modal-dependent |
+| Accessibility dock | Quick text and contrast controls | Add inline quick actions; keep deeper settings secondary |
+| Profile | Account and privacy settings | Remove misleading live-service claims and add privacy/retention copy |
+| Help and trust | Explain limitations and report issues | New surface for source quality, AI limitations, and feedback |
+
+## 9. Low-data and no-duplicate-download strategy
+
+### 9.1 Core rule
+
+Switching from Kiswahili to English must not automatically download a second audio file, video file, image set, or complete duplicate document. The client should reuse the canonical source and request only the missing text variant or term translation.
+
+### 9.2 Request strategy
+
+The client sends a learning-session request with language and representation preferences. The server returns a structured response with the smallest useful payload:
+
+```json
+{
+  "sessionId": "ls_123",
+  "conceptId": "concept_newton_1",
+  "source": {"kind": "text", "language": "en", "hash": "sha256:..."},
+  "availableVariants": ["sw", "en"],
+  "selectedVariant": "sw",
+  "sections": [
+    {"id": "explanation", "sw": "...", "en": "..."},
+    {"id": "example", "sw": "...", "en": "..."}
+  ],
+  "terms": [
+    {"id": "term_friction", "sw": "msuguano", "en": "friction"}
+  ],
+  "media": {
+    "canonicalSourceUri": "...",
+    "audio": {"sw": null, "en": null},
+    "captions": {"sw": "...", "en": "..."}
+  },
+  "dataEstimate": {"textBytes": 18000, "audioBytes": null}
+}
+```
+
+The server may return both short text variants if they fit the response budget, but audio and video are generated or fetched only when the learner requests them.
+
+### 9.3 Cache layers
+
+| Cache | Stored item | Policy |
+|---|---|---|
+| Memory cache | Current session and current language view | Cleared when the page closes |
+| IndexedDB | Saved text sessions, quiz progress, term list | User-controlled retention and size budget |
+| Service worker cache | App shell and critical translation catalog | Versioned, small, refreshed in the background |
+| Object storage | Source files and generated media | Server retention rules, signed URLs, lifecycle cleanup |
+| HTTP cache | Versioned translation catalogs and public assets | ETags, immutable hashes, compressed responses |
+
+### 9.4 Data saver behavior
+
+When data saver is active, the product should:
+
+- Request text before audio or video.
+- Avoid autoplay and decorative remote images.
+- Use compact JSON and compressed responses.
+- Delay the second language variant until the learner requests it, unless the content is a short term card.
+- Show a data estimate before an audio or video action.
+- Store completed text locally for offline reopening.
+- Offer a **Download text only** action.
+- Allow the learner to clear cached media separately from cached text.
+
+### 9.5 Data budget targets
+
+These are design targets for the MVP, not promises until measured on real devices.
+
+| Action | Target |
+|---|---:|
+| App shell after first load | Under 250 KB compressed excluding fonts |
+| Text learning response | Under 50 KB compressed for a standard lesson |
+| Language switch for existing session | Under 20 KB when the second text variant is not already cached |
+| Term card | Under 5 KB |
+| Text-only saved session | Under 100 KB each |
+| Audio preview | Explicit estimate shown before request |
+| Video or dubbing | Never requested automatically in data saver mode |
+
+## 10. Accessibility and inclusive design
+
+The product must use semantic HTML, labelled controls, visible focus states, keyboard operation, live status announcements, readable error messages, and screen-reader-friendly language switching. Language controls must expose the current language through text, not colour alone.
 
 | Requirement | Acceptance criterion |
 |---|---|
-| Text resizing | Content remains usable at 200% browser zoom without horizontal clipping in core flows |
-| Keyboard access | Every primary action and modal can be reached and operated without a pointer |
-| Screen readers | Inputs have associated labels; progress and result updates use an appropriate live region |
-| Contrast | Text and controls meet WCAG AA contrast targets in default and contrast modes |
-| Motion | Reduced-motion preference disables non-essential animations |
-| Captions | Audio/video results provide captions or a transcript when available |
-| Cognitive clarity | Forms use plain-language labels, one primary action, and visible error guidance |
-| Audio alternatives | Important learning content is available as readable text, not audio only |
+| Language switching | User can switch interface and session language from the visible language rail without losing route or progress |
+| English completeness | All navigation, system, error, source, quiz, and accessibility strings exist in English and Kiswahili |
+| Text scaling | Core flows remain usable at 200% zoom and with the in-app text scale at 1.25 |
+| Contrast | Default and high-contrast themes meet WCAG AA targets for normal text and controls |
+| Keyboard | Language rail, learning actions, result tabs, quiz controls, and library items are keyboard operable |
+| Screen reader | Current language, loading status, result changes, and feedback are announced appropriately |
+| Motion | Non-essential animation is disabled when reduced motion is enabled or preferred by the OS |
+| Captions | Audio/video content provides captions or a text transcript when available |
+| Cognitive load | One primary action per step, plain-language labels, clear progress, and reversible choices |
+| Touch | Interactive controls provide a minimum 44 CSS pixel target and adequate spacing |
 
-## 7. Low-bandwidth and offline-friendly requirements
+## 11. Learner safety, trust, and research quality
 
-The prototype should demonstrate a **Data saver** setting that hides decorative elements, prioritizes text, disables autoplay, and makes audio/video optional. Processing states should explain what is happening and offer a text-only fallback. Generated results should be saved in local storage so a learner can revisit a completed session after a refresh or temporary network loss.
+Elimu AI should clearly separate **AI learning assistance** from verified research. Research-oriented outputs must show sources used, publisher or source type when available, retrieval date, and a limitation note. For high-stakes medical, legal, financial, safety, and civic information, the product should encourage verification and should not present generated content as professional advice.
 
-The production architecture should use resumable uploads, background jobs, small JSON responses, compressed audio, signed download URLs, and a service worker or installable web app for cached learning sessions. No feature should imply that offline functionality is complete until it has been tested on an actual low-connectivity device.
+Learners should be able to report an output as incorrect, harmful, culturally inappropriate, poorly translated, or missing a source. A report must record the session and output version without exposing the learner’s private material publicly.
 
-## 8. Prototype implementation scope
+## 12. Technical architecture
 
-The current repository is a single static HTML file. The next prototype increment should remain dependency-free and should implement the following foundations without pretending that external services already work:
+A static HTML prototype is appropriate for validating interaction and content hierarchy. Production must move secrets, private uploads, authentication, AI calls, media processing, and payments to a secure server-side application.
 
-1. Add a persistent language and accessibility settings panel with Kiswahili/English selection, text-size controls, contrast mode, reduced motion, and data-saver mode.
-2. Add a learner-focused “session setup” panel with learning level, explanation style, output type, and source/language metadata.
-3. Add a real learning-session result model in the browser with explanation, key terms, example, self-check question, feedback, source metadata, and saved progress.
-4. Add local-storage persistence for preferences and saved learning sessions.
-5. Add explicit prototype labels and honest status copy for simulated AI, uploads, downloads, authentication, and payments.
-6. Improve semantic markup, focus behavior, keyboard access, live progress announcements, and accessible labels.
-7. Replace inflated or unverifiable usage statistics with product capability statements or clearly labelled demo data.
-8. Add a visible “Jinsi ya kujifunza” section explaining the learner workflow in plain Kiswahili.
-
-## 9. Production technical architecture
-
-The production service should use a mobile-first web application with a secure server-side API. A static prototype is suitable for validating the learner experience, but it must not handle secret API keys, private uploads, authentication tokens, or payment logic in browser JavaScript.
-
-| Layer | Responsibility | Suggested implementation direction |
+| Layer | Responsibility | Implementation direction |
 |---|---|---|
-| Web client | Responsive learner UI, preferences, local cache, accessible interactions | React/TypeScript or equivalent web application after prototype validation |
-| API | Authenticated sessions, learning requests, library, feedback, quotas | Server-side REST or typed RPC endpoints |
-| Job worker | Transcript extraction, translation, summarization, TTS, file conversion | Queue-backed background jobs with idempotent status updates |
-| LLM gateway | Prompt templates, model selection, moderation, structured outputs | Server-side provider abstraction with logging and budget limits |
-| Speech layer | Speech-to-text, translation, Kiswahili TTS, captions | Provider abstraction with language/voice capability checks |
-| Storage | Source files, generated text/audio, metadata, retention policies | Object storage with signed URLs and lifecycle cleanup |
-| Database | Users, preferences, sessions, outputs, sources, progress, feedback | Relational database with migrations and audit fields |
-| Observability | Job status, errors, latency, cost, abuse signals | Structured logs, metrics, tracing, and admin alerts |
+| Web client | Responsive bilingual interface, language rail, local state, accessibility | React/TypeScript or equivalent after prototype validation |
+| Translation catalog | Product strings and language coverage | Versioned JSON catalogs with build-time missing-key checks |
+| Session state | Current topic, language view, result, quiz, cache state | Client state store plus IndexedDB persistence |
+| Service worker | App shell and selected offline text sessions | Cache-first shell, network-first session sync, explicit media policy |
+| API gateway | Auth, rate limits, session requests, library, feedback | Server-side REST or typed RPC |
+| Learning orchestrator | Prompt templates, structured output, language variants, validation | Server-side provider abstraction and schema validation |
+| Job queue | Transcription, translation, TTS, captioning, conversion | Idempotent background jobs with status updates |
+| Media service | Speech-to-text, Kiswahili/English TTS, captions | Provider abstraction with capability checks and fallbacks |
+| Storage | Source files, generated outputs, media, cache metadata | Object storage with signed URLs and lifecycle rules |
+| Database | Learners, preferences, sessions, variants, progress, sources | Relational database with migrations and audit fields |
+| Search and sources | Research retrieval, source metadata, deduplication | Search provider plus source normalization and citation records |
+| Observability | Latency, errors, usage, costs, language quality reports | Structured logs, metrics, traces, privacy-preserving analytics |
 
-## 10. Core production data model
+## 13. Canonical content model
 
-| Entity | Important fields |
+The production content model must avoid duplicating the same lesson for every language. A canonical session contains a stable concept and language-specific representations.
+
+| Entity | Key fields |
 |---|---|
 | User | `id`, `email_or_phone`, `display_name`, `created_at`, `consent_version` |
-| LearnerPreference | `user_id`, `ui_language`, `output_language`, `education_level`, `text_scale`, `contrast_mode`, `reduced_motion`, `data_saver` |
-| LearningSession | `id`, `user_id`, `title`, `input_type`, `source_uri`, `source_language`, `output_language`, `level`, `status`, `created_at` |
-| LearningOutput | `id`, `session_id`, `output_type`, `content_json`, `audio_uri`, `caption_uri`, `model_version`, `confidence_note` |
-| QuizAttempt | `id`, `session_id`, `question_index`, `answer`, `is_correct`, `feedback`, `created_at` |
+| LearnerPreference | `user_id`, `interface_language`, `default_explanation_language`, `display_mode`, `text_scale`, `contrast_mode`, `reduced_motion`, `data_saver`, `cache_budget_bytes` |
+| LearningSession | `id`, `user_id`, `topic`, `input_type`, `source_id`, `level`, `status`, `created_at`, `updated_at` |
+| CanonicalConcept | `id`, `fingerprint`, `source_hash`, `source_language`, `normalized_sections`, `created_at` |
+| ConceptVariant | `id`, `concept_id`, `language`, `sections_json`, `model_version`, `review_status`, `created_at` |
+| TermBridge | `id`, `concept_id`, `source_term`, `sw_term`, `en_term`, `pronunciation`, `example_json`, `review_status` |
+| LearningOutput | `id`, `session_id`, `concept_id`, `output_type`, `selected_language`, `display_mode`, `limitations`, `created_at` |
+| QuizQuestion | `id`, `concept_id`, `language_variants_json`, `answer_key`, `explanation_json` |
+| QuizAttempt | `id`, `session_id`, `question_id`, `answer`, `is_correct`, `feedback_language`, `created_at` |
+| MediaAsset | `id`, `concept_id`, `kind`, `language`, `codec`, `bytes`, `uri`, `retention_until` |
+| SavedProgress | `user_id`, `session_id`, `section_id`, `quiz_position`, `cached_bytes`, `updated_at` |
 | Source | `id`, `session_id`, `url`, `title`, `publisher`, `published_at`, `retrieved_at`, `citation_text` |
-| SavedProgress | `user_id`, `session_id`, `position`, `completed_steps`, `updated_at` |
-| Feedback | `id`, `user_id`, `session_id`, `category`, `comment`, `created_at` |
+| Feedback | `id`, `user_id`, `session_id`, `category`, `language`, `comment`, `created_at` |
 
-## 11. API contract outline
+## 14. API contract
 
-The initial API should expose `POST /v1/learning-sessions` to create a session, `GET /v1/learning-sessions/:id` to retrieve status and outputs, `POST /v1/learning-sessions/:id/quiz-attempts` to record answers, `PATCH /v1/learners/me/preferences` to update language and accessibility preferences, `GET /v1/library` to list saved sessions, and `DELETE /v1/library/:id` to remove saved content.
+| Endpoint | Purpose |
+|---|---|
+| `POST /v1/learning-sessions` | Create a session with topic, source, level, language, display mode, and data policy |
+| `GET /v1/learning-sessions/:id` | Retrieve session status and currently available output variants |
+| `POST /v1/learning-sessions/:id/variants` | Request a missing language variant for an existing concept |
+| `POST /v1/learning-sessions/:id/media` | Request a selected audio, caption, or video representation with estimate |
+| `POST /v1/learning-sessions/:id/quiz-attempts` | Record an answer and return feedback in the chosen language |
+| `PATCH /v1/learners/me/preferences` | Update interface, language, accessibility, and data preferences |
+| `GET /v1/library` | List saved sessions, cache status, and progress |
+| `DELETE /v1/library/:id` | Delete a saved session and associated cached data |
+| `POST /v1/feedback` | Report incorrect, harmful, culturally inappropriate, or untranslated content |
+| `GET /v1/translation-catalog/:locale` | Retrieve a versioned UI translation catalog |
 
-Long-running tasks should return a session identifier and status such as `queued`, `processing`, `ready`, `partial`, `failed`, or `needs_review`. The client should poll or subscribe to status updates. Every generated result should include its model version, source metadata when available, and a clear limitation note.
+Long-running operations return `queued`, `processing`, `ready`, `partial`, `failed`, or `needs_review`. Every output includes a model version, language, source metadata when available, and a limitation note.
 
-## 12. Trust, safety, privacy, and research quality
+## 15. Front-end state model
 
-Elimu AI should distinguish between **learning assistance** and verified research. It should show links to sources used, state when no source was provided, and encourage verification for medical, legal, financial, and safety-critical topics. Learners should be able to report a harmful, incorrect, or culturally inappropriate result.
+The client should maintain separate state for interface language, session language, content availability, cache state, and accessibility preferences.
 
-Uploads and generated files should have a stated retention period. The product should request only necessary personal information, avoid exposing private content through public links by default, and require explicit consent before using learner content for improvement. Payment and account functionality must remain disabled or clearly marked as a demonstration until connected to secure services.
+```text
+app
+├── interfaceLocale: sw | en
+├── sessionLanguage: sw | en | both
+├── displayMode: single | parallel | reveal
+├── accessibility: textScale, contrast, reducedMotion
+├── dataPolicy: normal | textFirst | offlineOnly
+├── session: topic, level, source, status
+├── variants: sw?, en?
+├── currentSection
+├── quiz: questions, position, attempts
+└── cache: textBytes, mediaBytes, budgetBytes
+```
 
-## 13. Metrics for the learner-first release
+A language switch must update only the necessary state. It must not reset `session`, `currentSection`, or `quiz`.
 
-The first release should measure understanding and continued learning, not only generated volume. Useful metrics include first-session completion, percentage of learners who open a source, quiz completion rate, answer improvement after feedback, audio completion or resume rate, saved-session return rate, language preference distribution, low-data mode usage, error rate, and accessibility-setting usage. Metrics must be aggregated and privacy-preserving.
+## 16. Prototype redesign scope
 
-## 14. Delivery roadmap
+The prototype should be changed substantially rather than only adding another modal. The implementation increment should include:
+
+1. A visible bilingual **Language Rail** in the header with `SW` and `EN` controls.
+2. A home-page language dock with **Kiswahili**, **English**, and **Pande zote / Both** session choices.
+3. A visible data policy rail showing **Text-first**, **Normal**, or **Offline copy**.
+4. A new “Choose how to learn” section with text, practice, listen, research, and vocabulary routes.
+5. A bilingual result header with single-language, parallel, and focus-and-reveal display modes.
+6. A complete English translation catalog for prototype-visible navigation, controls, empty states, progress, feedback, and disclosures.
+7. A term bridge and bilingual vocabulary cards.
+8. A clear data estimate on audio, video, and language-variant actions.
+9. A text-first fallback for translation and audiobook flows.
+10. An inline accessibility quick dock on the home and learner pages, while preserving the deeper settings surface for detailed preferences.
+11. A “resume learning” strip and a lightweight vocabulary view.
+12. Honest product labels that remove misleading claims about real payments, app-store availability, live user counts, and connected AI services.
+
+## 17. Metrics and quality gates
+
+Success should be measured by learning continuity and understanding rather than only generation volume.
+
+| Metric | Why it matters |
+|---|---|
+| First-session completion | Indicates whether the learner can understand the workflow |
+| Language switch completion | Shows whether bilingual access works without losing context |
+| Second-variant request size | Measures the cost of switching language |
+| Text-only completion rate | Measures low-data viability |
+| Quiz completion and improvement | Measures learning rather than passive reading |
+| Source-open rate | Measures research trust and verification behaviour |
+| Saved-session return rate | Measures continuity across connectivity gaps |
+| Cache size per learner | Helps prevent storage and data surprises |
+| English string coverage | Prevents incomplete bilingual delivery |
+| Kiswahili quality reports | Supports terminology and cultural review |
+| Accessibility setting usage | Identifies which inclusive controls provide value |
+
+## 18. Delivery roadmap
 
 | Phase | Deliverable | Exit criteria |
 |---|---|---|
-| Prototype foundation | Language, accessibility, session setup, demo learning result, local persistence, honest status labels | Core flows work without external services and pass manual keyboard/mobile checks |
-| Learner MVP | Real auth, saved library, AI text workflow, structured quiz feedback, source capture | Learner can complete and resume a real session end to end |
-| Media learning | Transcription, captions, TTS, audio downloads, resumable jobs | Text-first fallback works when media processing fails |
-| Trust and scale | Source provenance, moderation, feedback, observability, quotas, privacy controls | Operations can detect failures and learners can report issues |
-| Regional expansion | Reviewed African-language terminology and voices | Each added language passes community and quality review |
+| A — Bilingual prototype | Language rail, home language dock, English catalog, bilingual result states, data policy rail | Learner can switch interface and session language without losing the current session |
+| B — Learning MVP | Real AI text workflow, source capture, structured explanations, quiz feedback, local session cache | Learner can complete and resume a real text learning session |
+| C — Offline text and vocabulary | Service worker, IndexedDB session cache, vocabulary, cache budget, text-only downloads | Saved text sessions reopen without network and without duplicate content |
+| D — Media learning | Transcription, captions, TTS, optional audio, resumable media jobs | Media is optional and text-first fallback always works |
+| E — Trust and scale | Source provenance, moderation, reports, observability, quotas, privacy controls | Operators can detect errors and learners can report them safely |
+| F — African language expansion | Reviewed terminology, voices, examples, and catalog coverage | Each new language passes community and quality review |
 
-## 15. Prototype acceptance checklist
+## 19. Revised prototype acceptance checklist
 
-The updated prototype is ready for review when a learner can set Kiswahili or English, adjust text size and contrast, enable data saver, choose a learning level, generate a demo explanation or quiz, receive answer feedback, save the session, reload the page, and find the saved session in the library. The prototype must visibly disclose that generated AI content, uploads, authentication, downloads, sharing, and payments are demonstrations unless they are actually connected.
+The revised prototype is ready for review when:
+
+- The header shows a visible `SW / EN` language rail without opening a modal.
+- Switching the interface language updates the major visible learner-facing strings, not only the HTML language attribute.
+- The home page lets the learner choose Kiswahili, English, or bilingual mode for the current session.
+- The learner can switch a generated result between single-language, parallel, and reveal views.
+- Switching language preserves the topic, result, quiz position, and saved progress.
+- The interface displays a text-first/data-saver policy outside the settings modal.
+- A language switch requests or simulates only the missing text variant; it does not duplicate media.
+- English and Kiswahili controls have accessible labels and visible active states.
+- Quiz feedback can be requested in either language.
+- A term bridge exposes Kiswahili and English technical vocabulary.
+- Data estimates appear before heavy media actions.
+- The prototype clearly discloses which services are not connected.
+- The product remains usable with high contrast, reduced motion, enlarged text, keyboard navigation, and screen readers.
 
 ## References
 
