@@ -82,3 +82,31 @@ The home page quick-access dock exposes text scaling, contrast, reduced-motion, 
 ## Vocabulary verification
 
 After bringing the result card into view, the `Save terms` control displayed `Terms saved.` and the Vocabulary route then showed four locally stored bilingual term cards. The cards contain only Kiswahili/English terms and short examples, with no media download, supporting the low-data learning model.
+
+## Official Tanzanian syllabus sources
+
+The official Tanzania Institute of Education (TIE) lower-secondary academic syllabus index is https://www.tie.go.tz/publications/syllabus-for-lower-secondary-academics. The page labels the collection as the new lower-secondary academic syllabuses and lists official documents dated 29 June 2023, including Physics, Mathematics, Literature in English, Kiswahili, Arabic, Theatre Arts, Sport Studies, Music, Textile and Garment Construction, Islamic Religious Education, and History of Tanzania and Ethics. The visible list is paginated, so the complete O-Level inventory requires collecting additional pages.
+
+The official TIE upper-secondary academic syllabus index is https://www.tie.go.tz/publications/syllabus-for-upper-secondary-education. The current page lists official Form V–VI documents including Tourism (25 April 2025), Theatre Arts, Sport Studies, Physics, Music, Islamic Religious Education, Literature in English, Kiswahili, History, History of Tanzania and Ethics, Geography, and French. The page is also paginated, and the complete A-Level inventory requires collecting additional pages.
+
+The collection should be integrated as source-linked metadata and structured learning objectives, not copied wholesale into the prototype. Each subject should retain the official TIE document URL, publication date, version, level, and review status.
+
+### A-Level Form V–VI inventory from TIE
+
+The official upper-secondary index contains 29 syllabus documents across three pages. Page 1 lists Tourism (2025), Theatre Arts, Sport Studies, Physics, Music, Islamic Religious Education, Literature in English, Kiswahili, History, History of Tanzania and Ethics, Geography, and French. Page 2 lists Food and Human Nutrition, Fine Art, Fasihi ya Kiswahili, English Language, Economics, Divinity, Computer Science, Chinese Language, Chemistry, Business Studies, Biology, and Basic Applied Mathematics. Page 3 lists Arabic, Agriculture, Textiles and Garment Construction, Mathematics, Accountancy, and Academic Communication. The official URLs and dates are captured on the corresponding TIE pages; these should be stored in a machine-readable manifest with `level: A`, `forms: V–VI`, `source_org: TIE`, and `source_date`.
+
+This inventory is 29 official subject documents, including language, science, business, humanities, arts, vocational, and applied subjects. The 2025 Tourism document should be treated as newer than the 2023 documents and surfaced with its publication date.
+
+### O-Level Form I–IV inventory from TIE
+
+The official lower-secondary index contains 29 academic syllabus documents across three pages. Page 1 includes Kiswahili, Theatre Arts, Sport Studies, Physics, Textile and Garment Construction, Music, Islamic Religious Education, History of Tanzania and Ethics, Mathematics, Literature in English, and Arabic, plus a 2025 Kiswahili document visible on the page. Page 2 includes History, Geography, French, Food and Human Nutrition (listed twice on TIE and requiring deduplication), Fine Art, Fasihi ya Kiswahili, English Language, Computer Science, Chinese Language, Chemistry, and Business Studies. Page 3 includes Book-keeping, Biology, Bible Knowledge, Agriculture, and Additional Mathematics.
+
+The inventory is 29 listed documents before deduplication, or 28 unique subject/document entries if the duplicated Food and Human Nutrition listing is treated as one subject. The prototype should not silently merge distinct religious studies, language, or applied subjects; each should remain a separate selectable subject with its own official source link.
+
+## Curriculum prototype verification
+
+The visible `Mitaala / Curriculum` route loads from the lightweight `curriculum-catalog.json` file without opening the settings modal. The O-Level tab displayed 29 official subjects and the A-Level tab displayed 30 official subjects. Each card showed form range, publication date, category, an `Open syllabus` link to the official TIE PDF, and a `Study this subject` action.
+
+Selecting the A-Level Tourism card handed the learner into the existing learning workspace with the context `TOURISM • A-Level • V–VI • Official TIE syllabus`. The topic field was prefilled with a subject-aware prompt, and a `Back to Curriculum` control was visible. Switching the interface rail to English showed that the new route and handoff support English without opening a modal; the visible page still has a few legacy workspace labels to be translated in a later polish pass if needed.
+
+The selected A-Level Tourism handoff generated a learner result with the existing bilingual text-first content and a source-transparency block linking directly to the official TIE Tourism Form V–VI PDF. The result remained text-first and did not request new media. The English interface rail could be changed while the result was open, and the official TIE source notice remained visible.

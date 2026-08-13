@@ -14,12 +14,16 @@ Open [`elimu-ai.html`](./elimu-ai.html) in a browser, or serve this folder with 
 - Local persistence of preferences and saved learning sessions using `localStorage`.
 - Accessibility controls for language, text size, high contrast, reduced motion, and data saver mode.
 - Honest prototype status labels for AI generation, uploads, downloads, authentication, sharing, and payments.
+- A visible Curriculum route with 29 official O-Level and 30 official A-Level TIE syllabus entries, subject search, category filters, official PDF links, and a syllabus-to-learning handoff.
+- A compact `curriculum-catalog.json` for low-data discovery, plus a complete `tie-syllabus-manifest.json` and `curriculum-index.json` source registry.
 
 The prototype does **not** connect to real AI, file processing, authentication, storage, audio generation, or payment services yet. Do not enter sensitive personal, educational, or payment information.
 
 ## Specification
 
 Read [`PRODUCT-TECH-SPEC.md`](./PRODUCT-TECH-SPEC.md) for the complete learner-first product and technical specification. It covers target learners, core journeys, information architecture, language rules, accessibility requirements, low-bandwidth strategy, production architecture, data model, API outline, trust and privacy requirements, metrics, roadmap, and acceptance criteria.
+
+Read [`CURRICULUM-INTEGRATION-SPEC.md`](./CURRICULUM-INTEGRATION-SPEC.md) for the syllabus knowledge-layer design, source governance, bilingual retrieval model, page-aware ingestion pipeline, production API additions, and acceptance criteria. [`CURRICULUM-COVERAGE.md`](./CURRICULUM-COVERAGE.md) summarises the official source inventory.
 
 The supporting evidence and design notes are in [`research-notes.md`](./research-notes.md).
 
