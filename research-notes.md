@@ -110,3 +110,15 @@ The visible `Mitaala / Curriculum` route loads from the lightweight `curriculum-
 Selecting the A-Level Tourism card handed the learner into the existing learning workspace with the context `TOURISM • A-Level • V–VI • Official TIE syllabus`. The topic field was prefilled with a subject-aware prompt, and a `Back to Curriculum` control was visible. Switching the interface rail to English showed that the new route and handoff support English without opening a modal; the visible page still has a few legacy workspace labels to be translated in a later polish pass if needed.
 
 The selected A-Level Tourism handoff generated a learner result with the existing bilingual text-first content and a source-transparency block linking directly to the official TIE Tourism Form V–VI PDF. The result remained text-first and did not request new media. The English interface rail could be changed while the result was open, and the official TIE source notice remained visible.
+
+## Bilingual curriculum and low-bandwidth test
+
+The browser test loaded the Curriculum route, displayed 29 O-Level subjects and 30 A-Level subjects, switched the interface from Kiswahili to English, selected A-Level, chose the Both-language session mode, and generated a result with Kiswahili and English panes. The source transparency card retained the official TIE PDF link for Tourism Form V–VI. No audio or syllabus PDF was fetched while generating the text-first result.
+
+The browser performance check reported `curriculum-catalog.json` at 16,376 encoded bytes and a cached `transferSize` of 0 for the current session. The browser reported `navigator.connection.downlink` of 0.4 Mbps, `effectiveType` of `4g`, `saveData: false`, and `rtt: 0`. This indicates that the lightweight catalog is suitable for low-data delivery, but it is not evidence of a full offline mode because the current prototype has no service worker or persistent PDF cache yet.
+
+## Offline implementation verification
+
+The local prototype registered `sw.js` successfully under `http://127.0.0.1:4173/`, gained an active service-worker controller, and created IndexedDB database `elimu-ai-offline` version 1. The browser reported caches for `elimu-shell-2026-08-13-1` and `elimu-catalog-2026-08-13-1`; the catalog cache contained `curriculum-catalog.json`, and IndexedDB contained one catalog record with all 59 entries. The storage estimate reported approximately 167,680 bytes in Cache Storage and 19,506 bytes in IndexedDB during the test.
+
+A temporary local fixture was successfully written to the `topicPacks` and `sessions` object stores; the service worker created an `offline-text` cache entry for the topic pack; and the temporary records were removed after verification. JavaScript syntax checks passed for `sw.js`, `offline-store.js`, and the inline prototype script. The current implementation intentionally does not persist opaque cross-origin PDF responses; production PDF downloads must use a rights-aware same-origin gateway with validators, checksums, and resumable range support.
